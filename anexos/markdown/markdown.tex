@@ -1,4 +1,4 @@
-\chapterimage{apendices/markdown/imagenes/cover}
+\chapterimage{anexos/markdown/imagenes/cover}
 \chapterimagedescription{Logo de Markdown sobre fondo con logos tridimensionales}
 \chapterimageauthor{Diseño propio}
 
@@ -26,11 +26,11 @@ fragmentación, con diversas implementaciones que agregan funciones, o remueven
 otras.
 
 Markdown se ha posicionado como un importante lenguaje en diversos ámbitos, por
-ejemplo, varios sistemas de blogs permiten escribir articulos utilizando
+ejemplo, varios sistemas de blogs permiten escribir artículos utilizando
 Markdown.
 
 En el área de programación es ampliamente utilizado para escribir documentación
-de los programas, habiendose convertido en el estándar de facto. Por ejemplo,
+de los programas, convirtiéndose en el estándar de facto. Por ejemplo,
 sitios que albergan repositorios de código, como \textbf{GitHub}, \textbf{GitLab}
 y \textbf{Bitbucket} entre otros, incluyen visualizadores para Markdown que
 muestran la documentación del programa de forma automática. Cómo estos sitios
@@ -50,10 +50,10 @@ Los archivos que contienen código markdown suelen guardarse con la extensión
 utilice para producirlos.
 
 Cabe destacar que Markdown permite exportar el contenido a HTML, un lenguaje
-de marcado que se utiliza para diseñar páginas web. Sin embargo, sus caracteristicas
+de marcado que se utiliza para diseñar páginas web. Sin embargo, sus características
 están muy reducidas con respecto a este último, por lo que el diseño de páginas
 no es su función. En cambio, está pensado para redactar correos electrónicos,
-articulos simples y documentación.
+artículos simples y documentación.
 
 \section{Sintaxis y Semántica}
 
@@ -78,12 +78,12 @@ saltos de línea desde el párrafo anterior.
 
 Existen dos formas de enfatizar una palabra en Markdown, un énfasis simple
 (que en general se visualiza como texto en itálica), y un énfasis doble (
-para palabras o frases un poco más importantes que las anteriores, y que
-termina visualizandose en negrita).
+para palabras o frases un poco más importantes que las anteriores, y que se
+termina visualizando en negrita).
 
 El énfasis consiste en colocar una marca (para énfasis simple) o dos (para énfasis
 doble) al inicio del texto a resaltar, y la misma cantidad al final de dicho texto.
-Pueden utilizarse tanto guines bajos como asteriscos para marcar, pero en general
+Pueden utilizarse tanto guiones bajos como asteriscos para marcar, pero en general
 se estila utilizar guión bajo para énfasis simple, y asteriscos para negrita.
 
 \begin{lstlisting}[language=Markdown]
@@ -94,20 +94,20 @@ pero estas que están a continuación **Presentan énfasis doble**
 La salida del texto anterior se visualizará de forma similar
 a lo siguiente:
 
-\includegraphics[]{apendices/markdown/imagenes/md_enfasis.png}
+\includegraphics[]{anexos/markdown/imagenes/md_enfasis.png}
 
 \subsection*{Títulos}
 
-Los titulos permiten delimitar secciones bien diferenciadas en el texto,
+Los títulos permiten delimitar secciones bien diferenciadas en el texto,
 y ya son por si mismos texto resaltado, por lo que no deben rodearse de
 marcas de énfasis.
 
 Los títulos vienen en diversos niveles, de acuerdo a la importancia del
 mismo. Por ejemplo, los títulos de primer nivel son los más importantes,
 y por tanto deberían ser utilizados solo como el título general del documento.
-Los títulos de nivel dos actuan como subtitulo, y permiten diferenciar
-secciones grandes del documento. Titulos de tercer, cuarto, quinto y sexto
-nivel pueden ser utilizados para marcar secciónes más especificas.
+Los títulos de nivel dos actúan como subtitulo, y permiten diferenciar
+secciones grandes del documento. Títulos de tercer, cuarto, quinto y sexto
+nivel pueden ser utilizados para marcar secciones más especificas.
 
 Los títulos, si bien tienen un estilo destacado, tienen una connotación
 semántica clara. No deberían ser utilizados para enfatizar palabras.
@@ -128,7 +128,7 @@ de segundo nivel, y así siguiendo.
 
 Lo que se termina visualizando como:
 
-\includegraphics[]{apendices/markdown/imagenes/md_titulos.png}
+\includegraphics[]{anexos/markdown/imagenes/md_titulos.png}
 
 También existe una forma distinta de escribir títulos de primer y segundo
 nivel, que consiste en ``subrayar'' las palabras que conforman el texto.
@@ -162,7 +162,7 @@ aunque esto atenta contra la lectura en la entrada y no es recomendado.
 
 Resulta en:
 
-\includegraphics[]{apendices/markdown/imagenes/md_ulist_1.png}
+\includegraphics[]{anexos/markdown/imagenes/md_ulist_1.png}
 
 También pueden colocarse listas dentro de otras listas, tabulando los
 elementos
@@ -177,13 +177,13 @@ elementos
 
 Resultando en:
 
-\includegraphics[]{apendices/markdown/imagenes/md_ulist_2.png}
+\includegraphics[]{anexos/markdown/imagenes/md_ulist_2.png}
 
 \subsection*{Listas ordenadas}
 
 Las listas ordenadas, también llamadas listas numeradas, presentan números
 en lugar de viñetas. Se logran colocando un número al comienzo de la línea
-y siguiendolo de un punto.
+y siguiéndolo de un punto.
 
 \begin{lstlisting}[language=Markdown]
 1. Primer elemento
@@ -191,38 +191,38 @@ y siguiendolo de un punto.
 3. Tercer elemento
 \end{lstlisting}
 
-\includegraphics[]{apendices/markdown/imagenes/md_olist.png}
+\includegraphics[]{anexos/markdown/imagenes/md_olist.png}
 
 De igual forma que con las listas desordenadas, estas se pueden anidar. Más
 aún, se pueden anidar listas ordenadas con no ordenadas en diversas formas.
 
 \subsection*{Enlaces}
 
-Una caracteristica interesante es la posibilidad de insertar enlaces en cualquier
-punto del texto, que apuntan a otros documentos o sitios web. Un elnace se compone
+Una característica interesante es la posibilidad de insertar enlaces en cualquier
+punto del texto, que apuntan a otros documentos o sitios web. Un enlace se compone
 de dos partes: la dirección a la cual se quiere acceder, y el texto que se le
 mostrará al lector. El texto se coloca entre corchetes, los cuales van seguidos
-de unos parentesis que contienen la dirección a la cual se enlazará.
+de unos paréntesis que contienen la dirección a la cual se enlazará.
 
 \begin{lstlisting}[language=Markdown]
 Lo siguiente es un enlace: [Ir a Google](https://google.com)
 \end{lstlisting}
 
-\includegraphics[]{apendices/markdown/imagenes/md_enlace.png}
+\includegraphics[]{anexos/markdown/imagenes/md_enlace.png}
 
 \subsection*{Imágenes}
 
 En ocasiones es necesario agregar algún tipo de elemento visual, en particular,
 imágenes. Las imágenes funcionan de forma similar a un enlace, pero se debe
 anteponer un signo de admiración (!) a los corchetes. El texto que se coloca
-entre corchetes corresponde con la descripción de la imágen, mientras que la
-dirección entre parentesis corresponde con la ubicación de la misma.
+entre corchetes corresponde con la descripción de la imagen, mientras que la
+dirección entre paréntesis corresponde con la ubicación de la misma.
 
 \begin{lstlisting}[language=Markdown]
 ![Logo de Markdown Here](http://cor.to/mdhere)
 \end{lstlisting}
 
-\includegraphics[scale=0.4]{apendices/markdown/imagenes/md_imagen.png}
+\includegraphics[scale=0.4]{anexos/markdown/imagenes/md_imagen.png}
 
 \subsection*{Código}
 
@@ -245,7 +245,7 @@ let z = x + y;
 
 Lo cual se vería así:
 
-\includegraphics[scale=0.63]{apendices/markdown/imagenes/md_codigo.png}
+\includegraphics[scale=0.63]{anexos/markdown/imagenes/md_codigo.png}
 
 \subsection*{Separaciones}
 
@@ -268,8 +268,8 @@ La línea superior marca esa separación de forma clara.
 \section{Actividades}
 
 \begin{exercise}
-Dado el siguiente código en Markdown, modifiquelo de forma tal de dar énfasis
-simple a los périfericos que aparecen mencionados en él y énfasis doble a las
+Dado el siguiente código en Markdown, modifique el mismo de forma tal de dar
+énfasis simple a los periféricos que aparecen mencionados y énfasis doble a las
 palabras informática, software y hardware en todos los lugares en donde aparece.
 
 \begin{minipage}{0.92\textwidth}
@@ -282,7 +282,7 @@ conjunto de hardware y software.
 El hardware se compone de una placa base, una
 fuente de alimentación, memoria, un microprocesador,
 y un conjunto de periféricos tales como mouse,
-teclado, pantalla, parlantes, impresora, microfono
+teclado, pantalla, parlantes, impresora, micrófono
 y placas de expansión.
 
 El software consiste en los programas que corremos
@@ -299,7 +299,7 @@ receta, en caso de que desconozca los pasos a seguir.
 \end{exercise}
 
 \begin{exercise}
-Buscque en Internet imágenes de tres lugares del mundo que desearía visitar.
+Busque en Internet imágenes de tres lugares del mundo que desearía visitar.
 En un documento Markdown, inserte las imágenes de forma consecutiva, colocando
 previo a cada una el nombre del lugar como titulo de nivel 3, y el país en el
 que se encuentra como subtitulo de nivel 5. El título debe consistir en un enlace
@@ -330,7 +330,7 @@ como asteriscos, almohadillas, y corchetes para lograr
 estructurar un documento. En general se pueden escribir
 los elementos de la siguiente lista:
 
-Titulos
+Títulos
 Palabras con énfasis
 Listas
 Enlaces
@@ -350,7 +350,7 @@ Elabore un documento Markdown que funcione como su curriculum vitae.
 Para ello, coloque su nombre completo como título principal, y siga al mismo
 con un subtitulo de nivel dos indicando su profesión. Agregue una foto de su persona,
 y seccione el contenido en datos personales, trabajos, formación y otros elementos
-utilizando titulos de tercer nivel en adelante y separadores según lo considere
+utilizando títulos de tercer nivel en adelante y separadores según lo considere
 necesario. Utilice una lista no ordenada para sus datos personales.
 
 No hace falta que el CV sea real, basta con que sea verosímil, si no cuenta con

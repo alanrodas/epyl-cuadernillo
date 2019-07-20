@@ -17,16 +17,16 @@ de información mediante una codificación.
 \section{Representación de Información}
 
 ¿Cómo hacen las computadoras para hacer todo lo que hacen? ¿Dónde guardan las
-cosas? ¿Cómo sáben? Son preguntas que en general el usuario promedio de
+cosas? ¿Cómo saben? Son preguntas que en general el usuario promedio de
 computadoras, no versado en la temática, suele hacerse en algún momento.
 
 En esta sección intentaremos responder algunas de esas preguntas, analizando en
-primer lugar la pregunta ``¿Qué es la información?'' desde la prespectiva de una
+primer lugar la pregunta ``¿Qué es la información?'' desde la perspectiva de una
 computadora. Tras contestar eso veremos como estas complejas máquinas pueden
 procesar esa información para realizar diversas tareas.
 
 Esto nos llevará a sumergirnos aún más en el mundo del software y en su interacción
-con el hardware en el nivel más sencillo, para luego acender en un proceso
+con el hardware en el nivel más sencillo, para luego ascender en un proceso
 espiral en los distintos niveles de abstracción que existen en el software.
 
 \subsection{Códigos y comunicación}
@@ -43,7 +43,7 @@ circula el \textbf{mensaje}, que es el elemento de la comunicación que se trans
 desde el emisor hacia el receptor (en el caso del habla, las ondas sonoras).
 
 Ahora bien, no haga trampa y no se adelante en el texto, lea solo lo que tiene
-inmediatamente a continuación, y responda ¿Puede descifrar el siguiente mensaje alienigena?
+inmediatamente a continuación, y responda ¿Puede descifrar el siguiente mensaje alienígena?
 
 \centerline{\includegraphics[]{capitulos/bajo_nivel/imagenes/secret_message_A1.png}}
 
@@ -74,14 +74,14 @@ sin que terceros (por ejemplo, nuestros padres, o las maestras) pudieran
 leerlos. El truco consistía en que la tabla de símbolos solo fuera conocida
 por nosotros y por la persona a quien le íbamos a enviar los mensajes.
 
-Imaginemos ahora dos barcos que se cruzan en altamar en la noche. Los barcos se
+Imaginemos ahora dos barcos que se cruzan en alta mar en la noche. Los barcos se
 encuentran lo suficientemente lejos como para que el sonido de la voz de sus
 capitanes viaje de un barco a otro, pero sin embargo están lo suficientemente
 cerca como para ver las luces del otro barco. Así, si los capitanes desean
 comunicarse, pueden usar la luz (por ejemplo, de una linterna) como canal de
-comunicación. Un capitan puede enviar mensajes mediante una serie de parpadeos
+comunicación. Un capitán puede enviar mensajes mediante una serie de parpadeos
 lumínicos que genera con su linterna (los cuales pueden ser largos o cortos) y
-que el otro capitan podría entender. Pero, para poder comunicarse efectivamente,
+que el otro capitán podría entender. Pero, para poder comunicarse efectivamente,
 ambos capitanes deben tener una serie de reglas o convenciones en común que le
 permitan saber que significan dichos parpadeos. Un parpadeo corto y uno largo,
 fácil, la letra ``A'', uno corto, uno largo y luego dos cortos, la letra ``L''.
@@ -109,17 +109,17 @@ tener la siguiente tabla a mano:
     \end{tabular}
 }
 
-En el caso de los mensajes alienigenas y el juego que realizabamos cuando chicos
-era que el sistema de reglas que usabamos para leer y escribir el mensaje es
+En el caso de los mensajes alienígenas y el juego que realizábamos cuando chicos
+era que el sistema de reglas que usábamos para leer y escribir el mensaje es
 secreto, solo nosotros y alguien más lo conocía. En el caso del código Morse
 en cambio, el código no debe ser secreto, sino todo lo contrario (todos los
-capitantes de barcos deberían saberlo para que podamos comunicarnos efectivamente).
+capitanes de barcos deberían saberlo para que podamos comunicarnos efectivamente).
 \autocite{petzold_2000}
 
 \begin{definition}\index{Codigo@Código}
     Un \textbf{código} es un sistema de reglas que permiten convertir información dada
     por el emisor de un mensaje en alguna forma (letras, símbolos, gestos,
-    parapedos lumínicos, sonidos u otros) en información relevante para el
+    parpadeos lumínicos, sonidos u otros) en información relevante para el
     receptor (probablemente en otra forma).
 \end{definition}
 
@@ -132,7 +132,7 @@ la computadora.
 
 Las computadoras modernas son dispositivos principalmente electrónicos, por tanto
 solamente pueden manipular la electricidad que fluye por sus cables (principalmente de
-cobre, como los de las instalaciones electricas, pero de tamaños mucho más
+cobre, como los de las instalaciones eléctricas, pero de tamaños mucho más
 reducidos y con mucha menos carga eléctrica). La computadora posee una serie de
 dispositivos que bloquean o no el paso de corriente eléctrica en determinados
 casos (similar a un interruptor eléctrico, pero que no requiere de intervención
@@ -161,7 +161,7 @@ información al usuario. Más importante es pensar en el canal y en el mensaje d
 dicha comunicación.
 
 El único canal existente son los cables que mencionamos, y el mensaje solo puede
-estar dado por pulsos electricos. Muy similar al ejemplo de las linternas, donde
+estar dado por pulsos eléctricos. Muy similar al ejemplo de las linternas, donde
 solo teníamos ``puntos'' o ``rayas'', aquí solo tenemos electricidad enviada por
 un cable (o no enviada). Es decir, en un único cable, hay solo dos posibles
 mensajes en un mismo momento.
@@ -204,7 +204,7 @@ que proviene de la fuente de alimentación) por alguno de los cables relevantes.
 Los discos ópticos (CD/DVD) operan de forma similar, pero con una superficie
 que refracta la luz, un láser y sensores ópticos en lugar de imanes y un
 cabezal. Dependiendo del lugar hacia donde se refracte la luz, el dispositivo
-enviará pulsos electricos en determinados cables.
+enviará pulsos eléctricos en determinados cables.
 
 Las tarjetas perforadas hacen algo parecido con punciones sobre una superficie
 de cartón o papel, para que luego un cabezal intente pasar por un determinado 
@@ -245,7 +245,7 @@ pase más ``encendido''.
 
 Así es como surge la idea de utilizar alguna especie de \textbf{código} para
 poder hablar del mensaje que se transmite por esos cables, sin tener que realizar
-complejos dibujos o digramas. Esto nos permite además abstraernos de los cables
+complejos dibujos o diagramas. Esto nos permite además abstraernos de los cables
 y circuitos, es decir, del canal, para centrarnos en el mensaje.
 
 \index{Codigo Binario@Código Binario}\index{Sistema Binario}\index{Binario}
@@ -380,7 +380,7 @@ sea entendible por el receptor.
 
 \begin{definition}\index{Codificacion@Codificación}
     Se conoce como \textbf{codificación} al proceso mediante el cual una cierta
-    información (por ejemplo, una imágen, un color, una letra) es transformada
+    información (por ejemplo, una imagen, un color, una letra) es transformada
     en algún otro elemento que la representa mediante la utilización de un
     código. El proceso inverso se conoce como \textbf{decodificación}.
 \end{definition}
@@ -409,7 +409,7 @@ más nítida y de mejor definición, a costa de que ocupa mayor espacio de
 almacenamiento.
 \end{knowwhat}
 
-Es decir, cualquier tipo de elemento del que podamos querer hablar es suceptible
+Es decir, cualquier tipo de elemento del que podamos querer hablar es susceptible
 de ser codificado mediante números.\autocite[p. 16]{white_2015} Pero eso es solo el
 principio de un proceso que va más allá, pues todo número puede ser representado mediante binario.
 
@@ -594,7 +594,7 @@ el procesador será un elemento más, y su interior no es relevante. Más aún, 
 componentes de hardware no son relevantes si lo que interesa es analizar el
 software de la computadora. Un último ejemplo podría ser la forma en la que los
 datos están codificados, como binario, que no interesa si lo que queremos es
-utilizar el equipo, por ejemplo, editando una imágen o escribiendo un texto.
+utilizar el equipo, por ejemplo, editando una imagen o escribiendo un texto.
 
 El concepto de caja negra utilizado en sistemas no debe confundirse con el
 ``cajanegrismo''; éste es un concepto vinculado a la sociología que hace
@@ -615,7 +615,7 @@ abstracciones de forma constante.
 \section{Actividades}
 
 \begin{exercise}
-Dada la imágen a continuación, expresela como un único
+Dada la imagen a continuación, exprésela como un único
 número utilizando la misma codificación que se aplicó
 en este capítulo.
 

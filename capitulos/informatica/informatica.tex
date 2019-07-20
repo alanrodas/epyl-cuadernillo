@@ -65,37 +65,37 @@ la forma en la que interpretamos esos ceros y unos debe ser la misma para todos,
 por lo que los formatos están \textbf{estandarizados}.
 
 \begin{definition}\index{Archivo}
-    Un \textbf{archivo informático} es la represenación digital de un archivo
+    Un \textbf{archivo informático} es la representación digital de un archivo
     físico, el cuál se encuentra almacenado en un dispositivo de almacenamiento
     como una cadena de bits la cual es la codificación de lo representado utilizando
     algún código determinado, determinando su formato. Un archivo además tiene un
     nombre y un tamaño (que depende de la cantidad de bits que tiene el archivo).\autocite[vid. p.13]{gookin_2005}
 \end{definition}
 
-Para tener una mejor idea, analicemos un ejemplo simple. Una fotografía o imágen
+Para tener una mejor idea, analicemos un ejemplo simple. Una fotografía o imagen
 digital puede almacenarse en alguno de los muchos formatos disponibles para ello.
 Tres de los más utilizados son los formatos RAW, JPEG y PNG.
 \begin{itemize}
-    \item Las imágenes en formáto RAW son aquellas en donde se almacena toda la
-        información para cada pixel de la imágen. Es decir, se divide la imágen
+    \item Las imágenes en formato RAW son aquellas en donde se almacena toda la
+        información para cada pixel de la imagen. Es decir, se divide la imagen
         en una grilla gigante de pequeños puntos (pixeles), y el archivo consiste
         en la información de que color debe tener cada pixel. Esto otorga la
         mejor precisión de los colores y la mejor calidad de imagen posible, fiel
-        al dispositivo que capturó la imágen. Como contrapartida, una sola imágen
+        al dispositivo que capturó la imagen. Como contrapartida, una sola imagen
         en buena calidad puede llegar a ocupar mucho tamaño en dispositivos de
         almacenamiento.
     \item Las imágenes JPG utilizan una técnica mediante la cual pueden eliminar
         la información de varios pixeles, los cuales pueden deducirse a partir de
         la información de los pixeles circundantes. Adicionalmente, se almacena
         la información de cada pixel mediante una técnica que permite reducir
-        el tamaño de la información. Así, la calidad de imágen baja
+        el tamaño de la información. Así, la calidad de imagen baja
         significativamente, pero el tamaño se reduce de forma acorde. Este formato
         es ideal para fotografías digitales y el estándar usado por la mayoría
         de las cámaras fotográficas.
     \item Las imágenes PNG utilizan técnicas que permiten minimizar el tamaño que
         ocupa la información de cada pixel, al pre-anotar los colores que aparecen
-        en la imágen. Adicionalmente, marca grandes bloques de imágen anotando su
-        posición relativa y tamaño, marcandolo con un único color. Este formato es
+        en la imagen. Adicionalmente, marca grandes bloques de imagen anotando su
+        posición relativa y tamaño, marcándolo con un único color. Este formato es
         ideal para imágenes que tienen pocos colores, o grandes bloques de un
         mismo color, por ejemplo, dibujos digitales.
 \end{itemize}
@@ -324,8 +324,8 @@ estructura de árbol. En estas estructuras siempre hay una carpeta que contiene
 a todas las otras, conocida como carpeta raíz.}
 
 \begin{definition}\index{Directorio}
-    Un \textbf{directorio} es la represenación digital de una carpeta física.
-    La misma se encuentra en algúna ubicación en algún dispositivo de
+    Un \textbf{directorio} es la representación digital de una carpeta física.
+    La misma se encuentra en alguna ubicación en algún dispositivo de
     almacenamiento, posee un nombre, y puede contener ninguno o varios
     archivos y/o directorios en su ``interior''. El tamaño, en bytes, de un
     directorio es la suma del tamaño de todos los directorios y archivos que
@@ -350,9 +350,9 @@ directorios y archivos se denominan sistemas de archivos jerárquicos.}
 \subsection{Rutas absolutas}
 \index{Ruta}\index{Ruta Absoluta}
 
-En los sistemas operativos cuyo sistema jerarquicos (lo cuál es hoy en día
+En los sistemas operativos cuyo sistema jerárquicos (lo cuál es hoy en día
 prácticamente la totalidad de los mismos, aunque hay excepciones) la ruta es la
-forma de identificar univocamente un archivo en el equipo. Así, todo archivo tiene
+forma de identificar de forma única un archivo en el equipo. Así, todo archivo tiene
 asociada una ruta absoluta en el equipo.
 
 \begin{definition}
@@ -366,18 +366,18 @@ cada sistema tiene su propia forma de estructurar las carpetas, pero el concepto
 subyacente es el mismo.
 
 A continuación se muestra un detallado ejemplo con algunos directorios en un
-sistema Windows para anlizar rutas absolutas de varios archivos.
+sistema Windows para analizar rutas absolutas de varios archivos.
 
 \vspace{0.5cm}
 \centerline{\includegraphics[scale=0.35]{capitulos/informatica/imagenes/directorios_windows_1.png}}
 
 En este sistema hay dos dispositivos de almacenamiento. Un disco extraible ``floppy''
 que Windows ha identificado con el nombre ``A:'', y un disco rígido, el cual se
-identifica con ``C:''. Es decir, ``A:'', y ``C:'' son las carpetas raices de cada
+identifica con ``C:''. Es decir, ``A:'', y ``C:'' son las carpetas raíces de cada
 uno de los dispositivos de almacenamiento presentes en el sistema.
 
 Dentro del disco rígido hay tres carpetas, ``Usuarios'', ``Programas'' y ``Windows''.
-La carpeta ``Windows'' está \textbf{vacía}. Un directorio se denomína vacío
+La carpeta ``Windows'' está \textbf{vacía}. Un directorio se denomina vacío
 cuando no contiene otras carpetas o archivos en su interior. La carpeta
 ``Programas'' contiene solamente tres archivos en su interior, ``PowerWrite.ini'',
 ``PowerWrite.exe'' y ``SuperProgram''. La carpeta ``Usuarios'' tiene dentro
@@ -389,19 +389,19 @@ un archivo con el nombre ``2015\_02.jpg''. ¿Significa esto que todos son el mis
 archivo? La respuesta es no, solo son archivos con el mismo nombre, pero el
 contenido del mismo podría ser completamente distinto. Podemos así modificar uno
 de esos archivos sin afectar el contenido de los otros. También surge la
-pregunta ¿Cómo sabe el sistema de cuál de los archivos estámos hablando? La
+pregunta ¿Cómo sabe el sistema de cuál de los archivos estamos hablando? La
 respuesta es, mediante la ruta absoluta del archivo.
 
 Cuando se trabaja sobre un archivo en el equipo, y aunque transparente para el
 usuario en la mayoría de los casos, se debe indicar la ruta completa al archivo,
 para que el sistema lo identifique de forma unívoca. Tomemos el ejemplo del archivo
 ``2015\_02.jpg''; dicho nombre no es único, sino que existen tres archivos con
-el mismo en úbicaciones distintas en el equipo. Si deseamos trabajar con cualquiera
+el mismo en ubicaciones distintas en el equipo. Si deseamos trabajar con cualquiera
 de ellos, deberíamos dar al sistema la ruta absoluta de aquel archivo que nos
-interesa. Para obtenerla uno debe imáginar una especie de camino que parte desde la
+interesa. Para obtenerla uno debe imaginar una especie de camino que parte desde la
 carpeta raíz (por ejemplo, ``C:'') y luego continúa por las lineas punteadas hasta
 arribar en el archivo, pasando en el camino por una serie de directorios intermedios
-(siempre moviendose hacia abajo y a los laterales, obteniendo así el camino más corto).
+(siempre moviéndose hacia abajo y a los laterales, obteniendo así el camino más corto).
 En el gráfico siguiente se muestran tres caminos distintos que llevan a los distintos
 archivos con el nombre ``2015\_02.jpg'', marcados cada uno con un color distinto.
 
@@ -467,8 +467,8 @@ separar cada uno de los elementos de una ruta. En realidad cada sistema operativ
 puede utilizar una símbolo distinto para separar los elementos de una ruta.
 Windows utiliza por convención la barra invertida (\textbackslash). Linux,
 macOS, y otros sistemas (aquellos que utilizan la convención de los sistemas
-básados en UNIX, y que en general se denominan sistemas basado en UNIX, o sistemas
-POSIX) separan los elementos con barra símple (/). Así, las rutas de los ejemplos
+basados en UNIX, y que en general se denominan sistemas basado en UNIX, o sistemas
+POSIX) separan los elementos con barra simple (/). Así, las rutas de los ejemplos
 de esta sección se escribirían en Windows:
 \begin{itemize}
     \item A:\textbackslash Casa\textbackslash 2015\_02.jpg
@@ -490,7 +490,7 @@ para cada uno de los dispositivos, sino que suelen tener un sistema de archivos
 que comienza en una carpeta virtual denominada ``/'' (``raíz'' o ``root'').
 Los diversos dispositivos son simplemente carpetas dentro de alguna de las
 carpetas que tiene ``/'', por ejemplo, la carpeta ``mnt'' o ``mount''. Las rutas
-absolutas en dichos sistemas comienzan entonces con la barra símple, para indicar
+absolutas en dichos sistemas comienzan entonces con la barra simple, para indicar
 que parten desde la raíz. Las rutas anteriores podrían verse algo como:
 \begin{itemize}
     \item /mount/floppy1/Casa/2015\_02.jpg
@@ -499,22 +499,22 @@ que parten desde la raíz. Las rutas anteriores podrían verse algo como:
 \end{itemize}
 
 Las rutas absolutas son un concepto simple de entender, pero complejo de dominar
-sin práctica en su uso. Más dificil aún es el concepto de rutas relativas.
+sin práctica en su uso. Más difícil aún es el concepto de rutas relativas.
 
 \subsection{Rutas relativas}
 \index{Ruta}\index{Ruta Relativa}
 
-Historicamente, los primeros sistemas funcionaban indicandole a la computadora
+Históricamente, los primeros sistemas funcionaban indicándole a la computadora
 comandos a realizar, mediante la introducción de las mismas utilizando el teclado.
 El usuario solamente visualizaba una pantalla con texto, y el mouse no existía.
 En ese contexto, indicar la ruta absoluta de forma constante para cualquier archivo
 que el usuario quisiera manipular era sumamente engorroso. Para solucionar esa
 molestia surgen dos ideas, la primera es el concepto de \textbf{directorio de
-trabajo actuál}, y la segunda las \textbf{rutas relativas}.
+trabajo actual}, y la segunda las \textbf{rutas relativas}.
 
 \begin{definition}
-    El \textbf{directorio de trabajo actuál} es un directorio de un sistema de
-    archivos jerarquico el cual se encuentra asociado de forma dinámica a un
+    El \textbf{directorio de trabajo actual} es un directorio de un sistema de
+    archivos jerárquico el cual se encuentra asociado de forma dinámica a un
     proceso o tarea del sistema.
 \end{definition}
 
@@ -557,7 +557,7 @@ basta con poner la ruta desde dicha carpeta (sin incluirla) hasta el archivo.
 \end{example}
 
 Es decir, desde la carpeta ``Bob'' basta ir a la carpeta ``Fotos'' para encontrar
-allí el archivo ``2015\_01.jpg''. Fijesé como la ruta siempre va hacia ``abajo'',
+allí el archivo ``2015\_01.jpg''. Note como la ruta siempre va hacia ``abajo'',
 es decir, que nos adentramos más en la jerarquía de carpetas, siempre yendo hacia
 la carpeta que está dentro de la anterior, y nunca saliendo de la misma.
 
@@ -609,7 +609,7 @@ Y en los sistemas UNIX
 Una propiedad interesante de las rutas relativas es que, dado un directorio
 como directorio de trabajo actual, todas las rutas relativas desde el mismo
 hacia archivos o carpetas que este contenga son iguales independientemente de
-donde esté ubicado el directorio en el equipo. Esto resulta muy util a las personas
+donde esté ubicado el directorio en el equipo. Esto resulta muy útil a las personas
 de sistemas, pues un archivo de configuración o programa que utilice esta técnica
 para hacer mención de sus archivos puede ser copiado o movido a otro lado sin
 perjudicar su funcionamiento, dado que no se copie solo el archivo, sino todos
@@ -630,7 +630,7 @@ identifier (URI)}. Pero antes de entender que son los URIs, veamos un momento
 como se identifica un equipo en una red.
 
 Cuando se cuenta con diversas computadoras conectadas a una red, se debe poder
-hacer mención a una máquina en particular, diferenciandola del resto de las de
+hacer mención a una máquina en particular, diferenciándola del resto de las de
 la red. Así, los sistemas de software de red (por ejemplo, aquellos incluidos
 en un sistema operativo o incluidos en dispositivos como routers) asignan a cada
 equipo un número único, conocido como \textbf{dirección IP}. 
@@ -646,14 +646,14 @@ Tal vez haya visto en algún momento estas formas de identificar computadoras
 al navegar por Internet, pues Internet no es más que una gran red donde el
 usuario simplemente solicita archivo a diversos equipos. Una dirección IP
 se compone en realidad de 4 números entre 0 y 255 cada uno, los cuales se
-escriben separados por púntos (ej. ``125.65.92.135''). En cambio los nombres
+escriben separados por puntos (ej. ``125.65.92.135''). En cambio los nombres
 de dominio suelen consistir en dos partes, de las cuales la primera suele ser
 un nombre que identifica a una empresa u organización, y la segunda, que consiste
 en un conjunto de 2 y/o 3 letras que identifican el tipo de organización (empresa,
 ONG, entidad educativa, etc.) y/o el país al que pertenece (ej. ``google.com.ar'',
 ``wikipedia.org'').
 
-Ahora bién, una URI se compone entonces de diversas partes. En primer lugar un
+Ahora bien, una URI se compone entonces de diversas partes. En primer lugar un
 protocolo, que le indica a los equipos de que forma se espera que se transfiera
 el archivo de una máquina a la otra, seguido por alguna forma de identificador
 de equipo (ya sea la dirección IP o un nombre de dominio) y luego una ruta hacia
@@ -668,7 +668,7 @@ la ruta de la URI no es una ruta absoluta, sino relativa a la carpeta compartida
 Un URI también puede ser llamado URL (Universal Resource Locator). Si bien hay
 pequeñas diferencias técnicas entre uno y otro concepto, los términos hoy en día
 se suelen utilizar de forma prácticamente intercambiable. Además, tanto los URI
-como los URL pueden contener otros elementos, como sub-dominios, puerto, querys,
+como los URL pueden contener otros elementos, como sub-dominios, puerto, queries,
 y fragmentos, que no analizaremos aquí.
 
 \begin{definition}\index{URI}\index{Identificador de Recursos Universal}
@@ -683,15 +683,15 @@ las redes, de forma tal que cualquier archivo (que sea accesible) tenga una form
 
 Cabe destacar como detalle adicional que el símbolo utilizado en una URI para
 separar los elementos de la ruta sigue el estándar de los sistemas UNIX, es decir,
-con barra símble (/). Esto quiere decir que, cuando se accede a un archivo en un
+con barra símple (/). Esto quiere decir que, cuando se accede a un archivo en un
 sistema Windows desde Internet, las barras invertidas de la ruta al archivo en
-Windows deberán ser reemplazadas con barras símples.
+Windows deberán ser reemplazadas con barras simples.
 
 \subsection{Programas, Editores y Visualizadores}
 \index{Programa}
 
 Los programas son uno de los elementos de software que más utilizamos. Son lo que
-provee a nuestra computadora de diferentes funcionalidades espcíficar, y nos
+provee a nuestra computadora de diferentes funcionalidades especificar, y nos
 permite realizar tareas sumamente diversas con un mismo equipo.
 
 A diferencia del resto de los archivos del equipo, un programa es un
@@ -711,7 +711,7 @@ Los programas pueden agruparse en categorías según diversos criterios. Por eje
 podríamos decir que hay programas que son ``accesorios'', elementos prácticos que
 el usuario puede requerir y conviene tener a manos, como una calculadora o un anotador.
 También hay programas que podrían entrar en una categoría ``reproductores de video'',
-que permiten al usuario ver videos en uno o más formatos, asi como controlar
+que permiten al usuario ver videos en uno o más formatos, así como controlar
 factores como el sonido y otros.
 
 Una categorización interesante que nos interesa mencionar aquí tiene que ver con
@@ -720,7 +720,7 @@ determinar dos grandes categorías, \textbf{visualizadores} y \textbf{editores}.
 
 Un visualizador permite simplemente ver los datos que se encuentran almacenados
 en un archivo, pero no modificarlos. Por ejemplo, un reproductor de video permite
-ver una pelicula digital, pero no modificarla. Un navegador de internet permite
+ver una película digital, pero no modificarla. Un navegador de internet permite
 ver páginas web, pero nuevamente, no pueden modificarse usando ese programa.
 
 \begin{definition}\index{Visualizador}
@@ -731,7 +731,7 @@ ver páginas web, pero nuevamente, no pueden modificarse usando ese programa.
 Los editores en cambio permiten manipular la información del archivo, alterando
 sus contenidos. Por ejemplo, un editor de sonido, o un manipulador de imágenes
 permiten editar audio o fotografías digitales, y no son los programas que el
-usuario utilizaría si lo que le interesa es escuchar música o ver fotografias.
+usuario utilizaría si lo que le interesa es escuchar música o ver fotografías.
 
 \begin{definition}\index{Editor}
     Un \textbf{editor} es un programa que permite crear y modificar el contenido
@@ -748,7 +748,7 @@ Una mención especial merecen los \textbf{editores de texto}. Un editor de texto
 permite editar el contenido de un archivo de texto sin formato. Como veremos más
 adelante, algunos formatos de archivo no codifican la información en binario,
 sino como texto. Para estos archivos, un editor de texto permite modificar su
-contenido, independientemtente si codifican imágenes, documentos, u otros.
+contenido, independientemente si codifican imágenes, documentos, u otros.
 
 \section{Programas y Lenguajes}
 
@@ -756,7 +756,7 @@ Un programa es el resultado del trabajo de un desarrollador de software (dentro
 de otros elementos), por lo que para realizar un programa se requiere de una serie
 de conocimientos técnicos específicos que permiten desarrollarlo.
 
-Resulta interesante tener una noción básica de la forma en la quese realiza 
+Resulta interesante tener una noción básica de la forma en la que se realiza 
 desarrolla un programa (sin internalizar en los conceptos específicos). Para
 encarar esta tarea es prioritario comprender el concepto de lenguaje, desde un
 punto de vista técnico.
@@ -791,13 +791,13 @@ La gramática determina luego como unir esas palabras para que cobren sentido.
 
 No solo hay idiomas que han surgido y evolucionado naturalmente, sino que pueden
 existir lenguajes creados de forma artificial con fines específicos. Por ejemplo,
-algunas series de televisión han creado lenguajes con fines artisticos, como la
+algunas series de televisión han creado lenguajes con fines artísticos, como la
 serie de ciencia ficción Star Trek y el lenguaje Klingon, o Game of Thrones (
 basada en los libros de George R. R. Martin) y el Idioma Dothraki.\autocite{littaur_2017}
 
 Pero también han habido intentos más nobles, como el Esperanto. Creado por 
-L. L. Zamenhof, un oftalmologo poláco, el Esperanto surge con la idea de que se
-transforme en un idioma capaz de ser facilmente aprendido y hablado por cualquier
+L. L. Zamenhof, un oftalmólogo polaco, el Esperanto surge con la idea de que se
+transforme en un idioma capaz de ser fácilmente aprendido y hablado por cualquier
 persona en el mundo. La intención última era unir a la humanidad bajo un mismo
 lenguaje universal (como segunda lengua, sin reemplazar los idiomas oficiales
 que ya tenían las distintas naciones). El Esperanto es la
@@ -805,7 +805,7 @@ lengua planificada más expandida y utilizada en el mundo hoy en día, y es
 reconocida por instituciones como la UNESCO.
 
 \index{Sintaxis}\index{Semántica}
-Todo lenguaje está computesto de dos partes, una \textbf{sintaxis} y una
+Todo lenguaje está compuesto de dos partes, una \textbf{sintaxis} y una
 \textbf{semántica}. La sintaxis determina los símbolos y las reglas que es posible
 utilizar en el lenguaje, mientras que la semántica determina que significado le
 asociamos a una determinada sintaxis. Por ejemplo, las expresiones ``Me baño en
@@ -814,27 +814,27 @@ pero la semántica asociada, es decir, el significado de esas dos frases, es com
 distinto.
 
 Pensemos también en una frase como ``lo voy a tomar''. ¿Cuál es la semántica de
-dicha frase?. A priori es dificil saberlo pues la palabra ``tomar'' tiene
+dicha frase?. A priori es difícil saberlo pues la palabra ``tomar'' tiene
 muchos significados distintos dependiendo del contexto. Puede que se esté hablando
 de un cuarto de un hotel, o de un transporte público. También podría ser que la
 frase se refiera a una bebida, o a un helado. Incluso la palabra tomar puede
 referirse a agarrar un objeto. Decimos entonces que la frase es \textbf{ambigua},
 pues su significado no queda claro si no se cuenta con el contexto subyacente.
 
-La ambiguedad es una problemática que a los humanos no nos molesta demasiado,
-pues somos capaces de analizar contextos y desambiguar rapidamente una frase
-basandonos en la información que tenemos. Las máquinas por otro lado, no tienen
-esa capacidad. Por tanto, es dificil (imposible prácticamente) comunicarse con
+La ambigüedad es una problemática que a los humanos no nos molesta demasiado,
+pues somos capaces de analizar contextos y desambiguar rápidamente una frase
+basándonos en la información que tenemos. Las máquinas por otro lado, no tienen
+esa capacidad. Por tanto, es difícil (imposible prácticamente) comunicarse con
 una computadora utilizando los idiomas que hablamos a diario. Por eso surgen
 lenguajes especialmente diseñados para tal fin, y que tienen como principal
-caracteristica el no presentar ambiguedades. Estos lenguajes se conocen como
+característica el no presentar ambigüedades. Estos lenguajes se conocen como
 \textbf{lenguajes formales}.
 
 \begin{definition}\index{Lenguaje Formal}
     Un \textbf{lenguaje formal} es un lenguaje cuyos símbolos y
     reglas para unir esos símbolos están formalmente especificados.
-    Al conjunto de los símbolos primitivos se le llama el \textbf{alfabeto}, y
-    al conjunto de las reglas se lo llama la \textbf{gramática formal}.\autocite{sunitha_2015}
+    Al conjunto de los símbolos primitivos se lo llama \textbf{alfabeto}, y
+    al conjunto de las reglas se lo llama \textbf{gramática formal}.\autocite{sunitha_2015}
 \end{definition}
 
 Dentro de los lenguajes formales podemos identificar dos grandes categorías:
@@ -846,10 +846,10 @@ programa puede luego interpretar.
 \index{Lenguaje de Programacion@Lenguaje de Programación}
 
 Los \textbf{lenguajes de programación} consisten en un conjunto de comandos (llamadas
-a veces instrucciones) que la computadora es capaz de entender. Mediante la
-secuenciación de estas instrucciones se pueden lograr complejos programas que
-realizan diversas tareas. Así, puede procesar datos que provienen por sensores,
-o que son ingresador por el usuario, pueden imprimir información en pantalla,
+a veces instrucciones) que la computadora es capaz de entender. Mediante una
+secuencia de estas instrucciones se pueden lograr complejos programas que
+realizan diversas tareas. Así, puede procesar datos que provienen de sensores,
+o que son ingresados por el usuario, pueden imprimir información en pantalla,
 o transmitir información por la red, dependiendo de qué es lo que el programador
 haya determinado.
 
@@ -860,7 +860,7 @@ de un triangulo sabiendo los catetos del mismo. Sin embargo, una persona con
 conocimientos del teorema de Pitágoras puede llegar al mismo resultado utilizando
 una serie de comandos más simples (multiplicación, radicación y sumas). A
 continuación hay un ejemplo de programa que calcula la hipotenusa de un triangulo
-dados sus catétos.
+dados sus catetos.
 
 \begin{example}
     \textbf{código de ejemplo para el cálculo de hipotenusa de un triangulo}
@@ -871,7 +871,7 @@ dados sus catétos.
         \item CSQ1 $\leftarrow$ C1 * C1
         \item CSQ2 $\leftarrow$ C2 * C2
         \item HSQ $\leftarrow$ CSQ1 + CSQ2
-        \item H $\leftarrow$ raiz de HSQ
+        \item H $\leftarrow$ raíz de HSQ
         \item Informar al usuario en pantalla el valor H
     \end{enumerate}
 \end{example}
@@ -897,7 +897,7 @@ uno con sus propias características, y diseñados para satisfacer necesidades
 específicas. Así, \textbf{no existe un ``mejor lenguaje''}, sino que existen lenguaje
 más o menos apropiados para solucionar un determinado problema. Por otro lado, muchos
 lenguajes distintos permiten solucionar los mismos problemas, pero con diferentes
-enfóques, por lo que el \textbf{programador puede elegir aquel que más se adapte a su
+enfoques, por lo que el \textbf{programador puede elegir aquel que más se adapte a su
 necesidad, pero también a sus preferencias personales}.
 
 \index{Compilador}\index{Compilar}
@@ -926,7 +926,7 @@ El archivo que contiene el texto que describe el programa se conoce como
 También existen algunos lenguajes que no trabajan de esta forma, sino que un programa
 va leyendo cada una de las líneas del programa, y lleva adelante la acción descripta
 para esa línea previo a leer la siguiente linea. Esto se conoce como \textbf{interpretación},
-y el programa que realiza esa tarea se conoce como \textbf{interpete}.
+y el programa que realiza esa tarea se conoce como \textbf{interprete}.
 
 \begin{definition}\index{Interprete}
     Un \textbf{interprete} es un programa que ejecuta paso a paso cada uno de los
@@ -934,7 +934,7 @@ y el programa que realiza esa tarea se conoce como \textbf{interpete}.
 \end{definition}
 
 \begin{knowwhat}[Simplificación]
-    La realidad es que el funcionamiento de los compiladores e interpetes es
+    La realidad es que el funcionamiento de los compiladores e interpretes es
     bastante más compleja. Hoy en día muchos interpretes realizan pasos de
     pre-compilación, y muchos compiladores funcionan con técnicas JIT. También
     se está obviando el tema de máquinas virtuales, lo cual representa un
@@ -948,19 +948,19 @@ Es importante a tener en cuenta que, ni los compiladores ni los interpretes trab
 con cualquier texto, sino que esperan texto escrito en un lenguaje específico.
 Es decir, el compilador del lenguaje C, no funcionará si se intenta procesar con
 el un archivo con código Python. Así, cada lenguaje tiene su propio compilador,
-o su propio interprete (o ámbos).
+o su propio interprete (o ambos).
 
 \index{Lenguaje Compilado}\index{Lenguaje Interpretado}
-El lector puede o podría encontrar en diversa bibliografía terminos como
+El lector puede o podría encontrar en diversa bibliografía términos como
 ``\textbf{lenguajes compilados}'' o ``\textbf{lenguajes interpretados}''. Esta
 categorización responde simplemente al hecho de que, en general, el autor del
-lenguaje provee asociado a la definción su lenguaje (gramática, semántica, etc.),
+lenguaje provee asociado a la definición su lenguaje (gramática, semántica, etc.),
 la herramienta que permite generar programas en dicho lenguaje (la cuál suele ser
-o bien un compilador, o bien un interpete). Sin embargo, nada evita que
+o bien un compilador, o bien un interprete). Sin embargo, nada evita que
 un lenguaje que era inicialmente distribuido con un interprete pueda ser luego
 distribuido con un compilador, sin alterar el lenguaje en si. Esto quiere
 decir que la categorización anterior es incorrecta, pues ser compilado o
-interpretado no es una caracteristica del lenguaje, sino de la herramienta que
+interpretado no es una característica del lenguaje, sino de la herramienta que
 lo acompaña.
 
 \index{Lenguaje de Bajo Nivel}\index{Lenguaje de Medio Nivel}\index{Lenguaje de Alto Nivel}
@@ -969,7 +969,7 @@ aquellos que son de \textbf{bajo nivel} y los que son de \textbf{alto nivel},
 distinguiendo incluso en ocaciones con un \textbf{medio nivel}. Los lenguajes
 de bajo nivel suelen proveer comandos que están asociados a las operaciones que
 puede realizar el hardware del equipo. Así, para cada comando, seguramente haya
-un circuito específico dentro del equipo. En cambio los lengujes de alto nivel
+un circuito específico dentro del equipo. En cambio los lenguajes de alto nivel
 proveen construcciones más complejas, que no necesariamente se traducen a circuitos,
 y que están más ligadas a ideas o conceptos que el desarrollador puede querer
 expresar. Cuando el desarrollador realiza el programa, primero piensa la idea,
@@ -989,7 +989,7 @@ a los desarrollos de teoría de la computación formal desarrollados por Alonzo
 Church, o la \textbf{programación orientada a objetos}, que utiliza procesos
 de abstracción conocidos como objetos para modelar los datos, y la comunicación
 entre ellos para modelar las transformaciones de esos datos. También existen
-otros paradigmas, más especificos y menos difundidos, y lenguajes que permiten
+otros paradigmas, más específicos y menos difundidos, y lenguajes que permiten
 escribir programas usando más de un paradigma al mismo tiempo.
 
 
@@ -1004,13 +1004,13 @@ receptor visualice porciones del texto recibido con un formato particular.}
 \index{Lenguaje de Marcado}
 Otro tipo de lenguajes formales son los \textbf{lenguajes de marcado}. Estos
 lenguajes tienen como función describir datos, donde ``datos'' puede ser cualquier
-cosa. Por ejemplo, existen lenguajes de marcado que describen posteos en foros,
+cosa. Por ejemplo, existen lenguajes de marcado que describen publicaciones en foros,
 otros que describen páginas de wikis (como Wikipedia), otros que describen
 documentos, otros para imágenes, otros para páginas web, etc.
 
-Recordemos que todas estas cosas podrían ser facilmente representadas mediante
+Recordemos que todas estas cosas podrían ser fácilmente representadas mediante
 archivos con diferente formato, esto es, con una codificación distinta del
-binario que respresenta el dato en el archivo. En los lenguajes de marcado,
+binario que representa el dato en el archivo. En los lenguajes de marcado,
 no se requieren diferentes formatos de archivo, sino que siempre se trabaja
 con texto plano, por lo que los datos \textbf{pueden ser editados con un editor
 de textos}.
@@ -1025,13 +1025,13 @@ la parte ``marcada''. Estas marcas pueden luego ser interpretadas luego por un
 visualizador, que las mostrará como elementos visuales, o ser utilizadas por
 un programa para realizar tareas especificas de acuerdo a las mismas.
 
-Existen cientos de lenguajes de marcado, cada uno con un propósito distinto, o
-un enfoque distinto ante mismos propósitos. Cada lenguaje define entonces que
-símbolos representan marcas, y como deben ser utilizados en el texto, así como
-la asociación semántica de cada marca.\autocite{coombs_1987}
+Existen cientos de lenguajes de marcado, cada uno intentado resolver una problemática
+distinta. Cada lenguaje define entonces que símbolos representan marcas, y como
+deben ser utilizados en el texto, así como la asociación semántica de cada
+marca.\autocite{coombs_1987}
 
 \begin{definition}\index{Lenguaje de Marcado}
-    Un \textbf{lenguaje de marcado} consiste en una codificación que incorporta
+    Un \textbf{lenguaje de marcado} consiste en una codificación que incorpora
     en un archivo de texto plano que junto con el texto incorpora una serie de
     marcas o etiquetas que contienen información sobre la semántica, la
     estructura o la forma de presentar el texto.
@@ -1042,7 +1042,7 @@ la asociación semántica de cada marca.\autocite{coombs_1987}
     de las letras que están escritas. No maneja ninguna otra información, como
     si las letras están en negrita, itálica o de algún color en particular.
     Sin embargo, muchos editores de texto diseñados para programar ofrecen una
-    caracteristica conocida como ``syntax highlighting'' o ``code styling'', que
+    característica conocida como ``syntax highlighting'' o ``code styling'', que
     colorea partes específicas del código, lo que le permite al desarrollador
     tener un panorama visual más ameno, facilitando su tarea.
 
@@ -1055,7 +1055,7 @@ de inicialización de Windows}, o archivos \textbf{.ini} consiste en texto que
 debe estructurarse en una serie de líneas. Cada línea consiste en un par de
 elementos, donde el primero, el de la izquierda, es conocido como ``clave'',
 y el segundo como ``valor''. Ambos elementos se encuentran separados con un
-sígno ``='' entre ambos. Adicionalmente, un conjunto de líneas con pares clave
+signo ``='' entre ambos. Adicionalmente, un conjunto de líneas con pares clave
 valor pueden estar antecedidas con un nombre, colocado entre corchetes en la
 línea inmediatamente superior al conjunto, de forma tal de agruparlas bajo
 un mismo identificador. Finalmente, cualquier línea que comience con el símbolo 
@@ -1092,7 +1092,7 @@ Maximizar=1
 Las marcas en un archivo INI consisten en el símbolo ``;'', que marca comentarios,
 o los caracteres ``\lbrack'' y ``\rbrack'' que determinan el nombre de un grupo,
 así como el signo ``='' que separa la clave del valor en cada línea. El salto
-de línea, aunque no es un caracter visible, también es considerado una marca,
+de línea, aunque no es un símbolo visible, también es considerado una marca,
 porque brinda información (termina un par clave valor y comienza otro).
 
 Los archivos de configuración de Windows son un formato de archivo sencillo,
@@ -1100,7 +1100,7 @@ pero hoy en día ya obsoleto.
 
 \index{XML}
 Otros lenguajes de marcado incluyen \textbf{JSON} o \textbf{XML}, los cuales
-son utilizados para intercambios de datos en la web o configuración de aplicacones
+son utilizados para intercambios de datos en la web o configuración de aplicaciones
 más modernas. A continuación se deja un ejemplo sencillo de \textbf{XML}:\autocite{marshal_2000}
 
 \begin{example}
@@ -1111,14 +1111,14 @@ más modernas. A continuación se deja un ejemplo sencillo de \textbf{XML}:\auto
     \begin{lstlisting}[language=XHTML]
 <Receta>
     <Nombre> Banana con Dulce de Leche </Nombre>
-    <Descripcion> El mejor postre </Descripcion>
+    <Descripción> El mejor postre </Descripción>
     <Ingredientes>
         <Ingrediente> Banana </Ingrediente>
         <Ingrediente> Dulce de Leche </Ingrediente>
     </Ingredientes>
-    <Utencilios>
-        <Utencilio> Cuchara </Utensilio>
-    </Utencilios>
+    <Utensilios>
+        <Utensilio> Cuchara </Utensilio>
+    </Utensilios>
     <Pasos>
         <Paso>Pelar la banana</Paso>
         <Paso>Destapar el frasco de dulce de leche</Paso>
@@ -1155,10 +1155,10 @@ Dentro de los lenguajes que descienden de XML se encuentra \textbf{HTML}, o
 \textbf{HyperText Markup Language}, en español ``lenguaje de marcado de hipertexto''.
 Este es tal vez el lenguaje de marcado más popular y más vastamente utilizado de
 la historia. Esto se debe a que HTML es el lenguaje con el que se \textbf{describen
-las páginas web}. Los elementos de una página web son estándarizados, y están
+las páginas web}. Los elementos de una página web son estandarizados, y están
 dados por las etiquetas que el lenguaje define. Por ejemplo, la etiqueta
 ``<a>'' define un enlace a otro sitio web, o la etiqueta ``<img>'' permite insertar
-una imágen.
+una imagen.
 
 Luego, un programa especializado, conocido como \textbf{browser} o \textbf{navegador
 web}, actúa como visualizador de estos archivos, mostrando los elementos visuales
@@ -1167,8 +1167,8 @@ que el autor haya escrito, sin mostrar las etiquetas.
 La combinación de las distintas etiquetas, estructuradas de diversas formas,
 puede dar lugar a las más diversas y creativas páginas web que uno pueda desear.
 HTML se combina con otros lenguajes, como CSS, y JavaScript, para lograr sitios
-web interactivos y con grandes caracteristicas visuales. Ejemplos y detalles de
-este lenguaje se pueden ver en el apendice \ref{HTML}.
+web interactivos y con grandes características visuales. Ejemplos y detalles de
+este lenguaje se pueden ver en el anexo \ref{HTML}.
 
 \begin{knowwhat}\index{Browsers}
     Casi todos los \textbf{browsers} permiten ver el \textbf{código fuente} de
@@ -1183,7 +1183,7 @@ pequeños documentos informativos, como puede ser documentación, o correos
 electrónicos. La ventaja fundamental de Markdown radica en que no se requiere de
 un visualizador especializado para comprender el documento, sino que el mismo
 código fuente permite visualizar el contenido de forma clara. Un pequeño resumen
-del lenguaje se puede ver en el apendice \ref{Markdown}.
+del lenguaje se puede ver en el anexo \ref{Markdown}.
 
 \section{Modelos de comercialización de software}
 
@@ -1199,8 +1199,8 @@ parte de otros programas, si puede ser utilizado comercialmente, etc.
 
 \begin{definition}
     El \textbf{derecho de autor} (o \textbf{copyright}, por su voz inglesa) consiste
-    en un conjunto de normas juridicas que defienden el derecho moral de los autores
-    de obras literarias, artisticas, musicales, cientificas, didacticas y de software,
+    en un conjunto de normas jurídicas que defienden el derecho moral de los autores
+    de obras literarias, artísticas, musicales, científicas, didácticas y de software,
     ya sea publicada o inédita, para explotar dicha obra comercialmente en cualquier
     forma que considere por un periodo de tiempo determinado.\autocite{oxford_copyright_2018}
 \end{definition}
@@ -1212,11 +1212,11 @@ agregado a sus equipos. Sin embargo, estos programas solo funcionaban en la
 máquina del fabricante, y por tanto uno quedaba atado a este para mantener
 compatibilidad de los productos. Además esos productos solían ser de baja calidad.
 
-Con la masividad de las computadoras, se vuelve posible la venta de software
+Con la masificación de las computadoras, se vuelve posible la venta de software
 como un producto o servicio de terceros, separado del fabricante. Microsoft
 es una de las empresas que promocionó este nuevo modelo de negocio, ofreciendo
 software de calidad a sus usuarios. Así, Microsoft Basic se volvió uno de los
-programas practicamente inprescindibles a tener en un equipo a comienzos de 1980.
+programas prácticamente imprescindibles a tener en un equipo a comienzos de 1980.
 
 \image{capitulos/informatica/imagenes/microsoft_barcelona.jpg}
 {Oficinas de Microsoft en Barcelona.}
@@ -1244,11 +1244,11 @@ Romper el contrato de licencia, por ejemplo, usar un programa para un fin para
 el cual no se tiene permiso, o descargarlo de un sitio que no está oficialmente
 habilitado para su distribución, es \textbf{ilegal}. La descarga y distribución
 de programas de forma ilegal se conoce como \textbf{piratería}. Por ejemplo,
-descargar y utilizar Microsoft Windows sin haber pagado los canones de licencia
+descargar y utilizar Microsoft Windows sin haber pagado los cánones de licencia
 oficiales es considerado \textbf{piratería}.
 
 \begin{definition}
-    La \textbf{pirateria de software} consiste en el incumplimiento del contrato
+    La \textbf{piratería de software} consiste en el incumplimiento del contrato
     legal que establece el propietario de los derechos de autor del software,
     tal como el uso indebido, descarga o adquisición en lugares no autorizados,
     redistribución del programa sin el consentimiento apropiado, prácticas de
@@ -1267,22 +1267,22 @@ está firmando un documento con validez legal, y cuyo incumplimiento puede
 llevarlo a que la contraparte lo demande.}
 {Imagen de Lhreis.}
 
-Algunos licenciantes ofrecen el software de forma gratuita para uso dentro de
+Algunos licenciantarios ofrecen el software de forma gratuita para uso dentro de
 cierto límite de tiempo (por ejemplo, 10 días de prueba del software). Esto
 permite a los potenciales compradores evaluar el producto previo a su compra,
 a la vez que posiciona potencialmente al desarrollador de una mejor forma frente
 al mercado. También puede suceder que la versión ofrecida de esta forma tenga
-limitaciones en su utilización, recortando caracteristicas escenciales. Este
+limitaciones en su utilización, recortando características esenciales. Este
 tipo de software se conoce como \textbf{shareware}.
 
 \begin{definition}\index{Shareware}
     El \textbf{shareware} consiste en software que se ofrece al usuario final de
-    forma gratuita por un periodo de tiempo, o con características límitadas,
-    con la intención de que el usuario pueda rpobar el producto previo a
+    forma gratuita por un periodo de tiempo, o con características limitadas,
+    con la intención de que el usuario pueda robar el producto previo a
     la adquisición del mismo.\autocite{mw_shareware_2018}
 \end{definition}
 
-Otros licenciantes pueden ofrecer el software de forma completamente desinteresada,
+Otros licenciatarios pueden ofrecer el software de forma completamente desinteresada,
 y por tanto gratuita. Este tipo de software se denomina \textbf{freeware}. No
 hay que confundir este término con software libre, que es un concepto completamente
 distinto. El freeware puede ofrecerse bajo ciertas restricciones, por ejemplo,
@@ -1303,17 +1303,17 @@ algo que trataremos en la siguiente sección.
 \index{Software como Servicio}\index{SaaS}
 Con la masificación de Internet, es cada vez más común encontrar sistemas que
 funcionan en línea, desde un navegador web. El licenciante puede optar por ofrecer
-el servicio con un modelo de alquiler, cobrandole al licenciante de forma
+el servicio con un modelo de alquiler, cobrándole al licenciante de forma
 mensual o anual por el servicio, o ofrecerlo de forma gratuita y solventando los
 gastos mediante la inserción de publicidad. Este modelo se conoce como \textbf{
 software como servicio (SaaS)}.
 
 \index{Software a Medida}
 Otra modalidad muy común es el \textbf{software a medida}, donde el desarrollador
-no realiza un producto generico para distribuir al mercado, sino que realiza un
+no realiza un producto genérico para distribuir al mercado, sino que realiza un
 sistema especialmente diseñado para un cliente particular, a pedido de este.
 Dependiendo del contrato el mismo puedo incluir solamente el código compilado,
-o también el código fuente, manejandose en general costos más elevados para este
+o también el código fuente, manejándose en general costos más elevados para este
 último. Junto con ello, suelen pautarse jornadas de capacitación para los usuarios
 del sistema, manuales y un periodo de soporte o garantía que puede pagarse junto
 con el desarrollo, o pagarse mensualmente luego de finalizado el mismo.\autocite{saxena_2017}
@@ -1323,7 +1323,7 @@ con el desarrollo, o pagarse mensualmente luego de finalizado el mismo.\autocite
 
 \index{Software Libre}\index{Stallman, Richard}
 Previo al actual modelo comercial del software, este era algo que se compartía
-entre los cientificos e ingenieros en las universidades. La historia cuenta que
+entre los científicos e ingenieros en las universidades. La historia cuenta que
 Richard Stallman, un desarrollador de software se encontró ya a fines de los
 70 trabajando en una empresa donde múltiples equipos estaban conectados en red
 con una única impresora. La impresora tenía el problema de trabarse de forma
@@ -1332,7 +1332,7 @@ que había ocurrido un error cuando se acercaba a la impresora, la cual se
 encontraba en la otra punta de la oficina. Stallman quería solucionar el
 problema, y solicitó al fabricante de la impresora que le proporcionara el
 software de la misma. La empresa se negó a entregar el software, incluso
-cuando Stallman ofreció trabajar gratis para mejorar las caracteristicas del
+cuando Stallman ofreció trabajar gratis para mejorar las características del
 mismo.
 
 Stallman entendió que \textbf{el modelo de licenciamiento y comercialización
@@ -1347,9 +1347,9 @@ lucro con la intención de llevar adelante su proyecto.
 
 \index{Libertades del Software Libre}
 También enuncia el concepto de \textbf{software libre}. Un software, para
-Stallman, es libre si cumple con cuatro características que el denomína ``libertades''.
+Stallman, es libre si cumple con cuatro características que el denomina ``libertades''.
 \begin{itemize}
-    \item Libertad 0: Ejecutar el programa comos e quiera y para el fin que se desee.
+    \item Libertad 0: Ejecutar el programa como se quiera y para el fin que se desee.
     \item Libertad 1: Posibilidad de estudiar el código fuente del programa y modificarlo a medida para solucionar las necesidades propias.
     \item Libertad 2: Distribuir copias exactas del programa, tal cual lo distribuye el fabricante a quien se desee.
     \item Libertad 3: Distribuir copias modificadas del programa a quien se desee.
@@ -1380,12 +1380,12 @@ evento en el que usuarios de software libre ayudan a quienes se acercan a
 reemplazar el software privativo de sus equipos por software libre. El evento
 también cuenta con charlas de divulgación o técnicas y otras actividades. Se
 realiza en diversas sedes de múltiples paises al mismo tiempo una vez al año.
-La imágen corresponde al evento realizado en el 2017 en la ciudad de Bariloche.}
+La imagen corresponde al evento realizado en el 2017 en la ciudad de Bariloche.}
 {Imagen de Cristian Caravá, Jose Gimenez, Mirian Ripoll, Ariel Kennedy, Andrés
 Grad Gut, Stefan Ronacher, Lucas Passalacqua y Pedro Wood}
 
 \index{GPL}\index{Copyleft}
-Estas libertades permiten teoricamente que los usuarios sean quienes tienen el
+Estas libertades permiten teóricamente que los usuarios sean quienes tienen el
 poder en el sistema, en lugar del autor del software. También crea la licencia
 \textbf{GPL (General Public Licence)}, un modelo de licenciamiento de software
 que reconoce al autor, a la vez que mantiene la garantía de estas libertades.
@@ -1421,10 +1421,10 @@ logro completarse. Si bien se crearon sendas herramientas que acompañan a un
 sistema operativo, la parte fundamental que maneja el hardware, conocido como
 kernel, jamas terminó de realizarse. En 1991, un joven finés llamado \textbf{Linus
 Torvalds} compartió en Internet su intención de llevar adelante el desarrollo de
-un kernel para un sistema operativo clón de UNIX que corriera en computadoras de
+un kernel para un sistema operativo clon de UNIX que corriera en computadoras de
 escritorio, y compartió libremente su código fuente. Contactado por Stallman
-y cenvencido del movimiento de software libre, decidió licenciar su software con
-GPL, bautizandolo Linux. Este sistema operativo se ha vuelto hoy en día el
+y convencido del movimiento de software libre, decidió licenciar su software con
+GPL, bautizándolo Linux. Este sistema operativo se ha vuelto hoy en día el
 sistema operativo libre más popular del mundo.
 
 \subsection{Open Source}
@@ -1450,7 +1450,7 @@ doble licenciamiento, comercial, por un lado, y libre, por otro.
 
 \index{Open Source Initiative}
 Así, diversas empresas comenzaron a abrir su código, pero no por una visión
-filantropica, sino por una cuestión comercial y económica. El software que
+filantrópica, sino por una cuestión comercial y económica. El software que
 se enmarca en este modelo se conoce como \textbf{Open Source}. En la práctica,
 el software open source y el software libre comparten las mismas
 características, pero la filosofía que subyace a ambas es completamente distinta.
@@ -1474,7 +1474,7 @@ Más aún, existe software libre que no es gratuito.
 Durante los años han sido varias las empresas que han trabajado en el desarrollo
 de software, y algunas de ellas, como Microsoft, Apple o IBM han alcanzado gran
 éxito comercial gracias al software privativo y a prácticas de negocio que
-implicaban el aprisonamiento de los usuarios a un sistema, el monopolio y el
+implicaban el aprisionamiento de los usuarios a un sistema, el monopolio y el
 lobby político. No es de extrañar que Richard Stallman y muchos otros seguidores
 del movimiento software libre vean a estas empresas como ``malvadas''. Sin
 embargo estas empresas solo hacen lo que toda empresa debe hacer, intentar
@@ -1484,11 +1484,11 @@ Sin embargo, también son varias las empresas que desarrollan y promueven el
 software libre o al menos el software open source. Google por ejemplo ha publicado
 numerosas herramientas para desarrolladores que se distribuyen como libres. En
 particular, el sistema operativo Android es un sistema operativo libre, basado
-en Linux. Facebook y Twitter también lo hacen. Los moelos de negocio de estas
+en Linux. Facebook y Twitter también lo hacen. Los modelos de negocio de estas
 empresas pasan por la venta de servicios y publicidad, y no por la venta de software.
 
 Otras empresas que han desarrollado múltiples FOSS incluyen a la ya desaparecida
-Sun Microsystems, Novell, Red hat y Canonical. Estas empresas proveen servicios
+Sun Microsystems, Novell, Red Hat y Canonical. Estas empresas proveen servicios
 empresariales alrededor del software libre que construyen, dandole la posibilidad
 al usuario de elegir si desea pagar por profesionales capacitados por la empresa
 para mantener el software de acuerdo a sus necesidades, o desea capacitar su
@@ -1499,7 +1499,7 @@ producto gratis. Existen formas múltiples de ganar dinero con el FOSS.
 
 Muchas veces se realizan comparaciones entre el software libre y el software
 privativo. En general las comparaciones suelen estar guiadas con intereses
-particulares de uno u otro grupo. A continuacion hay algunas de las proclamas
+particulares de uno u otro grupo. A continuación hay algunas de las proclamas
 que muchas veces se escuchan a favor y en contra del software libre en estas
 comparaciones, y algunas demistificaciones de las mismas:
 
@@ -1539,16 +1539,16 @@ comparaciones, y algunas demistificaciones de las mismas:
         que el hardware se actualiza, el software debe actualizarse para soportar
         dicho hardware, lo mismo ocurre con programas que corren en un determinado
         sistema operativo, si este último cambia, puede que el programa deba
-        cambiar. Además los desarrolladores actualizan sus programas dotandolos
+        cambiar. Además los desarrolladores actualizan sus programas dotándolos
         de nuevas funcionalidades, corrección de fallos y otros. Libre o
         privativo nada tiene que ver en el asunto.
     \item[El software libre no brinda soporte técnico]
         En parte esto es cierto. En general el software libre se distribuye
         bajo un concepto ``as is'' (como está), que significa que el autor
         no se hace responsable por fallos o errores que tenga el programa,
-        ni por los problemas que este pueda ocacionar. Sin embargo, el soporte
-        existe, ya sea a traves de foros o sitios de la comunidad de desarrolladores
-        y usuarios o a traves de servicios pagos que uno puede contratar. Los
+        ni por los problemas que este pueda ocasionar. Sin embargo, el soporte
+        existe, ya sea a través de foros o sitios de la comunidad de desarrolladores
+        y usuarios o a través de servicios pagos que uno puede contratar. Los
         sistemas privativos en general tampoco ofrecen soporte, o se cobra un
         plus para poder acceder al mismo.
 \end{description}
@@ -1556,13 +1556,13 @@ comparaciones, y algunas demistificaciones de las mismas:
 Probablemente estas no sean las únicas cosas que se dicen con poco criterio en
 el ámbito del software libre, sino que hay muchas otras. Entender como funcionan
 las computadoras y el software en particular permite discriminar mejor los
-postulados claramente erroneos de aquellos que no lo son, así como comprender
+postulados claramente erróneos de aquellos que no lo son, así como comprender
 los beneficios y las problemáticas de utilizar software libre.
 
 \section{Actividades}
 
 \begin{exercise}
-Valiendose de internet, determine para cada uno de los nombres completos de
+Utilizando Internet, determine para cada uno de los nombres completos de
 archivo a continuación, de qué formato de archivo se trata (imagen, audio, texto,
 programa ejecutable, etc.).
 
@@ -1601,10 +1601,10 @@ corresponde a un DVD de una película, se pide.
 
 Se pide que escriba las siguientes rutas absolutas:
 \begin{enumerate}[a)]
-    \item Al archivo de subtitulos en inglés (en.sub)
+    \item Al archivo de subtítulos en inglés (en.sub)
     \item Al archivo de audio de la pista 02 en español (carpeta es, archivo 02.wav)
     \item Al archivo de video de la pista 01 (track1.divx)
-    \item Al archivo de audio de la pista 01 en portugues.
+    \item Al archivo de audio de la pista 01 en portugués.
 \end{enumerate}
 \end{exercise}
 
@@ -1612,12 +1612,12 @@ Se pide que escriba las siguientes rutas absolutas:
 Teniendo en cuenta el sistema de directorios del ejercicio anterior y
 sabiendo qué:
 \begin{itemize}
-    \item Todo archivo de subtitulos pesa 500 KB.
+    \item Todo archivo de subtítulos pesa 500 KB.
     \item Los archivos de audio de la pista 01 pesan 5 MB.
     \item Los archivos de audio de la pista 02 pesan 25 MB, menos el de idioma
         portugués que pesa 27 MB.
     \item El archivo de video de la pista 01 pesa 340 MB
-    \item El archivo de vide de la pista 02 pesa 660 MB.
+    \item El archivo de video de la pista 02 pesa 660 MB.
 \end{itemize}
 
 Se pide determine las siguientes:
@@ -1647,8 +1647,8 @@ las siguientes rutas relativas:
     \item Desde la carpeta más externa de la jerarquía hasta el archivo
         alumnos.xls
     \item Desde la carpeta UNQ hasta el archivo clase-2.pdf
-    \item Desde la carpeta UNAHUR al archivo introduccion.pdf
-    \item Desde la carpeta UNQ al archivo introduccion.pdf
+    \item Desde la carpeta UNAHUR al archivo introducción.pdf
+    \item Desde la carpeta UNQ al archivo introducción.pdf
     \item Desde la carpeta Teoría en UNQ al archivo programa.rb
 \end{enumerate}
 \end{exercise}
@@ -1657,7 +1657,7 @@ las siguientes rutas relativas:
 \begin{exercise}
 Un programa ``hola mundo'' consiste en código que simplemente imprime en la
 pantalla las palabras ``hola mundo''. Este tipo de programa se ha hecho popular
-como una forma de poder dar a los programadores una vista minima y rápida de
+como una forma de poder dar a los programadores una vista mínima y rápida de
 la sintaxis de un lenguaje, y en cursos que se enfocan en la enseñanza de lenguajes
 de programación en lugar de sus conceptos, es muy común encontrarlo como una de
 las primeras muestras de código o actividades a realizar.
@@ -1675,7 +1675,7 @@ en el sitio \href{http://helloworldcollection.de}{http://helloworldcollection.de
     \item Assembly z80, Console
 \end{enumerate}
 
-¿Qué reflexiones puede realizar despues de ver los diferentes códigos?
+¿Qué reflexiones puede realizar después de ver los diferentes códigos?
 \end{exercise}
 
 \begin{exercise}

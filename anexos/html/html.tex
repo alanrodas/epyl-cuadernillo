@@ -1,4 +1,4 @@
-\chapterimage{apendices/html/imagenes/cover}
+\chapterimage{anexos/html/imagenes/cover}
 \chapterimagedescription{Imágen de un diseñador web pensando en código}
 \chapterimageauthor{Diseño de Mudassar Iqbal con retoques propios}
 
@@ -43,12 +43,12 @@ los más destacados están:
 
 \section{W3C y estándares de la web}
 
-A diferencia de otros lenguajes, HTML se encuentra claramente específicado en lo
+A diferencia de otros lenguajes, HTML se encuentra claramente especificado en lo
 que se conoce como el estándar HTML, el cual está definido por el \textbf{World
 Wide Web Consortium (W3C)}, una organización encargada de definir estándares para la web,
 y promover su correcto uso.
 
-\image{apendices/html/imagenes/browsers.png}
+\image{anexos/html/imagenes/browsers.png}
 {Logos de diferentes browsers. Existe una amplia diversidad, con navegadores que
 se enfocan en mercados sumamente específicos.}
 {Logos del proyecto \href{github.com/alrra/browser-logos}{github.com/alrra/browser-logos}.}
@@ -64,14 +64,14 @@ elementos. CSS también está especificado por la W3C.
 
 Finalmente, si lo que se desea es lograr una interactividad en el sitio (por ejemplo,
 que se muestre cierto contenido cuando el usuario selecciona una opción, o cuando
-presion un botón), se debe recurrir a un lenguaje de programación conocido como
+presiona un botón), se debe recurrir a un lenguaje de programación conocido como
 \textbf{JavaScript} (o \textbf{ECMAScript}), el cual permite manipular las etiquetas
 del documento HTML, agregando o quitando contenido, atributos, e incluso nuevas
 etiquetas en cualquier lugar del documento. JavaScript también está definido por
-la W3C, complementandose así los tres lenguajes.
+la W3C, complementando así los otros lenguajes.
 
 La W3C también define otros estándares que permiten la definición de imágenes
-escalables para la web, o formatos de transmisión de datos entre equipos, entre
+vectoriales para la web, o formatos de transmisión de datos entre equipos, entre
 otra serie de cosas.
 
 A lo largo del tiempo se han definido varias versiones de HTML, siendo las primeras
@@ -79,7 +79,7 @@ bastante primitivas, permitiendo poca interacción con el usuario, mientras que
 actualmente se puede definir aplicaciones enteras usando HTML, CSS y JavaScript.
 La versión actual de HTML es la versión 5, y es una versión ``viva'', es decir,
 no hay una versión 5 final, sino que el estándar se va actualizando a medida que
-surge la necesidad de utlizar nuevas etiquetas. Así, algunas etiquetas clásicas
+surge la necesidad de utilizar nuevas etiquetas. Así, algunas etiquetas clásicas
 desaparecen, y otras nuevas aparecen. Junto con HTML5 aparecen nuevos estándares
 para CSS (CSS 3, también una versión ``viva''), y JavaScript (En versiones cada
 vez más modernas adhiriendo al estándar ECMAScript que publica una nueva versión
@@ -93,7 +93,7 @@ eso es importante para los desarrolladores web seguir los estándares de la W3C 
 asegurarse de que su código siga dichos estándares.
 
 ¿Qué ocurre si nuestro código no sigue el estándar? En principio, nada.
-Cualquier ``buen browser'' (entiendase casi todos los navegadores web modernos,
+Cualquier ``buen browser'' (entiéndase casi todos los navegadores web modernos,
 a excepción de Internet Explorer) garantiza que los códigos que siguen el
 estándar de la W3C se verán correctamente. Sin embargo, cada uno tiene su
 propia implementación, y su propia idea de ``que hacer'' ante código que no
@@ -114,8 +114,8 @@ dejar de dar soporte a Internet Explorer.
 \section{Sistema de etiquetas como marcas}
 
 En los lenguajes basados a etiquetas, la etiqueta es el elemento fundamental
-que permite marcar una porción de texto, y es, en si mismo, un elemento marcable
-por otras etiquetas.
+que permite marcar una porción de texto, y es, en si mismo, un elemento que
+puede ser marcado por otras etiquetas.
 
 Toda etiqueta está dada por una marca que comienza por el signo ``<'' (menor),
 se sigue de un \textbf{nombre}, y cierra con el signo ``>'' (mayor). El nombre
@@ -125,7 +125,7 @@ guiones bajos o guiones medios (no puede tener espacios).
 Además, la mayoría de las etiquetas consisten en dos marcas, una como la
 mencionada anteriormente, conocida como marca de ``\textbf{apertura}'', y otra
 que es conocida como marca de ``\textbf{cierre}'', y que a diferencia de la
-anterios utiliza ``</'' (menor seguido de barra) para el comienzo de la marca.
+anteriores utiliza ``</'' (menor seguido de barra) para el comienzo de la marca.
 
 Así, la siguiente es la marca  de apertura:
 \begin{lstlisting}[language=XHTML]
@@ -166,7 +166,7 @@ y donde el valor siempre debe escribirse entre comillas.
 <nombre_de_etiqueta atributo="valor">
 \end{lstlisting}
 
-En una misma etiqueta pueden colocarse tantos atributos como se desee, sepando
+En una misma etiqueta pueden colocarse tantos atributos como se desee, separando
 cada atributo del otro con un espacio. Note como el primer atributo también
 se separa del nombre de la etiqueta mediante un espacio.
 
@@ -193,7 +193,7 @@ e incluso varias líneas de texto.
 \end{lstlisting}
 
 Además, vale aclarar que en HTML, así como en otros lenguajes de etiquetas, un
-espacio, multiples espacios, una o más tabulaciones, o incluso uno o más saltos
+espacio, múltiples espacios, una o más tabulaciones, o incluso uno o más saltos
 de línea son equivalentes a un único espacio. Así, estas cuatro etiquetas son
 exactamente equivalentes:
 
@@ -208,7 +208,7 @@ exactamente equivalentes:
 >
 \end{lstlisting}
 
-Notese como el signo ``>'' de cierre de la marca, puede también estar en otra línea.
+Note como el signo ``>'' de cierre de la marca, puede también estar en otra línea.
 También vale para el de apertura.
 
 Por último, considere el siguiente código:
@@ -221,7 +221,7 @@ Por último, considere el siguiente código:
 
 Observe como se vuelve complicado identificar que etiqueta contiene a que otra,
 y qué marca tiene cada uno. Considere ahora la siguiente versión con el mismo
-código, pero estructrado de una forma diferente:
+código, pero estructurado de una forma diferente:
 
 \begin{lstlisting}[language=XHTML]
 <etiqueta1>
@@ -236,7 +236,7 @@ código, pero estructrado de una forma diferente:
 </etiqueta1>
 \end{lstlisting}
 
-Observesé como esta forma de estructurar el contenido fácilita su lectura y
+Observe como esta forma de estructurar el contenido facilita su lectura y
 su entendimiento. Esto se conoce en programación como ``\textbf{indentación del
 código}'', es decir, tabular y estructurar el código de forma tal que sea fácil
 identificar las partes del mismo. La palabra ``indentación'' viene de la palabra
@@ -255,7 +255,7 @@ forma en la que deben estructurarse las mismas. También, el efecto que produce
 cada etiqueta al ser visualizada está definido en la especificación del lenguaje.
 
 Existen etiquetas para una gran cantidad de elementos, y este apunte no pretende
-ser una guia comprensiva de los mismos, así como tampoco estar necesariamente
+ser una guía comprensiva de los mismos, así como tampoco estar necesariamente
 actualizado. Por esto se recomienda tener a mano los siguientes enlaces para
 aprender sobre nuevas etiquetas o validar la información sobre las aquí expuestas.
 
@@ -267,9 +267,9 @@ aprender sobre nuevas etiquetas o validar la información sobre las aquí expues
 
 \subsection*{Párrafos y énfasis}
 
-La étiqueta más sencilla que permite definir un párrafo de texto es
+La etiqueta más sencilla que permite definir un párrafo de texto es
 ``\textbf{<p>}''. Dentro de ``<p>' solamente debería haber texto, el cuál puede
-o no estár enfatizado en algun lugar.
+o no estar enfatizado en algún lugar.
 
 \begin{lstlisting}[language=XHTML]
 <p>
@@ -297,7 +297,7 @@ negrita. Nuevamente, este comportamiento puede variarse con CSS.
 \begin{lstlisting}[language=XHTML]
 <p>
     En este párrafo <em>éste texto está siendo
-    enfátizado</em>, y el que sigue también,
+    enfatizado</em>, y el que sigue también,
     <strong>pero con un énfasis aún mayor</strong>
 </p>
 \end{lstlisting}
@@ -315,7 +315,7 @@ representa el título principal del documento, y por tanto no debería haber má
 de una en un mismo sitio. Etiquetas ``\textbf{<h2>}'' pueden ser utilizadas para
 subtítulos, o títulos de secciones o de artículos. Los ``\textbf{<h3>}'' pueden
 ser utilizados para subtítulos dentro de una sección o artículo. Así siguiendo el
-mísmo criterio, se debería utilizar títulos para marcar aquellos textos que identifícan
+mismo criterio, se debería utilizar títulos para marcar aquellos textos que identifican
 partes importantes del sitio.
 
 \begin{lstlisting}[language=XHTML]
@@ -370,7 +370,7 @@ lista.
 
 Las tablas son una forma de generar información tabulada, o de doble entrada
 (fila y columna). Es una buena forma de mostrar datos que dependen de dos
-elementos, por ejemplo, paises con algunas de sus propiedades geográficas o
+elementos, por ejemplo, países con algunas de sus propiedades geográficas o
 políticas, como muestra la tabla a continuación:
 
 \begin{tabular}{| l || r | r | r |}
@@ -392,39 +392,39 @@ Las tablas deben definirse con la etiqueta ``\textbf{<table>}'', y dentro de és
 declarar las filas, y en cada fila, las celdas (las columnas terminan siendo
 declaradas en base a las celdas).
 
-La tabla enterior puede ser generada con el siguiente código HTML:
+La tabla anterior puede ser generada con el siguiente código HTML:
 
 \begin{lstlisting}[language=XHTML]
 <table>
     <tr>
-        <td>País</li>
-        <li>Población</li>
-        <li>Superficie</li>
-        <li>Densidad</li>
+        <td>País</td>
+        <td>Población</td>
+        <td>Superficie</td>
+        <td>Densidad</td>
     </tr>
     <tr>
-        <li>Argentina</li>
-        <td>44.494.502 hab.</li>
-        <li>2.780.400 km%(*$^2$*)</li>
-        <li>16 hab/km%(*$^2$*)</li>
+        <td>Argentina</td>
+        <td>44.494.502 hab.</td>
+        <td>2.780.400 km%(*$^2$*)</td>
+        <td>16 hab/km%(*$^2$*)</td>
     </tr>
     <tr>
-        <li>Uruguay</li>
-        <td>3.519.014 hab.</li>
-        <li>176.215 km%(*$^2$*)</li>
-        <li>19,97 hab/km%(*$^2$*)</li>
+        <td>Uruguay</td>
+        <td>3.519.014 hab.</td>
+        <td>176.215 km%(*$^2$*)</td>
+        <td>19,97 hab/km%(*$^2$*)</td>
     </tr>
     <tr>
-        <li>Uruguay</li>
-        <td>7.152.703 hab.</li>
-        <li>406.752 km%(*$^2$*)</li>
-        <li>17,58 hab/km%(*$^2$*)</li>
+        <td>Uruguay</td>
+        <td>7.152.703 hab.</td>
+        <td>406.752 km%(*$^2$*)</td>
+        <td>17,58 hab/km%(*$^2$*)</td>
     </tr>
     <tr>
-        <li>Uruguay</li>
-        <td>11.383.094 hab.</li>
-        <li>1.098.58 km%(*$^2$*)</li>
-        <li>10,36 hab/km%(*$^2$*)</li>
+        <td>Uruguay</td>
+        <td>11.383.094 hab.</td>
+        <td>1.098.58 km%(*$^2$*)</td>
+        <td>10,36 hab/km%(*$^2$*)</td>
     </tr>
 </table>
 \end{lstlisting}
@@ -442,7 +442,7 @@ sea el agrupamiento deseado.
 
 \subsection*{Enlaces}
 
-El nombre de HTML signífica en español ``lenguaje de marcado de hipertexto''. El
+El nombre de HTML significa en español ``lenguaje de marcado de hipertexto''. El
 concepto de \textbf{hipertexto} remite a la idea de poder navegar el texto de
 una forma no lineal, mediante la utilización de enlaces, que pueden llevarnos
 delante y atrás en un conjunto de documentos.
@@ -451,7 +451,7 @@ Precisamente, uno de los elementos más importantes es entonces la capacidad de
 agregar enlaces a otros documentos. Un enlace siempre debe componerse de dos partes
 fundamentales: el texto a mostrarle al lector y la dirección al cuál se desea enlazar.
 
-Por esto, la etiqueta ``\textbf{<a>}'' (llamado así por ``anchor'', áncla en
+Por esto, la etiqueta ``\textbf{<a>}'' (llamado así por ``anchor'', ancla en
 inglés), utilizada para definir enlaces, requiere de forma obligatoria un
 atributo llamado ``\textbf{href}'' (de hiper-referencia). Mientras que el texto
 que se le mostrará al lector del documento al visualizarlo en un browser será
@@ -480,11 +480,11 @@ requerir únicamente su marca de apertura, no teniendo que ser cerrada. Es
 decir, es una etiqueta que no posee contenido alguno.
 
 Lleva sin embargo, de forma obligatoria, dos atributos. El primero es
-\textbf{src}, el cuál espera como valor una URL a la ubicación de la imágen
+\textbf{src}, el cuál espera como valor una URL a la ubicación de la imagen
 (también podría ser la ruta a un archivo local). El otro atributo es \textbf{alt},
-que espera como valor un texto, el cual se muestra en caso de que la imágen no
+que espera como valor un texto, el cual se muestra en caso de que la imagen no
 pueda ser cargada, o cuando el usuario deja el puntero del mouse sobre la imagen.
-Este texto consiste en la ``descripción'' de la imágen, y también puede ser utilizado
+Este texto consiste en la ``descripción'' de la imagen, y también puede ser utilizado
 por visualizadores específicos para no videntes como información adicional.
 
 \begin{lstlisting}[language=XHTML]
@@ -492,7 +492,7 @@ por visualizadores específicos para no videntes como información adicional.
      alt="Publicidad de la empresa">
 \end{lstlisting}
 
-El tamaño de la imágen se debe determinar por CSS.
+El tamaño de la imagen se debe determinar por CSS.
 
 \subsection*{Audio y Video}
 
@@ -500,7 +500,7 @@ Las etiquetas ``\textbf{audio}'' y ``\textbf{video}'' se introdujeron en HTML5
 con la intensión de soportar contenido multimedia avanzado (algo que antes de
 esta versión solo podía lograrse mediante complementos externos del navegador,
 como Adobe Flash o Microsoft Silverlight). Las etiquetas mencionadas pueden
-incluir un atributo controls, que no lleva valor alguno, y que le indica al navegador
+incluir un atributo \textbf{controls}, que no lleva valor alguno, y que le indica al navegador
 que debe mostrarle los controles de reproducción al usuario.
 
 El contenido de esas etiquetas debe ser una o más etiquetas ``\textbf{<source>}'',
@@ -515,10 +515,10 @@ indicar el formato resulta importante).
     <source src="caballo.mp3" type="audio/mpeg">
 </audio>
 
-<audio%(* \textcolor{codemorekeywords}{controls}*)>
+<video%(* \textcolor{codemorekeywords}{controls}*)>
     <source src="caballo.ogg" type="video/ogg">
     <source src="caballo.mp4" type="video/mp4">
-</audio>
+</video>
 \end{lstlisting}
 
 Se debe tener en cuenta que estas etiquetas solamente son soportadas en navegadores
@@ -565,7 +565,7 @@ tener una contrapartida visual si se utiliza CSS para darles estilo.
 Dentro de las etiquetas de agrupamiento encontramos:
 \begin{itemize}
     \item \textbf{<header>}, utilizada para la cabecera de un sitio (por ejemplo,
-        la parte que contiene el título principal del sitio, el logo, algúnos posibles
+        la parte que contiene el título principal del sitio, el logo, algunos posibles
         datos adicionales y tal vez algún menú de navegación principal).
     \item \textbf{<main>}, utilizada para agrupar todo el contenido principal del
         sitio, es decir, la parte relevante que interesa leer a los usuarios.
@@ -590,7 +590,7 @@ Dentro de las etiquetas de agrupamiento encontramos:
 
 Cada una de estas etiquetas abre cuando se comienza a agrupar y cierra cuando
 se deja de agrupar. A continuación se da una muestra de dos secciones de un sitio,
-que a su vez contienen articulos.
+que a su vez contienen artículos.
 
 \begin{lstlisting}[language=XHTML]
 <section>
@@ -604,18 +604,18 @@ que a su vez contienen articulos.
             quién es el mejor jugador de futbol del
             mundo. <strong>Maradona</strong> y
             <strong>Messi</strong> son dos de los
-            cantidatos más votados.
+            candidatos más votados.
         </p>
     </article>
     <article>
-        <h3>Se puede jugar al básquet con 1.50?</h3>
+        <h3>Se puede jugar al basquet con 1.50?</h3>
         <p>
-            El básquet siempre ha sido un deporte
+            El basquet siempre ha sido un deporte
             dominado por personas de gran altura,
-            pero una nueva óla de jugadores de baja
+            pero una nueva ola de jugadores de baja
             estatura y alta performance están dando
             muestra de que la altura no es un
-            condisionante a la hora de jugar.
+            condicionante a la hora de jugar.
         </p>
     </article>
 </section>
@@ -627,7 +627,7 @@ que a su vez contienen articulos.
         <p>
             Cuáles son las obras de teatro que
             podemos encontrar este verano en los
-            puntos turisticos?
+            puntos turísticos?
         </p>
     </article>
     <article>
@@ -685,7 +685,7 @@ No debería haber ninguna otra etiqueta fuera de html, ni directamente bajo
 esta, sino que toda otra etiqueta debería estar dentro de las etiquetas ``<head>''
 o ``<body>''.
 
-La etiqueta ``\textbf{<head>}'' sirve para darle información al navegador sobre caracteristicas
+La etiqueta ``\textbf{<head>}'' sirve para darle información al navegador sobre características
 adicionales del documento.  Estos datos son utilizados de diferentes formas por
 el navegador, y también por los robots de Google o Bing. En particular hay dos
 etiquetas importantes a colocar dentro de ``<head>'', la etiqueta ``\textbf{<title>}''
@@ -716,7 +716,6 @@ valores específicos en cada ocasión. Nuestro documento HTML comienza a verse a
     <head>
         <title>Título del sitio</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Autor del sitio">
         <meta name="description"
             content="Un sitio de prueba para los que se inician en HTML">
@@ -730,8 +729,8 @@ valores específicos en cada ocasión. Nuestro documento HTML comienza a verse a
 
 Ahora si podemos centrarnos en el contenido, el cuál estará declarado en la
 etiqueta ``<body>'', la cuál contendrá todos los elementos visibles del sitio.
-Por ejmplo, un header con el titulo principal del sitio, una etiqueta main con
-el contenido, y un footer con información de copyright.
+Por ejemplo, un \textit{header} con el titulo principal del sitio, una etiqueta main con
+el contenido, y un \textit{footer} con información de copyright.
 
 A continuación se muestra un ejemplo de una página HTML básica.
 
@@ -741,8 +740,6 @@ A continuación se muestra un ejemplo de una página HTML básica.
     <head>
         <title>Noticias</title>
         <meta charset="utf-8">
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Juan de los Palotes">
         <meta name="description"
             content="Un sitio de noticias para todos y todas">
@@ -765,15 +762,15 @@ A continuación se muestra un ejemplo de una página HTML básica.
                         quién es el mejor jugador de futbol del
                         mundo. <strong>Maradona</strong> y
                         <strong>Messi</strong> son dos de los
-                        cantidatos más votados.
+                        candidatos más votados.
                     </p>
                 </article>
                 <article>
-                    <h3>Se puede jugar al básquet con 1.50?</h3>
+                    <h3>Se puede jugar al basquet con 1.50?</h3>
                     <p>
-                        El básquet siempre ha sido un deporte
+                        El basquet siempre ha sido un deporte
                         dominado por personas de gran altura,
-                        pero una nueva óla de jugadores de baja
+                        pero una nueva ola de jugadores de baja
                         estatura y alta performance están dando
                         muestra de que la estatura no es un
                         condicionante a la hora de jugar.
@@ -788,7 +785,7 @@ A continuación se muestra un ejemplo de una página HTML básica.
                     <p>
                         ¿Cuáles son las obras de teatro que
                         podemos encontrar este verano en los
-                        puntos turisticos?
+                        puntos turísticos?
                     </p>
                 </article>
                 <article>
@@ -836,7 +833,7 @@ pero no nos asegura que el código sea ``bueno''.
 
 Es interesante comprender que en general, un sitio web no se compone únicamente
 de código HTML, sino que es un conjunto de archivos, que incluye tanto a uno
-como más archivos HTML, como también a las imágenes del sitio, íconos, fuentes,
+como más archivos HTML, como también a las imágenes del sitio, iconos, fuentes,
 estilos, y código para interactividad local. Es decir, cuando uno realiza un
 sitio web, no realiza un archivo, sino un directorio lleno de archivos.
 
@@ -891,7 +888,7 @@ selector {
 
 Cada propiedad se separa de las que le siguen mediante un punto y coma, que no
 debe olvidarse. El objetivo aparece al comienzo, y las propiedades que se
-aplicarán iran entre llaves.
+aplicarán irán entre llaves.
 
 Como selector, puede colocarse el nombre de cualquier etiqueta HTML. Las
 propiedades que acepta una regla dependen del tipo de elemento a dar estilo.
@@ -919,9 +916,9 @@ Existen formas de apuntar a un elemento específico del documento HTML, en lugar
 de ``a todos los elementos h1'', así como de apuntar a un grupo de elementos
 particular (por ejemplo, el grupo de elementos que deberían tener texto en rojo).
 Para ello, el HTML debe cumplir ciertos requisitos, agregando atributos a los
-elementos a dar estilo (Los atributos ``class'' y ``id''). Tmabién existen
+elementos a dar estilo (Los atributos ``class'' y ``id''). También existen
 formas de apuntar a los conocidos como pseudo-elementos (por ejemplo, los
-enlaces que tienen el cursor del mouse sobre ellos), dandoles estilo.
+enlaces que tienen el cursor del mouse sobre ellos), dándoles estilo.
 
 El código CSS se incluye en la etiqueta ``<head>'', pues si bien tiene resultados
 visibles, no involucran contenido a disponer en la página. Así, dentro de ``<head>''
@@ -958,10 +955,10 @@ que solicitan al usuario que suministre un correo electrónico y contraseña,
 previo a dejarlo visualizar la página principal. ¿Cómo hace HTML para validar
 que el usuario y la contraseña son correctos? La respuesta es, no lo hace.
 
-Un servidor espcializado, encargado de validar la información recibe los datos
+Un servidor especializado, encargado de validar la información recibe los datos
 que el usuario ingresó en el HTML y luego determina si la contraseña coincide
-con los registros de la empresa o no, mostrandole al usuario el contenido que
-solicitaba, o indicandole que verifique sus credenciales y vuelva a intentarlo.
+con los registros de la empresa o no, mostrándole al usuario el contenido que
+solicitaba, o indicándole que verifique sus credenciales y vuelva a intentarlo.
 
 HTML provee funcionalidad para realizar este tipo de acciones, es decir, enviar
 información a un servidor. Para ello, utiliza una etiqueta llamada ``<form>'',
@@ -972,13 +969,13 @@ Una etiqueta ``<form>'' debe contener dos atributos, ``method'' y ``action''.
 El atributo ``method' puede tener un valor de ``GET'' o de ``POST'', y le indica
 al navegador la forma en la que los datos serán enviados al servidor (El servidor
 deberá estar configurado para esperar lo mismo que el navegador envía). La
-etiqueta action, por su parte, espera como valor una URL, que es la dirección
+etiqueta ``action'', por su parte, espera como valor una URL, que es la dirección
 a donde se enviarán los datos.
 
 Todo formulario debe contar con alguna forma en que el usuario confirme los
 valores ingresados, y mande la información al servidor de forma efectiva. Esta
 acción se conoce como ``submit'', y suele ser un botón el que provee tal
-caracteristica.
+característica.
 
 Los botones se crean con la etiqueta ``<button>'', y muestran como texto del
 mismo, lo que tengan en su contenido. Además, suelen llevar un atributo llamado
@@ -987,17 +984,17 @@ que el browser trata de forma especial: ``submit'' y ``reset''. Si el usuario
 da clic sobre un botón cuyo ``type'' es ``submit'', la información cargada
 en el formulario será enviada al servidor. Si da clic sobre un botón con ``type''
 igual a ``reset'', limpiará toda la información cargada al momento en el formulario,
-dejandolo en blanco.
+dejándolo en blanco.
 
 Existen diversos elementos que pueden aparecer en un formulario. La mayoría de
-ellos se ven representados en la etiqueta ``<input>'', qué posee dos atriutos
+ellos se ven representados en la etiqueta ``<input>'', qué posee dos atributos
 obligatorios. El primero ``type'' indica que tipo de input se trata, pudiendo ser:
 \begin{itemize}
   \item \textbf{text} Un campo de texto genérico
   \item \textbf{password} Un campo de texto, pero donde el contenido no se muestra
     o aparece como puntos o asteriscos.
   \item \textbf{checkbox} Un campo de marca de selección, en donde el usuario
-    puede tildar, o destildar la opción.
+    puede marcar, o desmarcar la opción.
   \item \textbf{radio} Un campo de selección entre varias opciones. Si el usuario
     marca una opción, las otras se desmarcan.
   \item \textbf{hidden} Un campo que no se muestra en el formulario, y que puede
@@ -1029,7 +1026,7 @@ También existen otras opciones, para horas, meses, rangos de elementos, campos
 de búsqueda, etc.
 
 El otro atributo importante de los input es ``name'', el nombre. Este atributo
-es la forma de identificar al valor de forma inequivoca por parte del servidor.
+es la forma de identificar al valor de forma inequívoca por parte del servidor.
 Por tanto, cada input debe tener un valor distinto. El valor consiste en un
 nombre, que puede estar formado por letras, números, guiones bajos y guiones
 medios, pero que no puede contener espacios.
@@ -1058,7 +1055,7 @@ su correo electrónico y contraseña.
 
 Esto resulta en algo como lo siguiente:
 
-\includegraphics[scale=0.7]{apendices/html/imagenes/form_sample_login.png}
+\includegraphics[scale=0.7]{anexos/html/imagenes/form_sample_login.png}
 
 Note el uso de la etiqueta ``<label>''. Esta se utiliza para englobar a los
 elementos ``<input>'', permitiendo mostrar un texto asociado a los mismos
@@ -1067,7 +1064,7 @@ se espera que ingrese. Pueden usarse en su lugar párrafos de texto simple,
 pero ``<label>'' brinda una ventaja adicional de usabilidad, cuando el
 usuario da clic sobre el texto, el ``<input>'' se selecciona, y el usuario
 ya puede comenzar a escribir, esto no ocurre con un párrafo. En particular
-es una caracteristica muy útil cuando se trabaja con elementos de tipo
+es una característica muy útil cuando se trabaja con elementos de tipo
 ``radio'' o ``checkbox''.
 
 Las etiquetas ``<input>'' son muy útiles, pero en ocaciones no son suficientes.
@@ -1084,7 +1081,8 @@ muestra una lista desplegable, en donde el usuario puede seleccionar una de las
 opciones (dadas cada una por un ``<option>'' distinto).
 
 A continuación hay un formulario que muestra el uso de etiquetas ``<textarea>'' y
-``<select>''. También presenta un ``checkbox'' y un ``radio'' El formulario permite al usuario ingresar un reclamo en el sitio
+``<select>''. También presenta un ``checkbox'' y un ``radio'' El formulario
+permite al usuario ingresar un reclamo en el sitio
 de una empresa proveedora de internet.
 
 \begin{lstlisting}[language=XHTML]
@@ -1124,7 +1122,7 @@ de una empresa proveedora de internet.
     <label for="comunicacion2"></label>Comunicarse por teléfono</label>
   </div>
   <div>
-    <input type="radio" name="comunicacion">
+    <input type="radio" name="comunicacion" id="comunicacion3">
     <label for="comunicacion3">No comunicarse</label>
   </div>
   
@@ -1152,14 +1150,14 @@ defecto, los ``<div>'' se muestran uno bajo el otro, mientras que los
 
 El formulario anterior se vería algo así:
 
-\includegraphics[scale=0.7]{apendices/html/imagenes/form_sample_no_css.png}
+\includegraphics[scale=0.7]{anexos/html/imagenes/form_sample_no_css.png}
 
-Los formularios pueden ebellecerse con CSS. Existen incluso conjuntos de código
+Los formularios pueden embellecerse con CSS. Existen incluso conjuntos de código
 pre-hechos por terceros que uno puede utilizar para embellecer sus formularios
 (y sus sitios en general). Estos códigos se agrupan en lo que se llama ``biblioteca'.
 Con un poco de CSS el formulario anterior puede verse de la siguiente forma:
 
-\centerline{\includegraphics[scale=0.5]{apendices/html/imagenes/form_sample_css.png}}
+\centerline{\includegraphics[scale=0.5]{anexos/html/imagenes/form_sample_css.png}}
 
 Existen también otros atributos y particularidades que hacen a los formularios,
 así como al procesamiento de los mismos. Estos detalles no son parte del presente,
@@ -1174,7 +1172,7 @@ hacerlos en orden y no saltearse ninguno.
 
 \begin{exercise}
 Cree un documento HTML un sitio web que actuará como portal de noticias.
-Acuerdesé de que el documento debe tener todas las partes protocolares
+Recuerde de que el documento debe tener todas las partes protocolares
 necesarias. Luego agregue los siguientes elementos a su sitio:
 \begin{enumerate}[a)]
   \item Un título principal con el texto ``Últimas Noticias''.
@@ -1186,7 +1184,7 @@ necesarias. Luego agregue los siguientes elementos a su sitio:
 
 El resultado debería verse algo como:
 
-\includegraphics[scale=0.5]{apendices/html/imagenes/diario_1.png}
+\includegraphics[scale=0.5]{anexos/html/imagenes/diario_1.png}
 \end{exercise}
 
 \begin{exercise}
@@ -1197,7 +1195,7 @@ secciones), y un copete (resumen de la noticia) en donde aparezcan algunas
 palabras o frases clave con énfasis. El resultado debería ser similar al
 siguiente:
 
-\includegraphics[scale=0.5]{apendices/html/imagenes/diario_2.png}
+\includegraphics[scale=0.5]{anexos/html/imagenes/diario_2.png}
 \end{exercise}
 
 \begin{exercise}
@@ -1206,12 +1204,12 @@ Añada el link de referencia a los sitios de donde tomo las noticias
 enlaces deben leerse con el texto ``Leer más''. El resultado debería
 ser similar a este:
 
-\includegraphics[scale=0.5]{apendices/html/imagenes/diario_3.png}
+\includegraphics[scale=0.5]{anexos/html/imagenes/diario_3.png}
 \end{exercise}
 
 \begin{exercise}
-Sume ahora, antes del título del diario, en una cabecera, una imágen que
-actúe de logo del sitio. Puede tomar de internet una imágen que guste
+Sume ahora, antes del título del diario, en una cabecera, una imagen que
+actúe de logo del sitio. Puede tomar de internet una imagen que guste
 como logo. Incluya también un pie de página con la información de copyright
 del sitio. La misma debe contener el nombre del autor y el año en que
 realizó el sitio. Tenga en cuenta que lo que antes eran posiblemente
@@ -1223,7 +1221,7 @@ Si realizó los ejercicios hasta ahora correctamente (es decir, ha colocado
 todas las etiquetas de estructura semánticas que corresponde) debería ser
 posible que su sitio luzca como la siguiente imagen:
 
-\includegraphics[scale=0.3]{apendices/html/imagenes/diario_4.png}
+\includegraphics[scale=0.3]{anexos/html/imagenes/diario_4.png}
 
 Para ello necesitaremos agregar en el ``<head>'' del sitio la siguiente
 definición de CSS dentro de una etiqueta ``<style>'':
@@ -1320,20 +1318,20 @@ aside h5, aside h6 {
 \end{exercise}
 
 \begin{exercise}
-Agregue en la cebecera una barra de navegación, que contenga una lista
+Agregue en la cabecera una barra de navegación, que contenga una lista
 no ordenada de enlaces a las secciones del sitio. Las mismas son:
-Politica, Policiales, Deportes y Espectáculos.
+Política, Policiales, Deportes y Espectáculos.
 El resultado debe ser como el siguiente:
 
-\includegraphics[scale=0.3]{apendices/html/imagenes/diario_5.png}
+\includegraphics[scale=0.3]{anexos/html/imagenes/diario_5.png}
 \end{exercise}
 
 \begin{exercise}
 Agregue justo sobre el pie de página una publicidad. Coloque en ella
 un título o dos títulos de nivel dos en adelante, y un párrafo de
-texto. El resultado se verá also así:
+texto. El resultado se verá algo así:
 
-\includegraphics[scale=0.3]{apendices/html/imagenes/diario_6.png}
+\includegraphics[scale=0.3]{anexos/html/imagenes/diario_6.png}
 \end{exercise}
 
 \begin{exercise}
@@ -1342,7 +1340,7 @@ texto. El resultado se verá also así:
   no viola los estándares (aunque no significa que siga buenas prácticas
   de estilo, por lo que no necesariamente es un buen código).
 
-  De encontrarse con errores al momento de válidar, corrija su código
+  De encontrarse con errores al momento de validar, corrija su código
   hasta que este sea válido. Puede encontrar el validador en:
 
   \href{https://validator.w3.org/nu/\#file}{https://validator.w3.org/nu/\#file}
@@ -1353,15 +1351,15 @@ Se pide que diseñe una página web que contenga un formulario web capaz de
 cargar ordenes médicas para pacientes que requieren reposo laboral. El 
 formulario debe contener los siguientes campos:
 \begin{itemize}
-  \item Un campo de texto para el nombre del médico interviniente.
-  \item Un campo de texto para el número de matricula del médico interviniente.
+  \item Un campo de texto para el nombre del médico que firma la orden.
+  \item Un campo de texto para el número de matricula del médico que firma la orden.
   \item Un campo de selección radial que permita elegir si el número de
     matricula corresponde a la matricula nacional o provincial.
   \item Un campo de texto para el nombre del paciente.
   \item Un campo de selección que permita elegir la cantidad de horas de reposo.
     Deben haber 4 opciones: ``24 horas'', ``48 horas'', ``72 horas'', ``hasta alta médica''.
   \item Un campo de selección (checkbox) que se pueda marcar si el paciente
-    tiene obra social, y destildar en caso negativo.
+    tiene obra social, y desmarcar en caso negativo.
   \item Labels para cada uno de los campos.
   \item Un botón para enviar el formulario.
 \end{itemize}
@@ -1379,13 +1377,14 @@ label {
 \end{adjustwidth}
 Esto logrará que los elementos aparezcan como en la imagen a continuación:
 
-\includegraphics[scale=0.65]{apendices/html/imagenes/formulario_1.png}
+\includegraphics[scale=0.65]{anexos/html/imagenes/formulario_1.png}
 \end{exercise}
 
 \begin{exercise}
 Diseñe una página web que contenga un título principal con el texto
 ``Mundiales de la FIFA'', y luego una tabla de doble entrada, donde las filas
-corresponden cada una a un mundial distinto. Deben haber tres columnas, la pimera indicando en que lugar del mundo se realizó el evento, y la segunda y
+corresponden cada una a un mundial distinto. Deben haber tres columnas, la primera
+indicando en que lugar del mundo se realizó el evento, y la segunda y
 tercer columna indicando el campeón y subcampeón respectivamente.
 Incluya al menos los mundiales de los siguientes años:
 \begin{itemize}
@@ -1419,5 +1418,5 @@ table td {
 \end{adjustwidth}
 El resultado de la página debería ser el siguiente.
 
-\includegraphics[scale=0.65]{apendices/html/imagenes/tabla.png}
+\includegraphics[scale=0.65]{anexos/html/imagenes/tabla.png}
 \end{exercise}
