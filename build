@@ -1,0 +1,8 @@
+#!/bin/sh
+
+pdflatex cuadernillo.tex;
+makeindex cuadernillo.idx -s biblioteca/thebook_indexstyle
+biber cuadernillo;
+pdflatex cuadernillo.tex;
+pdflatex cuadernillo.tex;
+pdflatex cuadernillo.tex;
