@@ -16,7 +16,7 @@ proyecto en [https://github.com/alanrodas/epyl-cuadernillo/issues](https://githu
 
 ### Versionado
 
-La versión actual es la **0.5.0**.
+La versión actual es la **0.6.0**.
 
 La versión sigue un esquema major.minor.revision.
 
@@ -45,6 +45,6 @@ arara cuadernillo
 Ante algún error puede correr el comando en modo _verbose_ para obtener más
 información:
 
-```
+```sh
 arara cuadernillo -v
 ```

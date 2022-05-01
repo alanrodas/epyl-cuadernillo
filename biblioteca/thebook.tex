@@ -9,7 +9,7 @@
 % Vel (vel@latextemplates.com)
 % with modifications by:
 % Alan Rodas Bonjour (alanrodas@gmail.com)
-% 
+%
 % This file has been downloaded from:
 % http://www.LaTeXTemplates.com
 %
@@ -21,6 +21,8 @@
 %----------------------------------------------------------------------------------------
 %	VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
 %----------------------------------------------------------------------------------------
+
+\usepackage[dvipsnames]{xcolor} % Required for specifying colors by name
 
 \usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=10pt,a4paper]{geometry} % Page margins
 \usepackage{changepage}
@@ -39,6 +41,8 @@
 
 \usepackage{booktabs} % Required for nicer horizontal rules in tables
 
+\usepackage[export]{adjustbox} % Allows changing character box alignment
+
 \usepackage{wrapfig}
 
 \usepackage{appendix}
@@ -47,12 +51,14 @@
 \renewcommand{\appendixtocname}{Anexos}
 
 \usepackage{listings} % Allow code environments with accents
-\usepackage{xcolor} % Required for specifying colors by name
+
+\usepackage{xkeyval} % Allows key value parameters
+
+\usepackage{enumitem} % Allows enumerations with preffix, suffix
 
 %----------------------------------------------------------------------------------------
 %	DEFAULT COLORS AND CODE STYLE
 %----------------------------------------------------------------------------------------
-
 \definecolor{primary}{RGB}{243,176,25} % Define the primary color used for highlighting throughout the book
 
 \definecolor{codebase}{RGB}{0,0,0}
@@ -263,7 +269,7 @@
                 \color{gray}{#4}
             \end{flushright}
             \normalsize
-        }    
+        }
     \end{figure}
 }
 
@@ -280,7 +286,7 @@
                 \color{gray}{#4}
             \end{flushright}
             \normalsize
-        }    
+        }
     \end{wrapfigure}
 }
 
@@ -325,7 +331,7 @@
 \titlecontents{chapter}[1.25cm] % Indentation
 {\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
 {\color{primary!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{primary}} % Chapter number
-{\color{primary}}  
+{\color{primary}}
 {\color{primary!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
@@ -368,7 +374,7 @@
 \titlecontents{lchapter}[0em] % Indenting
 {\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
 {\color{primary}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{primary}} % Chapter number
-{}  
+{}
 {\color{primary}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
@@ -444,7 +450,7 @@
 {\small\bf\sffamily}% Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
-{\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+{\small\sffamily{\tiny\ensuremath{\textcolor{primary}{\blacksquare}}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}\\% Theorem text (e.g. Theorem 2.1)
 \thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
 
 \newtheoremstyle{blacknumbox} % Theorem style name
@@ -473,7 +479,7 @@
 \makeatother
 
 % Defines the theorem text style for each type of theorem to one of the three styles above
-\newcounter{dummy} 
+\newcounter{dummy}
 \numberwithin{dummy}{section}
 \theoremstyle{primarynumbox}
 \newtheorem{theoremeT}[dummy]{Teorema}
@@ -506,7 +512,7 @@ leftmargin=0cm,
 rightmargin=0cm,
 innerbottommargin=5pt]{tBox}
 
-% Exercise box	  
+% Exercise box
 \newmdenv[skipabove=5pt,
 skipbelow=7pt,
 rightline=false,
@@ -521,7 +527,7 @@ innertopmargin=10pt,
 innerbottommargin=5pt,
 leftmargin=0cm,
 rightmargin=0cm,
-linewidth=4pt]{eBox}	
+linewidth=4pt]{eBox}
 
 % Definition box
 \newmdenv[skipabove=17pt,
@@ -537,7 +543,7 @@ innertopmargin=10pt,
 innerbottommargin=5pt,
 leftmargin=0cm,
 rightmargin=0cm,
-linewidth=4pt]{dBox}	
+linewidth=4pt]{dBox}
 
 % Corollary box
 \newmdenv[skipabove=7pt,
@@ -559,10 +565,11 @@ innerbottommargin=5pt]{cBox}
 % Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
 \newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{primary}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}
-\newenvironment{knowwhat}[1][Sabías qué]{\begin{eBox}\textcolor{primary}{\textbf{#1}}\\}{\hfill{\color{primary}}\end{eBox}}				  
-\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
-\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}		
-\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	
+\newenvironment{knowwhat}[1][Sabías qué]{\begin{eBox}\textcolor{primary}{\textbf{#1}}\\}{\hfill{\color{primary}}\end{eBox}}
+\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
+\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}
+\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}
+\newenvironment{solution}{\vspace*{10pt}}{\vspace*{30pt}}
 
 %----------------------------------------------------------------------------------------
 %	REMARK ENVIRONMENT
@@ -606,7 +613,7 @@ innerbottommargin=5pt]{cBox}
 %----------------------------------------------------------------------------------------
 
 \makeatletter
-\renewcommand{\@seccntformat}[1]{\llap{\textcolor{primary}{\csname the#1\endcsname}\hspace{1em}}}                    
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{primary}{\csname the#1\endcsname}\hspace{1em}}}
 \renewcommand{\section}{\@startsection{section}{1}{\z@}
 {-4ex \@plus -1ex \@minus -.4ex}
 {1ex \@plus.2ex }
@@ -618,7 +625,7 @@ innerbottommargin=5pt]{cBox}
 \renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
 {-2ex \@plus -0.1ex \@minus -.2ex}
 {.2ex \@plus.2ex }
-{\normalfont\small\sffamily\bfseries}}                        
+{\normalfont\small\sffamily\bfseries}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
 {-2ex \@plus-.2ex \@minus .2ex}
 {.1ex}
@@ -655,9 +662,9 @@ innerbottommargin=5pt]{cBox}
 \markboth{}{}%
 {\thispagestyle{empty}%
 \begin{tikzpicture}[remember picture,overlay]%
-\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
+\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%
 \fill[primary!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
-\node[anchor=north] at (4cm,-3.25cm){\color{primary!40}\fontsize{220}{100}\sffamily\bfseries\thepart}; 
+\node[anchor=north] at (4cm,-3.25cm){\color{primary!40}\fontsize{220}{100}\sffamily\bfseries\thepart};
 \node[anchor=south east] at (\paperwidth-1cm,-\paperheight+1cm){\parbox[t][][t]{8.5cm}{
 \printcontents{l}{0}{\setcounter{tocdepth}{1}}%
 }};
@@ -670,7 +677,7 @@ innerbottommargin=5pt]{cBox}
 \phantomsection
 {\thispagestyle{empty}%
 \begin{tikzpicture}[remember picture,overlay]%
-\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
+\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%
 \fill[primary!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
 \node[anchor=north east] at (\paperwidth-1.5cm,-3.25cm){\parbox[t][][t]{15cm}{\strut\raggedleft\color{white}\fontsize{30}{30}\sffamily\bfseries#1}};
 \end{tikzpicture}};
@@ -768,8 +775,42 @@ addtohook={%
 }
 }
 
+%----------------------------------------------------------------------------------------
+%	SPECIAL TRANSLATIONS
+%----------------------------------------------------------------------------------------
+\addto\extrasspanish{%
+\def\partautorefname{Unidad}%
+\def\appendixautorefname{Anexo}%
+}
+
+%----------------------------------------------------------------------------------------
+%	SPECIAL INDENTS AND LINES
+%----------------------------------------------------------------------------------------
 \newcommand{\crline}[2][10pt]{
     \noindent #2
 
     \vspace{#1}
+}
+
+\newcounter{sindentwidth}
+\newcounter{dindentwidth}
+\setcounter{sindentwidth}{16}
+\setcounter{dindentwidth}{32}
+
+\newcommand{\sindent}{\noindent\hspace*{\value{sindentwidth} pt}}
+\newcommand{\dindent}{\noindent\hspace*{\value{dindentwidth} pt}}
+
+%----------------------------------------------------------------------------------------
+%	EMOJI IMAGES SUPPORT (IMAGES NOT PROVIDED)
+%----------------------------------------------------------------------------------------
+\newcommand{\emoji}[1]{%
+  \includegraphics[width=1em,valign=t,raise=-0.1em]{#1}%
+}
+
+%----------------------------------------------------------------------------------------
+%	DARK MODE SUPPORT
+%----------------------------------------------------------------------------------------
+\newcommand{\darkmode}{
+  \pagecolor{black!80}
+  \color{white!30}
 }

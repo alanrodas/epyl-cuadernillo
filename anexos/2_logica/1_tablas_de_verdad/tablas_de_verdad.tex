@@ -1,0 +1,177 @@
+\chapterimage{anexos/2_logica/1_tablas_de_verdad/imagenes/cover}
+\chapterimagedescription{Escultura en bronce de Aristóteles frente a la Universidad de Freiburg}
+\chapterimageauthor{Foto de pixabay}
+
+\chapter{Simbología Lógica y Tablas de Verdad}
+\index{Simbologia Logica y Tablas de Verdad@Simbología Lógica y Tablas de Verdad}
+\label{anex:logica}
+
+Este capitulo presenta una pequeña ayuda de memoría para la simbología lógica utilizada en este libro, así como también de las tablas de verdad y otras referencias útiles al momento de realizar actividades de lógica.
+
+Esta ayuda memoria no descarta la necesidad de que el lector incorpore a su saber cotidiano y de forma memoristica estos elementos.
+
+\pagebreak
+\section{Simbología de las conectivas y sus palabras asociadas en lenguaje natural en la lógica proposicional}
+
+Los símbolos usados en la lógica proposicional son:
+
+\vspace{0.5cm}
+\centerline{
+    \begin{tabular}{ c | c | c | l }
+        \textbf{Símbolo} & \textbf{Nombre} & \textbf{Idea en lenguaje natural} & \textbf{palabras clave en lenguaje natural} \\
+        \hline
+        $\ltrue$ & Verdadero & El valor de verdad verdadero.\\
+        \hline
+        $\lfalse$ & Falso & El valor de verdad falso. \\
+        \hline
+        &&& no, no es cierto que,\\
+        $\lnot$ & Negación & No & no es verdad que,\\
+        &&& ni (también indica conjunción) \\
+        \hline
+        &&& ”, ”, y, también, además,\\
+        &&& adicionalmente, en adición, ahora, incluso,\\
+        &&& inclusive, así mismo, de igual forma,\\
+        &&& del mismo modo, igualmente, sin embargo,\\
+        $\land$ & Conjunción & Y & no obstante, pero, pese, empero, aunque,\\
+        &&& aún así, a pesar de, tanto como,\\
+        &&& al igual que, por otra parte, más,\\
+        &&& “no... ni...” (el “ni” también es una negación),\\
+        &&& aparte, así mismo, “por otro lado”\\
+        \hline
+        &&& o, ``tal vez ...tal vez ...'',\\
+        $\lor$ & Disyunción & O & ``o de pronto'', aunque de pronto,\\
+        &&& ”puede... o ... puede”, aunque puede\\
+        \hline
+        $\lxor$ & Disyunción excluyente & O uno u otro, pero no ambos & "o bien ..., o bien..."\\
+        \hline
+        &&& "... entonces ...", "... implica ...",\\
+        $\lthen$ & Implicación & Entonces &“si... entonces...”, “... sólo sí ...”,\\
+        &&&“... es condición necesaria de ...”,\\
+        &&&“... es condición suficiente para ...”\\
+        \hline
+        $\liff$ & Equivalencia & Si y solo si, es igual a & "... es equivalente a ...", "... si y solo si ..." \\
+    \end{tabular}
+}
+
+\vspace{0.5cm}
+Las proposiciones utilizadas de forma genérica comienzan con $p$ (en minúscula) y continuan con las letras subsiguientes ($q$, $r$, $s$, ...). Las proposiciones podrían tener otras letras e incluso palabras si tienen un signifcado asociado.
+
+El símbolo $\lseq$ es utilizado para indicar que una conslusión puede deducirse de una o más premisas.
+
+En el caso de tener que asociar la fórmula a elementos semánticos se debe definir un diccionario.
+
+\begin{example}$\\
+    \text{Diccionario:}\\
+    \quad f = \text{hay fuego}\\
+    \quad h = \text{hay humo}\\
+    ~\\
+    \text{Fórmula:}\\
+    f \lthen h, \lnot h \lseq \lnot f
+$
+\end{example}
+
+\newpage
+
+\section{Simbología de la lógica de predicados}
+
+Los siguientes son los símbolos asociados a la lógica de predicados.
+
+\vspace{0.5cm}
+\centerline{
+    \begin{tabular}{ c | c }
+        \textbf{Símbolo} & \textbf{Nombre}\\
+        \hline
+        $\forall$ & Para todo \\
+        \hline
+        $\exists$ & Existe algún \\
+        \hline
+        $\nexists$ & Ningún \\
+    \end{tabular}
+}
+
+Los predicados genéricos suelen enumerarse con la letra $P$ (en mayúscula) y subsiguientes ($Q$, $R$, $S$, etc.). Las letras minúsculas desde $x$ en adelante, y asociadas a una premisa, representan variables proposicionales ($x$, $y$, $z$, etc.) mientras que las letras $a$ en adelante ($a$, $b$, $c$, etc.) representan constantes. Obviamente pueden usarse otras letras según la connotación semántica asociada. Las premisas y las constantes deben estar declaradas en el diccionario.
+
+\begin{example}$\\
+    \text{Diccionario:}\\
+    \quad P(x) = x~\text{es una persona}\\
+    \quad a = \text{Juan}\\
+    \quad m = \text{María}\\
+    ~\\
+    \text{Fórmula:}\\
+    P_(a) \land P_(m)
+$
+\end{example}
+
+
+\newpage
+
+\section{Tablas de verdad de conectivas}
+
+Las siguientes son las tablas de verdad elementales de las conectivas lógicas:
+
+\vspace{0.5cm}
+\centerline{
+    \begin{tabular}{ c | c }
+        \textbf{$\Phi$} & \textbf{$\lnot \Psi$}\\
+        \hline
+        $\ltrue$  & $\lfalse$ \\
+        $\lfalse$ & $\ltrue$  \\
+    \end{tabular}
+
+    \qquad
+
+    \begin{tabular}{ c | c | c }
+        \textbf{$\Phi$} & \textbf{$\Psi$} & \textbf{$\Psi \land \Psi$}\\
+        \hline
+        $\ltrue$  & $\ltrue$  & $\ltrue$  \\
+        $\ltrue$  & $\lfalse$ & $\lfalse$ \\
+        $\lfalse$ & $\ltrue$  & $\lfalse$ \\
+        $\lfalse$ & $\lfalse$ & $\lfalse$ \\
+    \end{tabular}
+
+    \qquad
+
+    \begin{tabular}{ c | c | c }
+        \textbf{$\Phi$} & \textbf{$\Psi$} & \textbf{$\Phi \lor \Psi$}\\
+        \hline
+        $\ltrue$  & $\ltrue$  & $\ltrue$  \\
+        $\ltrue$  & $\lfalse$ & $\ltrue$  \\
+        $\lfalse$ & $\ltrue$  & $\ltrue$  \\
+        $\lfalse$ & $\lfalse$ & $\lfalse$ \\
+    \end{tabular}
+}
+\vspace{0.5cm}
+\centerline{
+    \begin{tabular}{ c | c | c }
+        \textbf{$\Phi$} & \textbf{$\Psi$} & \textbf{$\Phi \lxor \Psi$}\\
+        \hline
+        $\ltrue$  & $\ltrue$  & $\lfalse$  \\
+        $\ltrue$  & $\lfalse$ & $\ltrue$  \\
+        $\lfalse$ & $\ltrue$  & $\ltrue$  \\
+        $\lfalse$ & $\lfalse$ & $\lfalse$ \\
+    \end{tabular}
+
+    \qquad
+
+    \begin{tabular}{ c | c | c }
+        \textbf{$\Phi$} & \textbf{$\Psi$} & \textbf{$\Phi \lthen \Psi$}\\
+        \hline
+        $\ltrue$  & $\ltrue$  & $\ltrue$  \\
+        $\ltrue$  & $\lfalse$ & $\lfalse$  \\
+        $\lfalse$ & $\ltrue$  & $\ltrue$  \\
+        $\lfalse$ & $\lfalse$ & $\ltrue$ \\
+    \end{tabular}
+
+    \qquad
+
+    \begin{tabular}{ c | c | c }
+        \textbf{$\Phi$} & \textbf{$\Psi$} & \textbf{$\Phi \liff \Psi$}\\
+        \hline
+        $\ltrue$  & $\ltrue$  & $\ltrue$  \\
+        $\ltrue$  & $\lfalse$ & $\lfalse$  \\
+        $\lfalse$ & $\ltrue$  & $\lfalse$  \\
+        $\lfalse$ & $\lfalse$ & $\ltrue$ \\
+    \end{tabular}
+}
+
+

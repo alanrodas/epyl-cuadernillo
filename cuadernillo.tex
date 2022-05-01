@@ -10,7 +10,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Cuadernillo de Elementos de Programación y Lógica
 % Universidad Nacional de Quilmes
-% Version 0.1 (18/09/2018)
+% Version 0.6.0 (24/04/2022)
 %
 % Original Author:
 % Alan Rodas Bonjour (alanrodas@gmail.com)
@@ -25,7 +25,7 @@
 %
 % Compiling this template:
 % This template uses biber for its bibliography and makeindex for its index.
-% When you first open the template, compile it from the command line with the 
+% When you first open the template, compile it from the command line with the
 % commands below to make sure your LaTeX distribution is configured correctly:
 %
 % 1) pdflatex main
@@ -34,7 +34,7 @@
 % 4) pdflatex main x 2
 %
 % After this, when you wish to update the bibliography/index use the appropriate
-% command above and make sure to compile with pdflatex several times 
+% command above and make sure to compile with pdflatex several times
 % afterwards to propagate your changes to the document.
 %
 % Alternatively you can use the "arara" building tool to build this
@@ -60,8 +60,11 @@
 %----------------------------------------------------------------------------------------
 
 \input{biblioteca/thebook} % Insert the thebook.tex file which contains the majority of the structure behind the template
+\input{biblioteca/logic} % Add definition for logic elements
 
 \addbibresource{bibliography.bib}
+
+% \darkmode
 
 \begin{document}
 
@@ -74,8 +77,8 @@
 \department{Departamento de Ciencia y Tecnología}
 \institution{Universidad Nacional de Quilmes}
 \author{Alan Rodas Bonjour}
-\version{0.5.0}
-\date{15/04/2019}
+\version{0.7.0}
+\date{12/12/2023}
 
 \primarycolor{176}{30}{45}
 
@@ -88,89 +91,7 @@
 \setlength{\parskip}{0.5em}
 
 \input{introduccion}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\part{Lógica}
-\label{Lógica}
-
-%\begin{refsection}
-\input{capitulos/logica/logica}
-%\input{capitulos/logica_predicados/logica_predicados}
-%\newpage
-% \printbibliography[heading=subbibliography]
-%\end{refsection}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%º  \part{Computadoras}
-%\label{Computadoras}
-
-%\begin{refsection}
-%\input{capitulos/computadoras/computadoras}
-%\input{capitulos/historia_computadoras/historia_computadoras}
-%\newpage
-%\printbibliography[heading=subbibliography]
-%\end{refsection}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\part{Información}
-%\label{Información}
-
-%\begin{refsection}
-%\input{capitulos/bajo_nivel/bajo_nivel}
-%\input{capitulos/informatica/informatica}
-%\newpage
-%\printbibliography[heading=subbibliography]
-%\end{refsection}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\part{Programación}
-\label{Programación}
-
-HECHO
-
-%\input{capitulos/lenguajes_de_programacion/lenguajes_de_programacion}
-%\input{capitulos/algoritmos/algoritmos}
-
-%----------------------------------------------------------------------------------------
-%	INDEX
-%----------------------------------------------------------------------------------------
-
-%\part{Índice y Anexos}
-%\label{Índice y anexos@Indice y Anexos}
-
-%\cleardoublepage
-%\phantomsection
-%\setlength{\columnsep}{0.75cm}
-%\addcontentsline{toc}{chapter}{\textcolor{primary}{Índice}}
-%\printindex
-
-%\appendix
-%\appendixpage
-%\noappendicestocpagenum
-%\addappheadtotoc
-
-%\input{anexos/markdown/markdown.tex}
-%\input{anexos/html/html.tex}
-
-%\chapter{Cheatsheet de Lógica Proposicional}
-%\label{Cheatsheet de Lógica Proposicional}
-
-%A ESCRIBIR
-
-%\chapter{Cheatsheet de Lógica de Predicados}
-%\label{Cheatsheet de Lógica de Predicados}
-
-%A ESCRIBIR
-
-%\chapter{Cheatsheet de Sintaxis en Programación}
-%\label{Cheatsheet de Sintaxis en Programación}
-
-%A ESCRIBIR
-
-%----------------------------------------------------------------------------------------
+\input{unidades/index}
+\input{anexos/index}
 
 \end{document}

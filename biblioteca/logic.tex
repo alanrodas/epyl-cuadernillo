@@ -1,0 +1,53 @@
+
+\usepackage{colortbl} % For logic tables coloring
+
+% Some additional greek leters
+\newcommand{\Alpha}{A}%
+\newcommand{\Beta}{B}%
+\newcommand{\Epsilon}{E}%
+\newcommand{\Zeta}{Z}%
+\newcommand{\Eta}{H}%
+\newcommand{\Iota}{I}%
+\newcommand{\Kappa}{K}%
+\newcommand{\Mu}{M}%
+\newcommand{\Nu}{N}%
+\newcommand{\omicrom}{o}%
+\newcommand{\Omicrom}{O}%
+\newcommand{\Rho}{P}%
+\newcommand{\Tau}{T}%
+\newcommand{\Chi}{X}%
+
+% \lnot, \land and \lor are already available in LaTeX
+% \rowcolor{gray}
+\newcommand{\lxor}{\veebar}%
+\newcommand{\lthen}{\to}%
+\newcommand{\liff}{\leftrightarrow}%
+\newcommand{\lseq}{\vdash}%
+\newcommand{\ltrue}{{\color{ForestGreen}V}}%
+\newcommand{\lfalse}{{\color{BrickRed}{F}}}%
+\newcommand{\ltruefull}{{\color{ForestGreen}VERDADERO}}%
+\newcommand{\lfalsefull}{{\color{BrickRed}FALSO}}%
+
+\makeatletter
+\define@cmdkey[]{lreasoning}{width}[1\textwidth]{}
+\define@cmdkey[]{lreasoning}{dividerheight}[2pt]{}
+\define@cmdkey[]{lreasoning}{margin}[0pt]{}
+\setkeys[]{lreasoning}{width=1\textwidth,dividerheight=2pt,margin=0pt}
+
+\newenvironment{lreasoning}[1][width=1\textwidth,dividerheight=3pt,margin=0pt]{
+  \setkeys[]{lreasoning}{#1}
+  \begin{minipage}[t]{\cmdlreasoning@width}
+}{
+  \end{minipage}
+}%
+\newcommand{\lreasonrule}[0]{%
+  \parbox[c][\cmdlreasoning@dividerheight][c]{1\textwidth}{\noindent\hspace*{\cmdlreasoning@margin}\hrulefill}\\%
+}%
+\newcommand{\lpremise}[1]{%
+  \noindent\hspace*{\cmdlreasoning@margin}#1\\%
+}%
+\newcommand{\lconclusion}[1]{%
+  \lreasonrule%
+  \noindent\hspace*{\cmdlreasoning@margin}#1%
+}%
+\makeatother

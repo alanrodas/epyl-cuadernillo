@@ -1,0 +1,96 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = es_AR
+% arara: pdflatex
+% arara: makeindex: { style: biblioteca/thebook_indexstyle }
+% arara: biber
+% arara: pdflatex
+% arara: pdflatex
+% arara: pdflatex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Solucionario del Cuadernillo de Elementos de Programación y Lógica
+% Universidad Nacional de Quilmes
+% Version 0.6.0 (24/04/2022)
+%
+% Original Author:
+% Alan Rodas Bonjour (alanrodas@gmail.com)
+%
+% Based on "The Legrand Orange Book" by
+% Mathias Legrand (legrand.mathias@gmail.com)
+% with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times
+% afterwards to propagate your changes to the document.
+%
+% Alternatively you can use the "arara" building tool to build this
+% document, by wunning "arara main"
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+
+\input{biblioteca/thebook} % Insert the thebook.tex file which contains the majority of the structure behind the template
+\input{biblioteca/logic} % Add definition for logic elements
+
+\addbibresource{bibliography.bib}
+
+% \darkmode
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\title{Elementos de Programación y Lógica}
+\subtitle{Solucionario del Cuadernillo del Estudiante}
+\department{Departamento de Ciencia y Tecnología}
+\institution{Universidad Nacional de Quilmes}
+\author{Alan Rodas Bonjour}
+\version{0.6.0}
+\date{24/04/2022}
+
+\primarycolor{176}{30}{45}
+
+\maketitle
+
+\input{copyright}
+
+\input{indice}
+
+\setlength{\parskip}{0.5em}
+
+%\input{introduccion_solucionario}
+\input{soluciones/index}
+
+\end{document}

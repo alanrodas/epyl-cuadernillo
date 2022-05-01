@@ -1,0 +1,1631 @@
+\newcommand{\apple}{\emoji{unidades/3_logica/1_logica/imagenes/apple.pdf}}
+\newcommand{\orange}{\emoji{unidades/3_logica/1_logica/imagenes/orange.pdf}}
+
+\chapterimage{unidades/3_logica/1_logica/imagenes/cover}
+\chapterimagedescription{Red Lógica de un Enrutador con LEDs}
+\chapterimageauthor{Fotografía de tschoenemeyer}
+
+\chapter{Introducción a la lógica}
+\index{Introduccion a la logica@Introducción a la lógica}
+\label{chap:logica}
+
+Construimos las computadoras para facilitarnos el realizar cáclulos, algo que
+nos ha caracterizado como especie por milenios. Pero hacer cuentas no es la
+única característica propia de los seres humanos. Somos, al menos por lo que
+sabemos, la única especie capaz de producir información novedosa mediante el
+pensamiento y la razón.
+
+La \textbf{razón}\index{Razon@Razón} es la base de la ciencia. Es lo que nos ha
+permitido formular teorémas, leyes, postulados, etc. y es lo que permite que
+todas las disciplinas y ciencias, tanto naturales, empíricas, formales, sociales
+o económicas, avancen constantemente. Aunque no solo aplica a la ciencia, pues
+razonamos de forma constante. Con nuestra mente detectamos patrones, realizamos
+conexiones entre información y llegamos a conclusiones sobre lo que sucedería en
+casos hipotéticos. Esto ha permitido a nuestra especie tomar decisiones que nos
+ayudan a preservar nuestra vida, ser más competitivos con respecto a otros,
+consiguiendo más y mejores recursos, y por tanto, evolucionar con ventaja por
+sobre otras especies.
+
+La \textbf{lógica}\index{Logica@Lógica} es el estudio de esos procesos mentales
+que llevan a la razón. Es una ciencia compleja, con diversos enfoques, muchisima
+historia y ramificaciones.
+
+Siendo la lógica una ciencia en si misma, su estudio completo abaracaría mucho
+más que las escasas páginas que le dedicaremos en esta unidad, mucho más que un
+único libro de hecho. Aquí solamente nos adentraremos en algunos conceptos
+fundamentales, que dan sustento a gran parte de los elementos de las ciencias de
+la computación, y que luego aplicaremos en la sección de programación, pero que
+también aparecerán en el futuro en múltiples lugares para quienes opten por
+dedicarse al estudio de alguna disciplina relacionada a las ciencias de la
+computación y la informática.
+
+En esta unidad comenzaremos por entender la lógica desde los conocimientos
+previos que se espera el lector posea. Si bien indagaremos en definiciones, no
+entraremos en profundos formalismos, ni presentaremos un sistema lógico formal
+de análisis, dejando estos elementos para los siguientes capítulos.
+
+\section{Aproximación a la lógica}
+\label{chap:logica:sec:aproximacion}
+
+Antes de empezar a trabajar con la lógica como ciencia formal, empecemos por
+tener una aproximación sobre esta ciencia que, incluso sin saberlo, utilizamos
+de forma constante en nuestro día a día. Vamos a abordar primero de dónde surge,
+y luego, cuáles son algunos de los elementos constituyentes claves. A posteriori
+veremos por qué es útil conocer y entender de lógica para un programador.
+
+Comencemos pues por el principio, de dónde surge la lógica.
+
+\subsection{Historia de la lógica}
+\label{chap:logica:subsec:historia_logica}
+
+La idea de razonar es algo que define a la especie humana, y por tanto no es
+de extrañar que ya en la Antigua Grecia alrededor del Siglo IV a.C. los
+filósofos intentaran comprender cómo funciona el proceso del pensamiento y la
+razón. La palabra actual ``lógica'' deriva del griego antiguo \textit{logiké}
+($\lambda o \gamma \iota \kappa \eta$), que significa ``\textit{dotada de razón,
+intelectual, argumentativa}''  y que a su vez viene de \textit{lógos} ($\lambda
+o \gamma o \varsigma$), ``\textit{palabra, pensamiento, idea, argumento, razón o
+principio}''. Así, la palabra ``\textit{lógica}'' se refiere a la ciencia que
+tiene por estudio el pensamiento y la razón. Por supuesto, los griegos no fueron
+los únicos en realizar estudios sobre el tema, ya que tanto en China como en la
+India aparecieron de forma independiente tratados sobre el tema alrededor de la
+misma época que en Grecia.
+
+Aristóteles\index{Aristoteles@Aristóteles} fue el primero en formalizar los
+razonamientos, utilizando letras para representar términos y estableciendo las
+fórmas válidadas de los mismos. Además estudió los razonamientos inductivos,
+base de lo que constituye la ciencia experimental, cuya lógica está
+estrechamente ligada al método científico. Los islámicos, y luego los lógicos de
+la Edad Media continuarían el analisis aristotélico de la lógica, vinculado más
+a la filosofía que a otras ciencias.
+
+\wraplimage[0.3]{unidades/3_logica/1_logica/imagenes/aristoteles_ceuta.jpg}
+{Busto de bronces de Aristóteles en la ciudad de Ceuta, España, del artista
+Serrán Pagán.} {Fotografía de Wikimedia Commons de CarlosVdeHasburgo}
+
+Ya en la modernidad, se comenzó a estudiar la lógica desde puntos de vista más
+formales, y vincular la ciencia a las matemáticas. Matemáticos como Gottlob
+Frege\index{Frege, Gottlob}, Giuseppe Peano\index{Peano, Giuseppe}, Ernst
+Schröder\index{Schroder, Ernst@Schröder, Ernst} y Charles Peirce\index{Pierce,
+Charles} extendieron los conceptos de la lógica aristotélica, agregando
+elementos como las variables o los cuantificadores ``todo'' y ``algunos'',
+permitiendo revelar la estructura lógica de las oraciones en lenguajes
+naturales. Así, se iría extendiendo el estudio de esta ciencia, definiendo
+``\textit{lógicas}'' de distintos ``\textit{ordenes}'' (primer y segundo orden).
+
+Por su parte , George Boole\index{Boole, George}, a quien ya hemos mencionado en
+este libro, publicó un breve tratado titulado ``\textit{El análisis matemático
+de la lógica}'', y en 1854 otro más importante titulado ``\textit{Las leyes del
+pensamiento}''. La idea de Boole fue construir a la lógica como un cálculo con
+propiedades similares a la matemática. Al mismo tiempo, Augustus De
+Morgan\index{De Morgan, Augustus} publica en 1847 su obra ``\textit{Lógica
+formal}'', donde introduce las ``\textit{leyes de De Morgan}'' e intenta
+generalizar la noción de silogismo. Otro importante contribuyente fue John Venn,
+quien en 1881 publicó su libro ``\textit{Lógica Simbólica}'', donde introdujo
+los famosos diagramas de Venn.
+
+Ya en 1910, a raíz de varias crisis en las bases fundamentales de la matemática,
+Bertrand Russell\index{Rusell, Bertrand} y Alfred Whitehead\index{Whitehead,
+Alfred} publican ``\textit{Principia mathematica}''\index{Principia
+Mathematica}, un trabajo en el que logran construir gran parte de las
+matemáticas a partir de la lógica, demostrando que la lógica es una ciencia
+subyacente a las matemáticas.
+
+Más de 2000 años de historia nos llevan a la actualidad de la lógica como
+ciencia, que hoy sustenta cualquier desarrollo científico, tanto de las ciencias
+empíricas (biología, química, física, etc.) como formales (matemáticas y sus
+diversas ramas) y también las ciencias sociales (legales, comunicación,
+filosofía, etc.) y económicas. Hoy en día se entiende a la lógica como una
+ciencia que requiere un análisis formal (parecido a las matemáticas, como
+veremos luego) y que sigue métodos estrictos para su análisis.
+
+Existen diversos ``\textit{típos de lógicas}'', como la lógica proposicional, la
+lógica de predicados, la logica hermitica, logicas modales, entre otras varias.
+También el enfoque de estudio varía, según la necesidad de la disciplina
+subyacente. Para las ciencias de la computación nos interesará centrarnos en la
+lógica proposicional y la lógica de predicados. Pero necesitamos entender mejor
+qué es la lógica, como ciencia en general, antes de poder estudiar cualquiera de
+ellas.
+
+\subsection{El objeto de estudio de la lógica}
+\index{Lógica}\index{Razonamientos}\index{Deducción}
+\label{chap:logica:subsec:objeto_de_estudio}
+
+Para poder comprender la \textbf{lógica} debemos comenzar por saber qué es y qué estudia. Para ello, veremos primero una definición simple.
+
+\begin{definition}\index{Logica@Lógica} La \textbf{lógica} es una ciencia formal
+    que estudia los principios de la deducción de los razonamientos, así como su
+    validez.
+\end{definition}
+
+Pero para entender esta definición, primero debemos comprender qué es un
+\textbf{razonamiento}. Veamos una segunda definición para ello.
+
+\begin{definition}\index{Razonamiento}\index{Premisa}\index{Conclusion@Conclusión}
+    Un \textbf{razonamiento} es el producto de un \textbf{proceso mental}
+    mediante el cual, a partir de una o más piezas de información de la cual se
+    dispone, llamadas \textbf{premisas}, se arriba a una nueva pieza de
+    información, llamada \textbf{conclusión}.
+\end{definition}
+
+Es decir, el \textbf{razonamiento} es el producto de
+\textbf{razonar}\index{Razonar}, un proceso que produce el cerebro humano. En
+este proceso tomamos información previamente disponible, es decir, información
+ya conocida, para descomponerla, analizarla y procesarla, y arribar así a una
+nueva información.
+
+Lo más fácil para comprender el concepto es ver un ejemplo concreto, por lo que
+recurriremos a un ejemplo clásico. Considere la siguiente información como
+\textbf{premisas}, es decir, como información ya conocida a priori.
+
+\begin{example}
+    \textit{Todos los humanos son mortales}.\\
+    \textit{Socrates es un humano}.
+\end{example}
+
+Una \textbf{conclusión} posible sería determinar que ``\textit{Socrates es
+mortal}''. Nuestro cerebro puede realizar el analisis de las dos primeras
+oraciones y encontrar que hay elementos relacionados entre ellas, elucidando una
+información que no era conocida previamente (el hecho de que Socrates sea
+mortal).
+
+Notar que si alguien pensara como conclusión que ``\textit{Socrates es
+inmortal}'', e intentara atravesarlo con una espada para probarlo, probablemente
+intentaríamos impedirlo inmediatamente. Es que de la información contenida en
+las premisas no hay forma de concluir la inmortalidad de Socrates, salvo
+mediante un proceso mental incorrecto. Así, la persona que arribo a dicha
+conclusión, no ha razonado de forma adecuada, llegando a una conclusión que no
+tiene sentido.
+
+\textbf{Los razonamientos pueden partir de una o más premisas, pero siempre
+tienen una única conclusión}. A veces nuestro cerebro realiza múltiples
+conclusiones a partir de un conjunto de premisas, pero con respecto a lo que
+concierne a la lógica estos se consideran múltiples razonamientos, y se debe
+estudiar cada uno de forma independiente.
+
+La \textbf{deducción}\index{Deducción} es entonces el proceso que realizamos
+para partir de información conocida para arribar a nueva información. La
+deducción sigue formas bien definidas y precisas, y es por eso que podemos
+concluir en la mortalidad de Socrates, pero no en su inmortalidad. Si concluimos
+lo segundo, nuestro razonamiento sería \textbf{inválido}, mientras que por el
+contrario, si concluimos lo primero, podemos decir que es un razonamiento
+\textbf{válido}.
+
+La lógica se va a encargar de estudiar entonces cuándo un razonamiento es
+válido, y cuándo no lo es.
+
+\begin{knowwhat}\index{Razonamiento deductivo}
+    \index{Razonamiento inductivo}
+    En realidad, nos estamos centrando en un tipo particular de razonamientos,
+    llamados \textbf{razonamientos deductivos}, y por tanto estamos abusando de
+    la simplificación en nuestras definiciones.
+
+    Existen otros tipos de razonamientos, como los inductivos (que surgen de
+    razonar por inducción, en lugar de por deducción), y que pueden ser a su vez
+    inductivos por enumeración, o inductivos por analogía. En el primero de este
+    tipo de razonamientos se obtiene una conclusión global a partir de premisas
+    que hablan de casos particulares (Por ej. de las premisas ``\textit{la droga
+    $X$ resulto exitosa para curar la enfermedad en el paciente 1}'',
+    ``\textit{La droga $X$ resulto exitosa para curar la enfermedad en el
+    paciente 2}'', etc. se puede concluir que ``\textit{La droga $X$ resultará
+    exitosa para curar a todos los pacientes}''), en el segundo se obtiene un
+    caso particular a partir de otros similares (Por ej. con las premisas
+    anteriores arribar a ``\textit{La droga $X$ resultará exitosa para curar al
+    paciente N}'').
+
+    Este tipo de lógica es útil en las ciencias empíricas, donde a veces, el
+    hecho de que se cumpla la conclusión el 99\% del tiempo es lo
+    suficientemente bueno. Sin embargo, siempre pueden encontrarse excepciones a
+    la regla. En el ejemplo anterior, pueden haber personas que sean alérgicas a
+    la droga en cuestión, o que la droga no haga efecto en sus organismos.
+
+    Los razonamientos deductivos, en cambio, tienen una caracteristica
+    particular. \textbf{Si las premisas de las que partimos son verdaderas, un
+    razonamiento bien realizado siempre arribará a una conclusión verdadera}.
+    Esto es así ya que que la información de la conclusión, en realidad está
+    ``oculta'' en las premisas, es decir, está expresada en las premisas, aunque
+    de otra forma, no evidente. Por eso este tipo de razonamientos es el
+    empleado en las ciencias formales (como en la matemática), para realizar
+    \textbf{demostraciones}.
+\end{knowwhat}
+
+Con esto tenemos más claro de qué se trata la lógica. Pero ¿A qué nos referímos
+con \textbf{ciencia formal}\index{Ciencia formal}? Pues bien, se trata de que el
+objeto de estudio no son los elementos en sí, sino las formas de los elementos.
+Además de la lógica hay solo otra ciencia formal, la matemática. Veamos un
+ejemplo de esta última.
+
+\begin{example}
+    \hspace*{14pt} Supongamos que tenemos 4 naranjas y decidimos comer una.
+    ¿Cuantas naranjas nos quedan para comer? Esto los saben hasta los niños
+    pequeños, nos quedan 3 naranjas.
+
+    Si de pronto tenemos 4 manzanas, y nos comemos una, sería ridiculo pensar
+    que debemos aprender algo nuevo para poder saber cuántas nos quedan.
+
+    Así, \textit{la forma} de la operación a realizar no tiene que ver con
+    naranjas o manzanas, sino con cantidades, con números. Las matemáticas nos
+    enseñan que la forma es ``$4-1=3$'', y una vez aprendemos a solucionar ese
+    problema, no nos importan qué sean los elementos.
+
+    Dicho de otra forma:
+
+    \dindent Operación real: ~ 4 \orange ~~ - 1 \orange ~ = 3 \orange \qquad
+    Forma: ~ 4 - 1 = 3
+
+    y también:
+
+    \dindent Operación real: ~ 4 \apple ~~ - 1 \apple ~ = 3 \apple \qquad Forma:
+    ~ 4 - 1 = 3
+\end{example}
+
+La lógica opera de forma similar. Pensemos en las premisas ``\textit{Todos los
+perros van al cielo}'' y ``\textit{Firulais es un perro}''. La conclusión sería
+que ``\textit{Firulais va al cielo}''. La forma para este razonamiento, es la
+misma que para el razonamiento anterior sobre Socrates, que sería algo como
+``\textit{Todos los $x$ hacen/son algo}'', ``\textit{$a$ es un $x$}'' por lo que
+se puede concluir que ``\textit{$a$ hace/es algo}''.
+
+Por ahora no nos interesa analizar la estructura de un razonamiento en detalle,
+sino solamente ver que es posible encontrar una estructura idéntica en distintos
+razonamientos, para comprender mejor el concepto de ``\textit{forma}'' al que
+nos referímos cuando hablamos de lógica.
+
+\section{Elementos constituyentes de la lógica}
+\label{chap:logica:sec:elementos_constituyentes}
+
+Una cosa importante a comprender es que no existe ``una lógica'' sino que hay distintos formalismos lógicos, cada una con sus particularidades, propiedades y sus utilidades de aplicación.
+
+\subsection{Valores de verdad}
+\index{Valores de verdad}
+\label{chap:logica:subsec:valores_de_verdad}
+
+Finalmente, es muy importante mencionar que la lógica se basa en asignar lo que
+llamamos un \textbf{valor de verdad} a diversos elementos, de forma similar a
+como en las matemáticas se le asignan valores numéricos a los elementos. Esto
+permite realizar análisis sobre diversas situaciones para determinar si un
+razonamiento es válido o inválido.
+
+Por lo tanto, debemos también entender de qué se trata un \textbf{valor de
+verdad}. Empecemos por una definición.
+
+\begin{definition}\index{Valor de verdad} Los \textbf{valores de verdad} son
+    valores binarios y dicotómicos, es  decir, dos valores que son opuestos
+    entre si, y donde no hay terceras opciones ni respuestas que impliquen ambos
+    valores al mismo tiempo.
+\end{definition}
+
+En el lenguaje natural, es decir, cuando hablamos en español (u otro idioma),
+usamos en general las respuestas ``\textit{si}'' y ``\textit{no}'' como valores
+de verdad. Pensemos en una pregunta cualquiera que pueda responderse con si o
+no, por ejemplo, ``\textit{¿Está lloviendo el día de hoy en la Ciudad de Buenos
+Aires?}''. Según el día y la hora que se esté leyendo esto, la respuesta
+concreta será o bien ``\textit{si}'' o bien ``\textit{no}'', pero seguro está
+lloviendo o bien no lo está, es decir, la respuesta es binaria. Más aún, los
+valores son opuestos, es decir, responder que ``\textit{si llueve}'' es opuesto
+a responder que ``\textit{no llueve}'', y no puede darse que llueva y no llueva
+al mismo tiempo.
+
+Tenemos otras formas de referirnos a ese ``\textit{si}'' en el lenguaje natural,
+por ejemplo ``\textit{afirmativo}'', ``\textit{cierto}'', o
+``\textit{verdadero}''. De igual forma, tenemos otras palabras para
+``\textit{no}'', como ``\textit{negativo}'', ``\textit{mentira}'' o
+``\textit{falso}''.
+
+Al hablar de lógica en términos formales se utilizan los términos
+``\textbf{verdadero}''\index{Verdadero} y ``\textbf{falso}''\index{Falso} para
+referirnos a los posibles valores de verdad que puede tomar un elemento.
+
+\begin{knowwhat}
+Otras disciplinas usar otros nombres para el mismo concepto de valor de verdad.
+Por ejemplo, la electrónica utiliza los nombres ``\textit{1}'' y ``\textit{0}''
+para este concepto, y lo utilizan para representar la idea de ``\textit{es
+verdadero que hay electricidad}'' o ``\textit{es falso que hay electricidad}'',
+cómo ya vimos en la unidad anterior.
+
+Hablar de \textit{1} y \textit{0} es confuso para los no iniciados en la
+electrónica y en la lógica, ya que esos mísmos símbolos se utilizan en la
+matemática, con un significado diferente, numérico.
+\end{knowwhat}
+
+La lógica entonces nos permite hablar de elementos verdaderos y falsos, de
+formas y estructuras para esos elementos, y de validez o invalidez de las
+combinaciones que hacemos sobre ellos, lo cual sirve para probar nuestros
+razonamientos.
+
+En las próximas secciones vamos a trabajar sobre algunos elementos
+constituyentes de la lógica, que nos permiten combinar elementos, y vamos a
+entender mejor algunas utilidades prácticas de la lógica.
+
+\section{Conectivas}
+\label{chap:logica:sec:conectivas}
+
+Desviémonos por un momento sobre la lógica como ciencia e imaginemos que en
+nuestro barrio han montado una moderna verdulería, atendida pura y
+exclusivamente por un robot. El verdulero robot es capaz de atender a los
+clientes, responder sobre el stock de las frutas y verduras, y venderlas, claro.
+Cómo es un robot, su repertorio de trabajo es límitado, y solo responde a cosas
+muy puntuales, y realizar preguntas que están fuera del repertorio del robot
+solo logra que este no nos responda.
+
+Lo que nos va a interesar en esta analogía son las preguntas sobre el stock. La
+versión inicial del robot solo comprende preguntas simples sobre una fruta o
+verdura, para indicarnos si hay en stock, o no hay en stock. Así, solo podemos
+realizar preguntas de la forma ``\textit{¿hay $X$?}'', donde $X$ es una fruta o
+verdura, por ejemplo, ``\textit{¿hay sandías?}'' o ``\textit{¿hay cebolla?}''.
+
+\wraprimage[0.3]{unidades/3_logica/1_logica/imagenes/sweeper.jpg}
+{Sweeper, un robot que recolecta pimientos morrones.} {Fotografía de
+http://www.sweeper-robot.eu}
+
+Ahora bien, un cierto día queremos preparar una ensalada de frutas, un popular
+postre que, bien preparado, debe llevar al menos tres ingredientes, manzana,
+banana y naranja. No disponemos de los elementos para la preparación en casa,
+por lo que nos aventuramos a la verdulería, a preguntar al robot si tiene stock
+de los ingredientes que necesitamos.
+
+Por supuesto, no podemos preguntar al verdulero robot si tiene o no los
+ingredientes de una ensalada de frutas, pues nada sabe sobre cuestiones
+culinarias. Es decir, si bien nosotros queremos preguntarle al robot
+``\textit{¿hay ingredientes para una ensalada de frutas?}'', no podemos hacerlo,
+y debemos recurrir a preguntas más simples, basadas en lo que el robot entiende.
+Por tanto debemos realizar tres preguntas independientes: ``\textit{¿hay
+manzanas?}'', ``\textit{¿hay bananas?}'' y ``\textit{¿hay naranjas?}''.
+
+El robot, por supuesto, podría responder con ``\textit{si}'' o ``\textit{no}'' a
+cualquiera de esas preguntas, y es nuestro trabajo deducir cuándo se puede
+preparar la ensalada de frutas y cuándo no.
+
+Pensemos en un posible escenario. El robot respondió con ``\textit{si}'' a
+``\textit{¿hay manzanas?}'', con ``\textit{si}'' a ``\textit{¿hay bananas?}'' y
+con ``\textit{no}'' a ``\textit{¿hay naranjas?}''. En este caso, \textbf{no}
+podremos preparar la ensalada de frutas, pues nos faltaría un ingrediente, las
+naranjas. Podemos apreciar que la única respuesta viable a cada pregunta, para
+que podamos elaborar nuestro postre, debe ser ``\textit{si}''.
+
+Si pudieramos interactuar con un robot más avanzado, que entienda preguntas un
+poco más complejas, tal vez preguntaríamos algo del estilo ``\textit{¿hay
+manzanas, bananas y naranjas?}'', es decir, uniríamos las tres preguntas en una
+sola, usando una palabra especial para ``\textbf{conectar}'' esos elementos, el
+``\textit{y}'' (gramaticalmente, la coma entre manzanas y bananas representa lo
+mismo que un ``\textit{y}'').
+
+Pensemos otro ejemplo antes de ir a una definición. Si queremos preparar un
+bizcochuelo, debemos agregar la ralladura de un cítrico noble, como las naranjas
+o los limones. Nuevamente, no podemos ir al verdulero robot y preguntarle si
+tiene los ingredientes para un bizcochuelo, solo podemos preguntar por frutas
+específicas, ``\textit{¿hay limones?}'' y ``\textit{¿hay naranjas?}''.
+
+Analicemos una vez más las respuestas posibles. Si el verdulero nos responde con
+``\textit{si}'' a ambas preguntas, podremos elegir que cítrico preferímos. Si
+responde a una con ``\textit{si}'' y la otra con ``\textit{no}'' tendremos que
+usar el cítrico disponible (ya sea el limón o las naranjas), pero aún podremos
+preparar el bizcochuelo. Solo si ambas respuestas son ``\textit{no}'' es que se
+nos hará imposible preparar el mismo.
+
+En una versión más avanzada del robot preguntaríamos algo como ``\textit{¿hay
+limones o naranjas?}''. Notar que acá la palabra que usamos para conectar los
+elementos es ``\textit{o}'', y no ``\textit{y}''. Estas palabras para conectar
+son lo que llamamos \textbf{conectivas}, y tienen una connotación semántica
+asociada. No es lo mismo preguntar ``\textit{¿hay manzanas y bananas?}'' que
+preguntar ``\textit{¿hay manzanas o bananas?}''. Podemos pensar estas preguntas
+como compuestas de partes más pequeñas, y la respuesta a alla depende de las
+respuestas individuales a cada una de las preguntas que la componen, así como de
+si usamos ``\textit{y}'' o si usamos ``\textit{o}'' para unirlas.
+
+La siguiente tabla muestra en cada fila un escenario de posibles respuestas,
+donde el robot contesta a cada una de las preguntas individuales únicamente, y
+cómo interpretaríamos la pregunta compuesta según la conectiva elegida.
+
+\vspace{0.5cm}
+\centerline{
+    \begin{tabular}{ c | c | c | c }
+          \textbf{¿hay manzanas?}
+        & \textbf{¿hay bananas?} & \textbf{¿hay manzanas y bananas?} &
+        \textbf{¿hay manzanas o bananas?} \\
+        \hline
+        Si & Si & Si & Si \\
+        Si & No & No & Si \\
+        No & Si & No & Si \\
+        No & No & No & No \\
+    \end{tabular}
+}
+
+Así, la \textbf{conectiva} utilzada es importante, porque cambia la semántica de
+la pregunta. Esto es algo que probablemente nos resulte obvio de nuestra vida
+cotidiana, donde usamos las palabras ``\textit{y}'' y ``\textit{o}'' de forma
+habitual, y esperamos una connotación semántica identica (o al menos similar) a
+la arriba mencionada.
+
+Con esta idea en mente estamos listos para dar una definición sobre las
+conectivas en términos de la lógica.
+
+\begin{definition}
+    Una \textbf{conectiva} es un elemento que permite unir una o dos entidades
+    portadoras de valor de verdad, para conformar una entidad más grande, cuyo
+    valor de verdad depende de las entidades constituyentes y de la semántica
+    asociada a la conectiva.
+\end{definition}
+
+En estos sencillos ejemplos, podríamos pensar a nuestras preguntas como las
+unidades portadoras de verdad, aunque veremos en los próximos capítulos a qué
+nos referímos con esto cuando veamos lógicas con sistemas formales específicos.
+Entonces, dicho de otra forma, y en nuestro ejemplo del verdulero robot, una
+conectiva permite unir una o dos preguntas para conformar una pregunta más
+grande.
+
+Pensemos por un momento en las siguientes preguntas:
+\begin{itemize}
+    \item ``\textit{¿hay manzanas y bananas?}''
+    \item ``\textit{¿hay manzanas y también bananas?}''
+    \item ``\textit{¿hay manzanas y además bananas?}''
+\end{itemize}
+
+Se puede apreciar como todas las formas de preguntar refieren a lo mismo. Para
+que la pregunta completa se responda como ``\textit{si}'', esperaríamos que las
+respuestas individuales de ``\textit{¿hay manzanas?}'' y ``\textit{¿hay
+bananas?}'' sean ``\textit{si}''. Los \textbf{lenguajes
+naturales}\index{Lenguaje natural}, como el español o el inglés, suelen ser muy
+ricos y diversos, e incluyen sinónimos y diversas construcciones gramaticales
+que son capaces de expresar la misma idea de distintas formas.
+
+A partir de ahora entonces, cuando tengamos una conectiva, no vamos a optar por
+realizar una única pregunta con la conectiva en el medio (ej. ``\textit{¿hay
+manzanas y bananas?}'') sino que en su lugar vamos a preferir mencionar las
+preguntas que componen a ese elemento como preguntas individuales, de forma de
+dejar más claro la conectiva entre ellas (ej. ``\textit{¿hay manzanas? Y ¿hay
+bananas?}''). En la siguiente sección veremos que la lógica opta por utilizar
+símbolos específicos para cada conectiva, lo que evita las ambiguedades causadas
+por elementos gramaticales.
+
+Pero ¿Por qué decimos que pueden unir una entidad sola? ¿Con qué se une? Bueno
+se une con la connotación semántica de la conectiva en sí misma. Volvamos a la
+verdulería robot y veamos un nuevo ejemplo.
+
+Sofía es una nena muy glotona que disfruta mucho de comer la ensalada de frutas
+que prepara su mamá. Pero su mamá no puede preparar ensalada de frutas todos los
+días, ya que no siempre están disponibles los ingredientes en la verdulería.
+Sofía acaba de cumplir años, y comienza a sospechar de su madre, pensando que
+tal vez le dice que no hay ingredientes para preparar ensalada de frutas, cuando
+en realidad es solo que no tiene ganas de cocinar. Sin embargo, como ahora ya
+tiene edad suficiente para salir a la calle sola, decide ir a la verdulería por
+su cuenta para corroborar que su madre, quien acaba de decirle que no puede
+preparar ensalada de frutas porque no hay manzanas, está diciendo la verdad.
+Sofía se acerca a la verdulería y su primer intento de interacción con el robot
+verdulero consiste en preguntarle ``\textit{¿Es cierto que no hay manzanas?}'',
+respuesta que el robot responde sorpresivamente para los presentes con
+``\textit{si}''.
+
+Se pregunta entonces al lector, ¿Estaba mintiendo la mamá de Sofía? Pensemos
+primero en la pregunta de Sofía y la respuesta del verdulero: ``\textit{¿Es
+cierto que no hay manzanas?}'', con la consiguiente respuesta ``\textit{si}''.
+Ese ``\textit{sí}'' no refiere a ``\textit{¿hay manzanas?}'', sino a si es
+cierto lo que Sofía está diciendo a continuación de ``\textit{es cierto qué}'',
+lo cual es ``\textit{no hay manzanas}''. Si la respuesta del verdulero fue
+``\textit{si}'' quiere decir que es cierto, por lo que efectivamente
+``\textit{no hay manzanas}'', mientras que si hubiera sido ``\textit{no}'',
+sería porque no es cierto que ``\textit{no hay manzanas}'', es decir, que habría
+manzanas.
+
+Si bien parece un trabalenguas, lo que está expresando la pregunta de Sofía es
+una pregunta que está relacionada a ``\textit{¿hay manzanas?}'' pero que es
+inversa a esta. Es decir, si la respuesta a ``\textit{¿hay manzanas?}'' era
+``\textit{si}'', la respuesta a la pregunta de Sofía debería ser
+``\textit{no}'', mientras que si la respuesta a ``\textit{¿hay manzanas?}'' es
+``\textit{no}'', la respuesta a la pregunta de sofía debería ser
+``\textit{si}''.
+
+En este ejemplo también hay una conectiva, la idea de cambiar la respuesta, o lo
+que en general llamamos ``\textit{no}''. Cuando trabajamos con preguntas en
+español, a veces uno tiende a preguntar cosas como ``\textit{¿no hay
+mayonesa?}'', esperando que nos respondan ``\textit{si}'' y nos pasen la
+mayonesa en el caso de que hubiera (por ``\textit{si hay}'' y no por
+``\textit{si, es cierto que no hay}''). En español, así como en muchos otros
+idiomas, es raro usar la idea semántica de ese ``\textit{no}'' en preguntas.
+
+Sin embargo, si pensamos en afirmaciones, decir ``\textit{hay mayonesa}'' y
+decir ``\textit{no hay mayonesa}'' son claramente cosas distintas, siendo una
+afirmación opuesta a la otra, algo sobre lo que ahondaremos en los siguientes
+capítulos. Este es un ejemplo de una conectiva que trabaja sobre una única
+entidad portadora de valor de verdad, cambiando su valor. Veremos más sobre las
+distintas conectivas en la siguiente sección.
+
+El concepto de \textbf{conectiva} es transversal a todas las formas de la
+lógica, ya que modela un elemento fundamental del lenguaje natural, que tiene
+una connotación semántica importante en las oraciones que componemos.
+
+Cómo mencionamos al inicio de esta unidad, la gracia de la lógica consiste en
+poder analizar la forma de los razonamientos y sus elementos constituyentes, por
+lo que no nos interesa cual es la (o las) palabra exacta que se está utilizando
+como conectiva, sino cuál es la semántica que se le está dando a esa palabra.
+Esto permite identificar la conectiva, y por tanto entender mejor el rol de los
+elementos involucrados. Por eso nos interesa ``\textbf{la forma}'', y no el
+contenido.
+
+En esta sección vamos a profundizar y formalizar las conectivas que hemos
+trabajado en los ejemplos en la \autoref{chap:logica:sec:conectivas}. Si bien
+existen otras conectivas, abordaremos las mismas recién en el
+\autoref{chap:logica_proposicional}.
+
+Como parte de esta formalización, dejaremos atrás la idea de ``\textit{si}'' y
+de ``\textit{no}'' como respuestas a nuestras preguntas, para pasar a hablar en
+lenguaje lógico, teniendo entonces ``\textit{verdadero}'' ($\ltruefull$, o
+simplemente $\ltrue$) y ``\textit{falso}'' ($\lfalsefull$, o simplemente
+$\lfalse$) en su lugar.
+
+\subsection{Conjunción}
+\index{Conjuncion@Conjunción}
+\label{chap:logica:subsec:and}
+
+La \textbf{conjunción} es la conectiva que permite unir dos elementos formando
+uno más grande, cuyo valor de verdad es verdadero solo cuando \textbf{ambos
+elementos son también verdaderos}, y falso cuando cualquiera de los elementos
+que lo constituyen es falso. Hemos visto esta conectiva en el ejemplo de la
+ensalada de frutas, en expresiones como ``\textit{¿hay manzanas? Y ¿hay
+bananas?}''.
+
+\wraprimage[0.3]{unidades/3_logica/1_logica/imagenes/venn_logica_1.png}
+{Diagramas de Venn de las operaciones lógicas.} {Elaboración propia.}
+
+La conjunción se asocia en el español a la palabra ``\textit{y}'', pero también
+a otra serie de palabras o frases como: ``\textit{también}'',
+``\textit{además}'', ``\textit{adicionalmente}'', ``\textit{en adición}'',
+``\textit{más}'', ``\textit{incluso}'', ``\textit{inclusive}'',  entre otras
+varias \footnote{ Puede verse una lista más amplia en el
+    \autoref{anex:logica}
+}.
+
+Ya vimos formas de expresar la misma pregunta a nivel semántico con elementos
+gramaticales o sintácticos diferentes en la sección anterior, y mencionamos
+también que a cada conectiva se le asocia un símbolo distinto. El símbolo para
+la conjunción es ``$\land$''. Así, podríamos expresar la pregunta del ejemplo
+como ``\textit{¿hay manzanas? $\land$ ¿hay bananas?}''.
+
+Para entender mejor la conectiva podemos pensar en cualquier par de elementos
+portadores de valor de verdad genéricos, ``$\Phi$'' (phi) y ``$\Psi$'' (psi),
+que son unidos por la conectiva de conjunción, quedando ``$\Phi \land \Psi$''.
+Así, podemos analizar el valor semántico de dicha conjunción de forma genérica,
+analizando el valor de verdad de cada una de las partes que lo constituyen.
+
+\begin{itemize}
+    \item Si $\Phi$ es $\ltruefull$ y $\Psi$ es $\ltruefull$, entonces $\Phi
+        \land \Psi$ es $\ltruefull$
+    \item Si $\Phi$ es $\ltruefull$ y $\Psi$ es $\lfalsefull$, entonces $\Phi
+        \land \Psi$ es $\lfalsefull$
+    \item Si $\Phi$ es $\lfalsefull$ y $\Psi$ es $\ltruefull$, entonces $\Phi
+        \land \Psi$ es $\lfalsefull$
+    \item Si $\Phi$ es $\lfalsefull$ y $\Psi$ es $\lfalsefull$, entonces $\Phi
+        \land \Psi$ es $\lfalsefull$
+\end{itemize}
+
+Esto quiere decir que, si reemplazamos $\Phi$ y $\Psi$ por preguntas cualquiera,
+y las unimos con una conjunción, la semántica asociada será la arriba expuesta,
+independientemente de la pregunta que usemos.
+
+Podemos expresar más cómodamente cada uno de esos casos posibles y los
+resultados de la conjunción en una tabla, en donde hay una columna para cada uno
+de los elementos constituyentes de la conjunción ($\Phi$ y $\Psi$) y una columna
+para el resultado de la conjunción ($\Phi \land \Psi$). En cada fila se analiza
+una situación con valores de verdad distintos para los elementos constituyentes.
+Obtenemos entonces la siguiente tabla:
+
+\centerline{
+    \begin{tabular}{ c | c | c }
+        \textbf{$\Phi$} & \textbf{$\Psi$} & \textbf{$\Phi \land \Psi$}\\
+        \hline
+        $\ltruefull$  & $\ltruefull$  & $\ltruefull$  \\
+        $\ltruefull$  & $\lfalsefull$ & $\lfalsefull$ \\
+        $\lfalsefull$ & $\ltruefull$  & $\lfalsefull$ \\
+        $\lfalsefull$ & $\ltruefull$  & $\lfalsefull$ \\
+    \end{tabular}
+}
+
+Llamamos a esta tabla la \textbf{tabla semántica de la conectiva}\index{Tabla
+semantica@Tabla semántica}, ya que muestra la semántica asociada a la misma.
+Cada conectiva tendrá su propia tabla semántica.
+
+\subsection{Disyunción}
+\index{Disyuncion@Disyunción}
+\label{chap:logica:subsec:or}
+
+Mientras que la conjunción requiere que ambos elementos sean verdaderos, la
+\textbf{disyunción} solo pide que \textbf{al menos alguno lo sea}. La disyunción
+es la idea del ``\textit{o uno, u otro, o ambos}''.
+
+En general asociamos la disyunción con la palabra ``\textit{o}'', como en
+ejemplo del bizcochuelo que trabajamos con anterioridad, ``\textit{¿hay limones?
+O ¿hay naranjas?}''. Sin embargo, acá también pueden haber otras palabras o
+frases del español que pueden ser identificadas como conectivas de disyunción,
+como ``\textit{o también}'', ``\textit{o bien}'', ``\textit{aunque de pronto}''
+o construcciones como ``\textit{tal vez..., tal vez...}'' o ``\textit{puede... o
+puede...}''\footnote{ Nuevamente se puede consultar el \autoref{anex:logica}
+para una lista más amplia. }
+
+En este caso el símbolo que se utiliza es $\lor$ \footnote{ Notar que es el
+    mismo símbolo de la conjunción, pero invertido, lo cual a veces trae
+    confusión. Se recomienda mantener referencia de la simbología a mano hasta
+    memorizarla. Puede ver la simbología en el \autoref{anex:logica}. }
+
+La tabla semántica para la conectiva, con entidades genéricas, quedaría de la
+siguiente forma:
+
+\centerline{
+    \begin{tabular}{ c | c | c }
+        \textbf{$\Phi$} & \textbf{$\Psi$} & \textbf{$\Phi \lor \Psi$}\\
+        \hline
+        $\ltruefull$  & $\ltruefull$  & $\ltruefull$  \\
+        $\ltruefull$  & $\lfalsefull$ & $\ltruefull$  \\
+        $\lfalsefull$ & $\ltruefull$  & $\ltruefull$  \\
+        $\lfalsefull$ & $\ltruefull$  & $\lfalsefull$ \\
+    \end{tabular}
+}
+
+\subsection{Negación}
+\index{Negacion@Negación}
+\label{chap:logica:subsec:not}
+
+La conjunción y la disyunción son conectivas \textbf{binarias}\index{Conectiva
+binaria}, es decir, unen dos elementos. Por su lado, la \textbf{negación} es una
+conectiva \textbf{unaria}\index{Conectiva unaria}, es decir que trabaja sobre un
+único elemento.
+
+La \textbf{negación} es la idea de ``\textit{no}'', en el lenguaje natural,
+aunque se pueden usar otras frases como ``\textit{no es cierto que}'',
+``\textit{es falso que}'', entre otras.
+
+El símbolo es $\lnot$ y su semántica es la de \textbf{cambiar el valor de verdad
+de la entidad sobre la que opera}. Ya vimos el ejemplo de la pregunta de Sofía
+al verdulero robot, la que podemos expresar entonces como ``\textit{$\lnot$ ¿hay
+manzanas?}''.
+
+La tabla de su semántica general es la siguiente:
+
+\centerline{
+    \begin{tabular}{ c | c }
+        \textbf{$\Phi$} & \textbf{$\lnot \Phi$}\\
+        \hline
+        $\ltruefull$  & $\lfalsefull$ \\
+        $\lfalsefull$ & $\ltruefull$  \\
+    \end{tabular}
+}
+
+Estas tres conectivas son las más simples que podemos encontrar, y las
+utilizamos de forma cotidiana en el lenguaje natural, pero como ya mencionamos,
+no son las únicas. Sin embargo, debemos primero acostumbrarnos a trabajar con
+conectivas y valores de verdad antes de poder ver conectivas más complejas.
+
+\section{Utilidad de la lógica en la informática}
+\label{chap:logica:sec:utilidad}
+
+Cabe preguntarse después de entender el objeto de estudio y sus elementos básicos, cuál es el punto de estudiar esta ciencia en las disciplinas informáticas en general.
+
+
+\section{La lógica como formuladora de preguntas}
+\label{chap:logica:subsec:formuladora_preguntas}
+
+Una caracteristica interesante que podemos apreciar entonces es la capacidad que
+nos brindan las conectivas para pensar preguntas complejas en términos de otras
+preguntas más simples. Podemos decir por ejemplo que la pregunta ``\textit{¿hay
+para preparar ensalada de fruta?}'' es lo mismo que preguntar ``\textit{¿hay
+manzanas? $\land$ ¿hay bananas? $\land$ ¿hay naranjas?}''. Lo mismo vale para la
+pregunta ``\textit{¿hay para preparar bizcochuelo?}'' que queda expresada como
+``\textit{¿hay limones? $\lor$ ¿hay naranjas?}''.
+
+Las computadoras, al igual que nuestro verdulero robot, tienen un repertorio
+limitado en cuánto a lo que son capaces de hacer y responder. De hecho, como ya
+vimos, solo hacen cuentas, y una ``respuesta'' de la computadora, no es más que
+electricidad (o ausencia de ella) en un cable especifico. Incluso aplicando el
+concepto de caja negra, y subiendo varios niveles en la abstracción de las
+ciencias de la computación, las respuestas posibles de una computadora son
+limitadas.
+
+Así, esta caracteristica de la lógica es de especial relevancia en las ciencias
+de la computación, en diversas área, aunque vamos a centrarnos en este caso en
+el área de la programación.
+
+Pensemos en una caracteristica que tienen hoy muchos teléfonos celulares
+notebooks o computadoras de escritorio, cambiar el esquema de colores del equipo
+cuando se hace de noche, el llamado ``modo oscuro'', que se activa de forma
+automática.
+
+Para poder realizar un programa que active automaticamente el modo oscuro, un
+programador debería contar con que la computadora es capaz de responder una
+simple pregunta, ``\textit{¿es de noche?}''. Pero las computadoras en general,
+no incluyen circuitería específica para poder responder una pregunta tan
+abstracta. Pensemos además, que esa pregunta, se responde no solo diferente en
+diferentes horas del día, sino en diferentes días y regiones, por lo que no es
+posible realizar una solución en hardware para algo tan complejo.
+
+De esta forma, un programador debe encontrar algún conjunto de preguntas que la
+computadora sepa responder, y que le sirvan para responder lo que verdaderamente
+le interesa, saber si ``\textit{¿es de noche?}''. Bien, las computadoras suelen
+incorporar un reloj, por lo que pueden decir la hora del día (asumiendo que la
+hora esté configurada adecuadamente). Además hoy en día es normal contar con
+conexión a internet, y los servicios de sistemas meteorológicos nacionales
+suelen publicar en diversos lugares la hora del ocaso. Si puedieramos obtener
+ambos datos, saber si es o no de noche implica simplemente comparar la hora del
+ocaso con la hora del equipo( si el equipo tiene una hora posterios, es de
+noche, sino, aún es de día).
+
+Este ejemplo es tal vez un poco dificil de entender, pues además de preguntas
+que se responden con verdadero o falso hay también otros elementos involucrados,
+como fechas y comparaciones, pero es un ejemplo real que busca simplemente que
+el lector se haga una idea de cómo los programadores deben buscar ``reformular''
+sus preguntas en términos de otros elementos disponibles en el equipo.
+
+En la Unidad \ref{unit:programacion}, dedicada a programación, veremos como esta
+capacidad de reformular preguntas se vuelve sumamente útil para resolver algunos
+problemas computacionales.
+
+\section{Precedencia de conectivas}
+\label{chap:logica:sec:precedencia}
+
+Vimos cómo se pueden unir dos preguntas con conectivas de conjunción y
+disyunción, y como se le puede cambiar el valor de verdad mediante la negación.
+También vimos tablas para entender la semántica de dichas conectivas en casos
+genéricos, y cómo podemos tener preguntas más complejas como ``\textit{¿hay
+manzanas? $\land$ ¿hay bananas? $\land$ ¿hay naranjas?}'', que involucran más de
+dos preguntas pequeñas.
+
+Vamos a aventurarnos a continuación en comprender como \textbf{operan} las
+conectivas lógicas en preguntas complejas, donde hay múltiples conectivas de
+distinto tipo, para, ya en la \autoref{chap:logica:sec:tablas_de_verdad} poder
+entender la forma de operar con estos elementos. Para esto, vamos a llamar
+\textbf{elementos base} a cada pregunta símple, es decir, las preguntas que no
+tienen conectivas (Del estilo de las que el verdulero robot sabría responder) y
+\textbf{expresión} a una pregunta compleja, formada por uno o varios elementos
+base unidos con conectivas.
+
+Y es que en primer lugar hay que entender que, para el analisis de la lógica en
+términos formales, las conectivas lógicas operan de forma similar a las
+operaciones matemáticas. Por ejemplo, la suma es también una operación binaria
+entre elementos, al igual que la conjunción, con la diferencia de que esos
+elementos son números, en lugar de elementos portadores de valor de verdad.
+
+Veamos un caso concreto para entender como operar en situaciones con múltiples
+conectivas. En matemáticas estamos acostumbrados a trabajar con múltiples
+operaciones en una misma expresión, y tenemos convenciones para trabajar con las
+mismas para determinar de que forma llegar al resultado. Por ejemplo, podemos
+tener una cuenta expresada en la forma ``$((2+4) \times ((7+3)^2))$''. Si bien
+la expresion tiene muchos elementos y operadores entre ellos, los
+\textbf{paréntesis} ayudan a desambiguar el orden en el que debemos resolver
+cada operación. Sin embargo, no solemos escribir absolutamente todos los
+paréntesis. Por ejemplo, los más externos, nunca los escribimos, y tampoco el de
+la potenciación. Más aún, pensemos en la expresión ``$7 \times 5 + 4 \times 6$''
+y pensemos en la forma de resolverla. La multiplicación asocia más fuerte que la
+suma, debiendo resolverse primero (lo que llamamos coloquialmente ``separar en
+términos''), por lo que incluso sin paréntesis involucrados, existe un orden en
+el que las operaciones deben realizarse. Por último, en el caso de una expresión
+como ``$2 + 3 + 4$'', existe un orden implicito de operación, de izquierda a
+derecha, por lo que en realidad es lo mismo que expresar ``$(2 + 3) + 4$'', y la
+forma de operar involucra solucionar primero ``$(2 + 3)$'', para luego, al
+resultado, sumarle ``$4$''.
+
+En lógica ocurren cosas muy similares. Si queremos entender el valor de verdad
+de una pregunta con varias partes, como ``\textit{¿hay manzanas? $\land$ ¿hay
+bananas? $\land$ ¿hay naranjas?}'', tenemos que comprender cómo se asocian esos
+elementos base, para interpretar las conectivas en el orden correcto, y obtener
+un valor de verdad al final de las mismas que sea adecuado. El orden en el que
+realizamos las operaciones se conoce como \textbf{precedencia}.
+
+\begin{definition}\index{precedencia} La \textbf{precedencia} es el orden en el
+    que se deben resolver los diversos operadores de una fórmula determinada,
+    debiendo respetarla para una resolución adecuada.
+\end{definition}
+
+Por un lado, y al igual que en matemáticas, al momento de formalizar, se pueden
+utilizar \textbf{paréntesis} para indicar de forma explicita la precedencia.
+Así, decir ``\textit{(¿hay manzanas? $\land$ ¿hay naranajas?) $\lor$ ¿hay
+limones?}'' no es lo mismo que decir ``\textit{¿hay manzanas? $\land$ (¿hay
+naranajas? $\lor$  ¿hay limones?)}''. En cualquier caso, lo que está dentro de
+los paréntesis tiene precedencia por lo que está fuera, por lo que primero
+debería resolverse lo que está dentro. La semántica de cada una de esas
+expresiones es por tanto distinta\footnote{ Notar que no existe una propiedad
+asociativa entre conectivas distintas, aunque si existen para algunas
+conectivas. Veremos propiedades de algunas conectivas en el
+\autoref{chap:logica_proposicional}. }.
+
+Podemos usar paréntesis para desambiguar la semántica de una expresión que
+involucra múltiples conectivas, pero la gran cantidad de paréntesis puede
+volverse confusa rápidamente. Por ello existen operaciones que tienen
+precedencia sobre otra (también se dice que tienen prioridad o más jerarquía).
+Esto es algo a lo que también estamos acostumbrados de las matemáticas, donde la
+expresión $2 + 3 \times 5$ debe ser resuelta primero por la multiplicación, y
+luego la suma, ya que la multiplicación tiene mayor precedencia.
+
+En la lógica la precedencia es la siguiente:
+\begin{enumerate}
+    \item Negación
+    \item Conjunción y Disyunción
+\end{enumerate}
+
+Es decir, si tenemos una expresión como ``\textit{¿hay manzanas? $\lor$ ($\lnot$
+¿hay naranajas? $\land$ ¿hay limones?)}'', ya que no hay paréntesis, la forma en
+que debe interpretarse es: primero la negación, que como es un operador unario,
+asociará un único elemento; luego como los elementos tienen igual precedencia,
+leeremos de izquierda a derecha, salvo que haya paréntesis, como es este caso.
+Entonces, la interpretación correcta es  ``\textit{¿hay manzanas? $\lor$
+(($\lnot$ ¿hay naranajas?) $\land$ ¿hay limones?)}'' y no ``\textit{¿hay
+manzanas? $\lor$ ($\lnot$ (¿hay naranajas? $\land$ ¿hay limones?))}''.
+
+El orden de precedencia cobrará especial importancia cuando contemos con un
+sistema formal subyacente más elaborado y empecemos a formalizar todos los
+elementos que componen a nuestras expresiones, así como cuando deseemos realizar
+pruebas, comprender la validez de los razonamientos, etc. Por ahora, esta
+explicación debería ser suficiente para lo que nos convoca en este capítulo. Una
+versión completa con el resto de las conectivas existentes se presentará en el
+\autoref{anex:logica}.
+
+\section{Analisis de expresiones}
+\index{Analisis de expresiones}
+\label{chap:logica:sec:analisis_expresiones}
+
+En la sección anterior vimos que podemos tener múltiples preguntas unidas con
+varias conectivas, como en el caso de ``\textit{¿hay manzanas? $\lor$ $\lnot$
+¿hay naranajas? $\land$ ¿hay limones?}''. También, que las operaciones de las
+conectivas son unarias o binarias, por lo que hay un orden en el que deben
+realizarse las mismas al momento de interpretar las expresiones completas de
+forma semántica.
+
+Pero como hacemos entonces poder saber el valor de verdad que tiene una
+expresión compuesta de varias preguntas y conectivas. Es decir, ante una serie
+de respuestas concretas a las preguntas que componen una expresión, por ejemplo,
+si sabemos que la respuesta a ``\textit{¿hay manzanas?}'' es ``$\ltruefull$'', a
+``\textit{¿hay naranajas?}'' es ``$\lfalsefull$'' y a ``\textit{¿hay limones?}''
+es ``$\lfalsefull$'', ¿Cuál es el valor de verdad de la expresión? ¿Cómo llego a
+dicho valor? Lo que necesitamos es una forma de``calcular'' dicho valor.
+
+En primer lugar debemos comprender otro concepto clave de la lógica, la idea de
+\textbf{valuación}, de la que veremos primero su definición.
+
+\begin{definition}\index{Valuación@Valuación} Una \textbf{valuación} es la
+    asignación de un valor de verdad concreto a cada elemento base portador de
+    verdad que participa en una expresión concreta.
+\end{definition}
+
+Un ejemplo de valuación sería decir que ``\textit{¿hay manzanas?}'' es
+``$\ltruefull$'', ``\textit{¿hay naranajas?} '' es ``$\lfalsefull$'' y
+``\textit{¿hay limones?}'' es ``$\lfalsefull$''. Por otro lado, si
+``\textit{¿hay manzanas?}'' es ``$\lfalsefull$'', ``\textit{¿hay naranajas?}''
+es ``$\ltruefull$'' y ``\textit{¿hay limones?}'' es ``$\lfalsefull$'' entonces
+tenemos otra valuación, diferente a la primera.
+
+Es decir, una valuación consiste en asignar valores de verdad concretos a cada
+una de los elementos que componen la expresión a evaluar. La cantidad de
+valuaciones posibles de una expresión está dada por la cantidad de elementos
+base en la misma, es decir, la cantidad de preguntas elementales a responder.
+
+Si por ejemplo, hay una única pregunta, entonces tendremos solamente dos
+valuaciones posibles (o bien le asignamos verdadero o bien falso a dicha
+pregunta). Si tenemos dos preguntas, pasaremos a tener cuatro valuaciones
+posibles, y si tenemos tres preguntas, serán ocho. Como regla general podemos
+decir entonces que:
+
+\begin{corollary}
+    $\text{cantidad de valuaciones diferentes} = 2^\text{cantidad de elementos
+    base}$
+\end{corollary}
+
+Así, si deseamos conocer el valor de la expresión para una valuación concreta,
+se puede realizar un analisis semántico mediante resolución operacional, paso a
+paso para cada conectiva. Sin embargo, no es la única forma de analizar una
+expresión compleja, ya que en ocaciones queremos poder resolver la expresión
+para todas las valuaciones posibles al mismo tiempo, para lo cual necesitaremos
+una herramienta llamada tabla de verdad.
+
+\subsection{Análisis mediante semántica}
+\index{Análisis mediante semántica}
+\label{chap:logica:subsec:analisis_semantico}
+
+Si sabemos los valores concretos de los elementos base, es decir, \textbf{si
+contamos con una valuación}, podemos analizar la expresión completa
+``\textbf{resolviendo}'' cada una de las conectivas. Para ello, nos valdremos de
+las tablas semánticas de cada una de las conectivas y de la descomposición de la
+expresión en partes.
+
+Veamos el ejemplo de la expresión antes mencionada, ``\textit{¿hay manzanas?
+$\lor$ $\lnot$ ¿hay naranajas? $\land$ ¿hay limones?}''. El primer paso es
+determinar la precedencia, para saber el orden en el que debemos evaluar los
+distintos elementos. Ya hemos realizado este paso en la sección anterior, y
+determinamos la precedencia como ``\textit{(¿hay manzanas? $\lor$ (($\lnot$ ¿hay
+naranajas?) $\land$ ¿hay limones?))}''. Con esto en mano, podemos resolver desde
+los paréntesis más internos a los más externos, reemplazando para cada pregunta
+por el valor de verdad correspondiente para la valuación que se está analizando.
+En este caso iremos por la valuación donde ``\textit{¿hay manzanas?}'' es
+``$\ltruefull$'', ``\textit{¿hay naranajas?} '' es ``$\lfalsefull$'' y
+``\textit{¿hay limones?}'' es ``$\lfalsefull$''.
+
+\begin{example}
+    \sindent Valuación a analizar:
+
+    \dindent ``\textit{¿hay manzanas?}'' es ``$\ltruefull$''
+
+    \dindent ``\textit{¿hay naranajas?} '' es ``$\lfalsefull$''
+
+    \dindent ``\textit{¿hay limones?}'' es ``$\lfalsefull$''
+
+    ~
+
+    \sindent Expresión a analizar:
+
+    \dindent ``\textit{¿hay manzanas? $\lor$ $\lnot$ ¿hay naranajas? $\land$
+    ¿hay limones?}''
+
+    ~
+
+    \sindent Expresión con precedencia analizada:
+
+    \dindent ``\textit{(¿hay manzanas? $\lor$ (($\lnot$ ¿hay naranajas?) $\land$
+    ¿hay limones?))}''
+
+    ~
+
+    \sindent Resolución paso a paso:
+
+    \dindent ``\textit{(¿hay manzanas? $\lor$ (($\lnot$ ¿hay naranajas?) $\land$
+    ¿hay limones?))}''
+
+    \dindent \qquad {\scriptsize $\rightarrow$ Se reemplaza \textit{¿hay
+    naranjas?} por el valor que tiene en la valuación, $\lfalsefull$.}
+
+    \dindent ``\textit{(¿hay manzanas? $\lor$ (($\lnot$ $\lfalsefull$) $\land$
+    ¿hay limones?))}''
+
+    \dindent \qquad {\scriptsize $\rightarrow$ Se resuelve el $\lnot$ según su
+    tabla semántica, para $\lfalsefull$ la tabla indica que la negación debe ser
+    $\ltruefull$.}
+
+    \dindent ``\textit{(¿hay manzanas? $\lor$ ($\ltruefull$ $\land$ ¿hay
+    limones?))}''
+
+    \dindent \qquad {\scriptsize $\rightarrow$ Se reemplaza \textit{¿hay
+    limones?} por el valor que tiene en la valuación, $\lfalsefull$.}
+
+    \dindent ``\textit{(¿hay manzanas? $\lor$ ($\ltruefull$ $\land$
+    $\lfalsefull$))}''
+
+    \dindent \qquad {\scriptsize $\rightarrow$ Se resuelve el $\land$ según su
+    tabla semántica, para el caso donde el primer elemento es $\ltruefull$ y el
+    segundo}
+
+    \dindent \qquad {\scriptsize es $\lfalsefull$ la tabla indica que la
+    conjunción debe ser $\lfalsefull$.}
+
+    \dindent ``\textit{(¿hay manzanas? $\lor$ $\lfalsefull$)}''
+
+    \dindent \qquad {\scriptsize $\rightarrow$ Se reemplaza \textit{¿hay
+    manzana?} por el valor que tiene en la valuación, $\ltruefull$.}
+
+    \dindent ``\textit{($\ltruefull$ $\lor$ $\lfalsefull$)}''
+
+    \dindent \qquad {\scriptsize $\rightarrow$ Se resuelve el $\lor$ según su
+    tabla semántica, para el caso donde el primer elemento es $\ltruefull$ y el
+    segundo}
+
+    \dindent \qquad {\scriptsize es $\lfalsefull$ la tabla indica que la
+    disyunción debe ser $\ltruefull$.}
+
+    \dindent ``\textit{$\ltruefull$}''
+\end{example}
+
+Como se puede apreciar, la forma de resolver es muy similar a lo que uno
+realizaría en matemáticas, con la salvedad de que aquí no hay números, sino
+valores de verdad. Conocer las operaciones, y el resultado que se obtiene de
+cada una ante ciertos valores de verdad, es importante para poder resolver cada
+paso, y se puede recurrir a las tablas semánticas de cada conectiva para ello.
+
+Sin embargo, esta metodología tiene la limitación de solo permitir determinar el
+valor de verdad final para una única valuación. Si se desea saber el resultado
+para otra valuación, se deberá volver a realizar todos los pasos, reemplazando
+ahora cada pregunta por los valores de la nueva valuación.
+
+Recordemos que la cantidad de valuaciones es de dos, elevado a la cantidad de
+elementos base de la expresión. Para expresiones con dos elementos base, ya
+serán cuatro veces las que deberemos realizar el análisis, algo poco viable.
+
+Sin embargo, es ideal para cuando queremos determinar el valor de verdad de la
+expresión sabiendo exactamente los valores de los elementos que la componen. Por
+ejemplo, si alguien me respondió las preguntas.
+
+Si lo que se desea es poder analizar todas las posibles valuaciones al mismo
+tiempo, se debe recurrir a otra herramienta, las tablas de verdad.
+
+\subsection{Tablas de verdad}
+\label{chap:logica:subsec:tablas_de_verdad}
+
+Una \textbf{tabla de verdad} permite visualizar y analizar todas las posibles
+valuaciones, y como estas influyen en la expresión final y en cada una de sus
+partes. Consiste en una tabla de doble entrada, en donde cada columna representa
+un elemento portador de valor de verdad (un elemento base o una expresión
+compuesta por conectivas) y cada fila una posible valuación.
+
+La tabla de verdad es ideal para poder analizar expresiones donde hay varios
+elementos base, pues permite una más rápida resolución para cada valuación que
+la resolución paso a paso, pero también es útil para casos en donde no sabemos
+cuál es la valuación que nos interesa. Por ejemplo, puede que nos interese saber
+cuales son las valuaciones que hacen la expresión verdadera, y cuales no.
+
+Aún así, necesitaremos tantas filas como valuaciones posibles, lo cual hace que
+si tenemos muchas preguntas, las tablas de verdad dejen de ser una gran
+herramienta para el análisis, pues ante 5 preguntas ya habrá que analizar 32
+valuaciones diferentes, es decir, terminaremos con una tabla de 32 filas.
+Existen otras formas de análisis que no veremos en esta sección.
+
+Para ver cómo armar la tabla de verdad, resolveremos nuevamente el ejemplo de la
+expresión ``\textit{¿hay manzanas? $\lor$ $\lnot$ ¿hay naranajas? $\land$ ¿hay
+limones?}''. Ya sabemos que esta expresión contiene tres elementos base, y serán
+por tanto ocho las valuaciones posibles ($2^3$). Para comenzar a armar nuestra
+tabla deberemos arrancar entonces por tres columnas, una para cada pregunta
+elemental, y 8 filas, que de momento estarán vacías.
+
+\centerline{
+\begin{tabular}{ c | c | c }
+    \textit{¿hay manzanas?} & \textit{¿hay naranjas?} & \textit{¿hay limones?}
+    \\
+    \hline
+    && \\
+    && \\
+    && \\
+    && \\
+    && \\
+    && \\
+    && \\
+    &&
+\end{tabular}
+}
+
+Ahora hay que completar esta parte de la tabla y asegurarnos de que contamos con
+todas las valuaciones posibles, así como que no estamos duplicando ninguna
+valuación. Para ello podemos completarlo de forma mecánica siguiendo los pasos
+enunciados a continuación: Comenzando por la primer columna, completamos la
+mitad de las filas con $\ltruefull$ y la otra mitad con $\lfalsefull$, quedando
+la tabla como la siguiente.
+
+\centerline{
+\begin{tabular}{ c | c | c }
+    \textit{¿hay manzanas?} & \textit{¿hay naranjas?} & \textit{¿hay limones?}
+    \\
+    \hline
+    $\ltrue$  && \\
+    $\ltrue$  && \\
+    $\ltrue$  && \\
+    $\ltrue$  && \\
+    $\lfalse$ && \\
+    $\lfalse$ && \\
+    $\lfalse$ && \\
+    $\lfalse$ &&
+\end{tabular}
+}
+
+Pasamos a la segunda columna y hacemos lo mismo, pero esta vez completamos un
+cuarto de los casos con $\ltruefull$, otro cuarto con $\lfalsefull$, y luego
+repetimos un cuarto más con $\ltruefull$ y otro cuarto con $\lfalsefull$,
+quedando así.
+
+\centerline{
+\begin{tabular}{ c | c | c }
+    \textit{¿hay manzanas?} & \textit{¿hay naranjas?} & \textit{¿hay limones?}
+    \\
+    \hline
+    $\ltrue$  & $\ltrue$  & \\
+    $\ltrue$  & $\ltrue$  & \\
+    $\ltrue$  & $\lfalse$ & \\
+    $\ltrue$  & $\lfalse$ & \\
+    $\lfalse$ & $\ltrue$  & \\
+    $\lfalse$ & $\ltrue$  & \\
+    $\lfalse$ & $\lfalse$ & \\
+    $\lfalse$ & $\lfalse$ &
+\end{tabular}
+}
+
+Volvemos a repetir el proceso, pero ahora tomando de a un octavo, con el primer
+octavo como $\ltruefull$, el segundo como $\lfalsefull$ y repitiendo. La tabla
+quedará así.
+
+\centerline{
+\begin{tabular}{ c | c | c }
+    \textit{¿hay manzanas?} & \textit{¿hay naranjas?} & \textit{¿hay limones?}
+    \\
+    \hline
+    $\ltrue$  & $\ltrue$  & $\ltrue$  \\
+    $\ltrue$  & $\ltrue$  & $\lfalse$ \\
+    $\ltrue$  & $\lfalse$ & $\ltrue$  \\
+    $\ltrue$  & $\lfalse$ & $\lfalse$ \\
+    $\lfalse$ & $\ltrue$  & $\ltrue$  \\
+    $\lfalse$ & $\ltrue$  & $\lfalse$ \\
+    $\lfalse$ & $\lfalse$ & $\ltrue$  \\
+    $\lfalse$ & $\lfalse$ & $\lfalse$
+\end{tabular}
+}
+
+De esta forma obtenemos todas las posibles valuaciones (notar como no hay dos
+filas que se repitan en la tabla). Esta dinámica puede aplicarse
+independientemente de la tabla y la cantidad de filas que tenga. Por ejemplo, si
+hubiera solo dos preguntas, habrá solo 4 filas y 2 columnas, la primera se
+completará tomando mitad y mitad, y la segunda tomando de a cuartos, para
+completar toda la tabla. Si fueran cuatro preguntas, tendríamos 16 filas, y
+habría un cuarto paso, tomando de a dieciseisavos.
+
+Ahora estamos listos para resolver las conectivas de la tabla. El paso siguiente
+es ir agregando columnas, una para cada operación, en el orden en que deben
+resolverse según la precedencia. Ya hemos analizado la precedencia de la
+expresión, y sabemos que la primer operación a resolver en este ejemplo es
+``\textit{$\lnot$ ¿hay naranajas?}''. Por esto agregamos dicha columna a la
+tabla.
+
+\centerline{\small
+\begin{tabular}{ c | c | c | c }
+    \textit{¿hay manzanas?} & \textit{¿hay naranjas?} & \textit{¿hay limones?} &
+    \textit{$\lnot$ ¿hay naranajas?}\\
+    \hline
+    $\ltrue$  & $\ltrue$  & $\ltrue$  & \\
+    $\ltrue$  & $\ltrue$  & $\lfalse$ & \\
+    $\ltrue$  & $\lfalse$ & $\ltrue$  & \\
+    $\ltrue$  & $\lfalse$ & $\lfalse$ & \\
+    $\lfalse$ & $\ltrue$  & $\ltrue$  & \\
+    $\lfalse$ & $\ltrue$  & $\lfalse$ & \\
+    $\lfalse$ & $\lfalse$ & $\ltrue$  & \\
+    $\lfalse$ & $\lfalse$ & $\lfalse$
+\end{tabular}
+}
+
+Para completar la columna ``\textit{$\lnot$ ¿hay naranajas?}'' debemos mirar la
+o las preguntas involucradas en dicha operación. En este caso, la única parte
+que aparece es ``\textit{¿hay naranajas?}'', es decir, la que figura en la
+segunda columna de nuestra tabla. Así, deberemos mirar dicha columna y aplicar
+para cada fila la semántica de la conectiva de negación.
+
+La negación nos indica en su tabla semántica genérica que, para cualquier cosa
+que negemos, si el valor era verdadero, debe pasar a ser falso, y si era falso,
+debe pasar a ser verdadero. Luego, para completar la columna fila a fila,
+debemos ir mirando el valor de la segunda columna para dicha fila, y aplicando
+el cambio indicado por la conectiva en su tabla semántica. Por ejemplo, en la
+primer fila el valor en la segunda columna es $\ltruefull$ por lo que deberemos
+completar en la cuarta columna con $\lfalsefull$. Si seguimos el proceso para
+cada fila de la tabla tedremos\footnote{Marcamos en la tabla con color celeste
+la columna que acabamos de completar, y en amarilla la columna que miramos para
+poder hacerlo. El color solo aporta mayor claridad al paso que acabamos de
+mencionar, pero no es significativo en el proceso de resolución.}.
+
+\centerline{\small
+\begin{tabular}{ c | c | c | c }
+    \textit{¿hay manzanas?} & \textit{¿hay naranjas?} & \textit{¿hay limones?} &
+    \textit{$\lnot$ ¿hay naranajas?}\\
+    \hline
+    $\ltrue$  & \cellcolor{yellow}$\ltrue$  & $\ltrue$  &
+    \cellcolor{cyan}$\lfalse$ \\
+    $\ltrue$  & \cellcolor{yellow}$\ltrue$  & $\lfalse$ &
+    \cellcolor{cyan}$\lfalse$ \\
+    $\ltrue$  & \cellcolor{yellow}$\lfalse$ & $\ltrue$  &
+    \cellcolor{cyan}$\ltrue$  \\
+    $\ltrue$  & \cellcolor{yellow}$\lfalse$ & $\lfalse$ &
+    \cellcolor{cyan}$\ltrue$  \\
+    $\lfalse$ & \cellcolor{yellow}$\ltrue$  & $\ltrue$  &
+    \cellcolor{cyan}$\lfalse$ \\
+    $\lfalse$ & \cellcolor{yellow}$\ltrue$  & $\lfalse$ &
+    \cellcolor{cyan}$\lfalse$ \\
+    $\lfalse$ & \cellcolor{yellow}$\lfalse$ & $\ltrue$  &
+    \cellcolor{cyan}$\ltrue$  \\
+    $\lfalse$ & \cellcolor{yellow}$\lfalse$ & $\lfalse$ &
+    \cellcolor{cyan}$\ltrue$
+\end{tabular}
+}
+
+Continuamos con la operación ``\textit{$\lnot$ ¿hay naranajas? $\land$ ¿hay
+limones?}''. En este caso, las columnas involucradas son la cuarta y la tercera.
+Es decir, el resultado de ``\textit{$\lnot$ ¿hay naranajas?}'' se usa para
+calcular ``\textit{$\lnot$ ¿hay naranajas? $\land$ ¿hay limones?}'. Nuevamente
+entonces agregamos una columna, y seguimos la semántica, en este caso, de la
+conjunción, que nos dice que para cada fila, debemos completar con verdadero
+solo cuando ambas columnas involucradas son verdaderas, y con falso en cualquier
+otro caso. Si seguimos esto obtendremos:
+
+\centerline{\scriptsize
+\begin{tabular}{ c | c | c | c | c }
+    \textit{¿hay manzanas?} & \textit{¿hay naranjas?} & \textit{¿hay limones?} &
+    \textit{$\lnot$ ¿hay naranajas?} & \textit{$\lnot$ ¿hay naranajas? $\land$
+    ¿hay limones?}\\
+    \hline
+    $\ltrue$  & $\ltrue$  & \cellcolor{yellow}$\ltrue$ &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\lfalse$ \\
+    $\ltrue$  & $\ltrue$  & \cellcolor{yellow}$\lfalse$ &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\lfalse$ \\
+    $\ltrue$  & $\lfalse$ & \cellcolor{yellow}$\ltrue$  &
+    \cellcolor{yellow}$\ltrue$  & \cellcolor{cyan}$\ltrue$ \\
+    $\ltrue$  & $\lfalse$ & \cellcolor{yellow}$\lfalse$ &
+    \cellcolor{yellow}$\ltrue$  & \cellcolor{cyan}$\lfalse$ \\
+    $\lfalse$ & $\ltrue$  & \cellcolor{yellow}$\ltrue$  &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\lfalse$ \\
+    $\lfalse$ & $\ltrue$  & \cellcolor{yellow}$\lfalse$ &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\lfalse$ \\
+    $\lfalse$ & $\lfalse$ & \cellcolor{yellow}$\ltrue$  &
+    \cellcolor{yellow}$\ltrue$  & \cellcolor{cyan}$\ltrue$ \\
+    $\lfalse$ & $\lfalse$ & \cellcolor{yellow}$\lfalse$ &
+    \cellcolor{yellow}$\ltrue$  & \cellcolor{cyan}$\lfalse$
+\end{tabular}
+}
+
+La última operación de nuestra expresión es ``\textit{¿hay manzanas? $\lor$
+$\lnot$ ¿hay naranajas? $\land$ ¿hay limones?}'', es decir, la expresión
+completa, e implica resolver la disyunción entre la primera columna, y la quinta
+columna, que acabamos de completar. Semánticamente la disyunción nos dice en su
+tabla que debemos completar con verdadero cualquier fila que, en alguna de las
+columnas involucradas, tenga por valor verdadero, y falso solamente cuando en
+ambos casos es falso.
+
+\centerline{\scriptsize
+\begin{tabular}{ c | c | c | c | c | c }
+    \tiny \textit{¿hay manzanas?} & \tiny \textit{¿hay naranjas?} & \tiny
+    \textit{¿hay limones?} & \tiny \textit{$\lnot$ ¿hay naranajas?} & \tiny
+    \textit{¿hay manzanas? $\land$ $\lnot$ ¿hay naranajas?} & \tiny \textit{¿hay
+    manzanas? $\lor$ $\lnot$ ¿hay naranajas? $\land$ ¿hay limones?}\\
+    \hline
+    \cellcolor{yellow}$\ltrue$  & $\ltrue$  & $\ltrue$  & $\lfalse$ &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\ltrue$  \\
+    \cellcolor{yellow}$\ltrue$  & $\ltrue$  & $\lfalse$ & $\lfalse$ &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\ltrue$  \\
+    \cellcolor{yellow}$\ltrue$  & $\lfalse$ & $\ltrue$  & $\ltrue$  &
+    \cellcolor{yellow}$\ltrue$  & \cellcolor{cyan}$\ltrue$  \\
+    \cellcolor{yellow}$\ltrue$  & $\lfalse$ & $\lfalse$ & $\ltrue$  &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\ltrue$  \\
+    \cellcolor{yellow}$\lfalse$ & $\ltrue$  & $\ltrue$  & $\lfalse$ &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\lfalse$ \\
+    \cellcolor{yellow}$\lfalse$ & $\ltrue$  & $\lfalse$ & $\lfalse$ &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\lfalse$ \\
+    \cellcolor{yellow}$\lfalse$ & $\lfalse$ & $\ltrue$  & $\ltrue$  &
+    \cellcolor{yellow}$\ltrue$  & \cellcolor{cyan}$\ltrue$  \\
+    \cellcolor{yellow}$\lfalse$ & $\lfalse$ & $\lfalse$ & $\ltrue$  &
+    \cellcolor{yellow}$\lfalse$ & \cellcolor{cyan}$\lfalse$
+\end{tabular}
+}
+
+La última columna nos permite visualizar en que casos (en que valuaciones) la
+expresión completa es verdadera, y en que casos no lo es. De hecho, salvo las columnas
+para los elementos base, y la última columna que muestra la expresión completa, el resto de las columnas no son en general parte de interés, pues solo se realizan como pasos intermedios para llegar al valor de la expresión. Es decir, no podemos prescindir de elaborar esas columnas, porque sin ellas no podríamos arribar al resultado, pero la realidad es que, una vez completa la tabla, podemos eliminar esas columnas intermedias. Así, la tabla anterior quedaría como:
+
+\centerline{
+\begin{tabular}{ c | c | c | c }
+    \textit{¿hay manzanas?} & \textit{¿hay naranjas?} &
+    \textit{¿hay limones?} & \textit{¿hay
+    manzanas? $\lor$ $\lnot$ ¿hay naranajas? $\land$ ¿hay limones?}\\
+    \hline
+    $\ltrue$  & $\ltrue$  & $\ltrue$  & $\ltrue$  \\
+    $\ltrue$  & $\ltrue$  & $\lfalse$ & $\ltrue$  \\
+    $\ltrue$  & $\lfalse$ & $\ltrue$  & $\ltrue$  \\
+    $\ltrue$  & $\lfalse$ & $\lfalse$ & $\ltrue$  \\
+    $\lfalse$ & $\ltrue$  & $\ltrue$  & $\lfalse$ \\
+    $\lfalse$ & $\ltrue$  & $\lfalse$ & $\lfalse$ \\
+    $\lfalse$ & $\lfalse$ & $\ltrue$  & $\ltrue$  \\
+    $\lfalse$ & $\lfalse$ & $\lfalse$ & $\lfalse$
+\end{tabular}
+}
+
+En esta sección nos
+concentraremos únicamente en la estructura y en la resolución mecánica de una
+tabla de verdad, más no procederemos a su análisis exhaustivo, concepto que
+abordaremos en el \autoref{chap:logica_proposicional}.
+
+Sin embargo, mencionaremos tres escenarios posibles que pueden darse tras
+completar una tabla de verdad y algunas de sus implicancias.
+
+Si en algunas valuaciones, la expresión final resulta $\ltruefull$ y en algunas
+resulta $\lfalsefull$, decimos que estamos frente a una
+\textbf{contingencia}\index{Contingencia}.
+
+También puede darse el caso en el que no haya ninguna valuación que haga
+verdadera la expresión, es decir, que para toda valuación, el resultado de la
+expresión es $\lfalsefull$. Ante esta situación decimos que se trata de una
+\textbf{contradicción}\index{Contradiccion@Contradicción}.
+
+El caso contrario sería que no haya casos falsos, es decir, que para toda
+valuación, la expresión sea $\ltruefull$. Esto se conoce con el nombre de
+\textbf{tautología}\index{Tautologia@Tautología}.
+
+Las tautologías y las contradicciones son interesantes de analizar, ya que son
+lo que permite formular leyes lógicas. Veremos en el próximo capítulo como usar
+este conocimiento para tal fin.
+
+\section{Resumen}
+\label{chap:logica:sec:resumen}
+
+En este capítulo intentamos abordar la lógica desde una perspectiva intuitiva al
+lector, comprendiendo no solo la definición e historia de esta ciencia, así como
+su objeto de estudio, sino algunos de los diversos elementos transversales a la
+disciplina. Sin embargo, no hemos establecido ningún sistema formal particular.
+
+Incluso así, la cantidad de conceptos involucrados en esta introducción han sido
+varios, por lo que intentaremos proporcionar un breve resumen al lector de lo
+expuesto.
+
+La \textbf{lógica} es una ciencia formal que estudia la \textbf{deducción} en
+los \textbf{razonamientos}, es decir, los procesos de pensamiento del cerebro
+humano que llevan a elaborar \textbf{conclusiones} a partir de una o más
+\textbf{premisas}. Por ser una ciencia formal, a la lógica no le interesarán los
+elementos que constituyen el razonamiento en sí, sino la \textbf{forma} que
+tienen dichos razonamientos.
+
+La lógica basa su análisis de \textbf{validez} de un razonamiento mediante la
+operatoria con \textbf{valores de verdad} (binarios y dicotómicos,
+\textbf{verdadero} y \textbf{falso}). En todo sistema formal de la lógica habrá
+elementos que son portadores de valor de verdad (encaramos la idea pensando en
+preguntas que se responden por ``\textit{si}'' o ``\textit{no}''.
+
+Los distintos elementos portadores de valor de verdad pueden ser elementos base,
+es decir estar solos, o formar parte de expresiones más complejas, mediante el
+uso de \textbf{conectivas}. Una \textbf{conectiva} es un elemento fundamental de
+la lógica, que permite unir elementos portadores de verdad, para elaborar un
+nuevo elemento, más complejo, y cuyo valor semántico depende tanto de la
+conectiva como de los elementos constituyentes. Puden ser \textbf{unarias} (como
+la \textbf{negación}) o \textbf{binarias} (como la \textbf{conjunción} y la
+\textbf{disyunción}).
+
+Cuando en una expresión hay más de una conectiva, se pueden utilizar paréntesis
+para desambiguar la \textbf{precedencia}. Además hay un orden de precedencia
+implicito para cuando no se colocan paréntesis (negación, conjunción y luego
+disyunción). La precedencia permite entender sin ambiguedad el significado
+semántico de una expresión con múltiples conectivas, indicando qué elemento debe
+ser ``resuelto'' primero, y cuál después.
+
+Para analizar una expresión compleja podemos elaborar una \textbf{tabla de
+verdad}, que nos permite visualizar facilmente todos los elementos involucrados,
+así como cada posible \textbf{valuación}. La tabla de verdad se puede completar
+de forma mecánica, aunque su interpretación y análisis son más complejos, por lo
+que se dejarán para el próximo capítulo.
+
+Según el resultado de la expresión en todas las valuaciones podemos clasificarlo
+como: una \textbf{tautología} (todas verdaderas), una \textbf{contradicción}
+(todas falsas) o una \textbf{contingencia} (algunas verdaderas, algunas falsas).
+
+Si se tiene una valuación concreta, o se desea analizar solo un caso particular,
+puede realizarse en su lugar una resolución semántica paso a paso.
+
+Además vimos una de las utilidades de la lógica en las ciencias de la
+computación, la capacidad de permitir \textbf{elaborar preguntas a partir de
+otras más simples}.
+
+En el \autoref{chap:logica_proposicional} veremos una primera definición formal
+de la lógica, basada en los principios de Aristóteles, y profundizaremos sobre
+varios de los elementos aquí trabajados, definiendo claramente quienes son los
+elementos portadores de valor de verdad, ahondando en nuevas conectivas,
+realizando el pasaje del lenguaje natural al lenguaje formal y viceversa, y
+estableciendo formas de determinar si un razonamiento es o no válido mediante el
+análisis de las tablas de verdad.
+
+Luego veremos los límites de la lógica proposicional con los que se encontraron
+los matemáticos de la Edad Moderna. Esto dará lugar a, ya en el
+\autoref{chap:logica_predicados}, a trabajar la lógica de predicados, que
+resuelve algunos de los problemas de la lógica proposicional, y permite
+formalizar razonamientos que no eran posibles de formalizar con el sistema
+anterior. Veremos allí sobre la forma de mencionar elementos, sus propiedades y
+relaciones, y maneras de hablar sobre todos los elementos del universo, o sobre
+algún elemento en particular, así como hacer aseveraciones sobre ellos.
+
+\section{Actividades}
+\label{chap:logica:sec:actividades}
+
+\begin{exercise}
+    Dados los siguientes razonamientos, indique si se tratan de razonamientos
+    deductivos o inductivos.
+
+    \begin{enumerate}[a)]
+      \item
+        Dado que las versiones más nuevas de los navegadores soportan HTML5,
+        y dado que el Microsoft Edge es la última versión del navegador de dicha
+        empresa, se sigue que el Microsoft Edge soporta HTML5.
+
+      \item
+        Mi primo compró una computadora aquí y tenía instalado Windows 10.
+        Mi hermano compró una computadora aquí y tenía instalado Windows 10.
+        Mi tío compró una computadora aquí y tenía instalado Windows 10.
+        Si compro una computadora aquí tendrá instalado Windows 10.
+
+      \item
+        Maria se inscribió el jueves y solo tenía habilitadas las materias del CI.
+        Pablo se inscribió el jueves y solo tenía habilitadas las materias del CI.
+        Juan se inscribió el jueves y solo tenía habilitadas las materias del CI.
+        Por lo tanto, todo alumno que se inscriba el jueves tiene solo habilitadas las materias del CI.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Considerando las siguientes preguntas como básicas:
+
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item ¿hay harina?
+            \item ¿hay manteca?
+            \item ¿hay aceite?
+            \item ¿hay agua?
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item ¿hay huevos?
+            \item ¿hay yerba?
+            \item ¿hay chocolate?
+            \item ¿hay azúcar?
+        \end{itemize}
+    \end{minipage}
+
+    Se le pide que, utilizando las mencionadas como preguntas básicas\footnote{
+        Recuerde que puede elaborar preguntas auxiliares que le ayuden a
+        solucionar las pedidas } y las conectivas lógicas vistas, exprese las
+        preguntas generales a continuación\footnote{ Se espera escriba algo de
+        la forma ``\textit{¿hay manzanas?} $\land$ \textit{¿hay bananas?}'' }:
+    \begin{enumerate}[a)]
+        \item \textbf{¿hay para hacer una torta?} (Una torta requiere harina,
+        huevos y manteca)
+        \item \textbf{¿hay para hacer huevos fritos?} (Requiere huevos y aceite)
+        \item \textbf{¿hay para hacer huevos duros?} (Requiere huevos y agua)
+        \item \textbf{¿Puedo almorzar huevos?} (Ya sean duros o fritos)
+        \item \textbf{¿hay para hacer una torta de chocolate?} (Idéntico a una
+        torta, más chocolate)
+        \item \textbf{¿Solo se puede tomar mate amargo?} (Cuando se puede tomar
+        mate, es decir, hay agua y yerba, pero no hay azúcar)
+        \item \textbf{¿No hay nada para el mate?} (Cuando se puede tomar mate,
+        pero no hay torta de ningún tipo)
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Considerando las siguientes preguntas básicas y sus respuestas asociadas:
+    \begin{itemize}
+        \item ¿Plutón es un planeta? $\lfalsefull$
+        \item ¿Marte es un planeta?  $\ltruefull$
+        \item ¿Marte es un satélite? $\lfalsefull$
+        \item ¿Deimos es un satélite?  $\ltruefull$
+        \item ¿Ganímedes es un satélite?  $\ltruefull$
+        \item ¿Eros es un planeta? $\lfalsefull$
+        \item ¿Eros es un satélite? $\lfalsefull$
+    \end{itemize}
+
+    Se le pide que, utilizando las mencionadas como preguntas básicas y las
+    conectivas lógicas vistas, exprese las preguntas generales a continuación y
+    determine el valor de verdad de cada una.
+    \begin{enumerate}[a)]
+        \item \textbf{¿Son Marte y Plutón planetas?}
+        \item \textbf{¿Es Marte un planeta o es Plutón un planeta?}
+        \item \textbf{¿Es Marte un planeta o un satélite?}
+        \item \textbf{¿Es cierto que Marte es un planeta y Plutón no lo es?}
+        \item \textbf{¿Es cierto que Ganímedes y Eros son satélites?}
+        \item \textbf{¿Es cierto que Eros no es un satélite, pero Deimos si lo
+        es?}
+        \item \textbf{¿Es Deimos un satélito o es cierto que Marte es un
+        planeta?}
+        \item \textbf{¿Es Eros un satélite o es cierto que es un planeta?}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Considerando las siguientes preguntas como básicas:
+
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item ¿hay ejercito enemigo al Norte?
+            \item ¿hay ejercito enemigo al Este?
+            \item ¿hay ejercito enemigo al Sur?
+            \item ¿hay ejercito enemigo al Oeste?
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item ¿hay ejercito aliado al Norte?
+            \item ¿hay ejercito aliado al Este?
+            \item ¿hay ejercito aliado al Sur?
+            \item ¿hay ejercito aliado al Oeste?
+        \end{itemize}
+    \end{minipage}
+
+    Se le pide que, utilizando las mencionadas como preguntas básicas\footnote{
+        Recuerde que puede elaborar preguntas auxiliares que le ayuden a
+        solucionar las pedidas } y las conectivas lógicas vistas, exprese las
+        preguntas generales a continuación\footnote{ Se espera escriba algo de
+        la forma ``\textit{¿hay manzanas?} $\land$ \textit{¿hay bananas?}'' }:
+    \begin{enumerate}[a)]
+        \item \textbf{¿Se está amenazado?} (Cuando hay ejercito enemigo en
+        alguna dirección)
+        \item \textbf{¿Se está libre de peligro?} (Cuando no hay ejercitos
+        enemigos en ninguna dirección)
+        \item \textbf{¿Se tiene apoyo?} (Cuando hay un ejercito aliado en alguna
+        dirección)
+        \item \textbf{¿Se está hasta las manos?} (Cuando no hay apoyo y se está
+        amenazado)
+        \item \textbf{¿Se puede neutralizar alguna amenaza?} (Cuando hay un
+        ejercito enemigo en alguna dirección, pero también hay un ejercito
+        aliado allí)
+        \item \textbf{¿Se puede neutralizar todas las amenazas?} (Cuando se
+        puede neutralizar en todas las direcciones)
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Considerando las siguientes preguntas símples:
+    \begin{itemize}
+        \item ¿Se cumple P?
+        \item ¿Se cumple Q?
+        \item ¿Se cumple R?
+    \end{itemize}
+
+    Se le pide que analice que valuaciones darán verdadero y cuales falso para
+        las siguientes preguntas compuestas\footnote{ Si pensar en preguntas
+        como ``\textit{¿Se cumple P?}'' le resulta confuso, piense en
+        reemplazarlas por preguntas que le sean más familiares, como
+        ``\textit{¿Se cumple que el lobo vive en el bosque?}''. Lo interesante
+        del ejercicio es que la pregunta en cuestión no es realmente relevante,
+        sino la forma de la pregunta compuesta. }. Además se le pide determine
+        cuales de ellas se tratan de tautologías, cuales de contradicciones y
+        cuáles de contingencias.
+    \begin{enumerate}[a)]
+        \item \textbf{¿Se cumple P? $\land$ $\lnot$ ¿Se cumple P?}
+        \item \textbf{¿Se cumple P? $\lor$ $\lnot$ ¿Se cumple P?}
+        \item \textbf{¿Se cumple P? $\land$ ¿Se cumple Q?}
+        \item \textbf{¿Se cumple P? $\land$ (¿Se cumple Q? $\lor$ ¿Se cumple
+        R?)}
+        \item \textbf{¿Se cumple P? $\lor$ ¿Se cumple Q?}
+        \item \textbf{$\lnot$ ¿Se cumple P? $\lor$ (¿Se cumple Q? $\land$ ¿Se
+        cumple R?)}
+        \item \textbf{$\lnot$ ¿Se cumple P? $\lor$ $\lnot$ (¿Se cumple Q? $\lor$
+        ¿Se cumple R?)}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Sabiendo que las siguientes preguntas compuestas evalúan todas a
+    $\ltruefull$
+    \begin{itemize}
+    \item ¿La palmera está creciendo torcida? y ¿Es cierto que el árbol no dio
+    paltas este año?
+    \item ¿Es cierto que no hay flores en el cantero? o ¿El árbol dio paltas
+    este año?
+    \end{itemize}
+
+    Se pide que responda las siguientes preguntas simples
+    \begin{enumerate}[a)]
+        \item ¿El árbol dio paltas este año?
+        \item ¿Hay flores en el cantero?
+        \item ¿La palmera está creciendo torcida?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Dadas las siguientes preguntas base y sus respuestas:
+    \begin{itemize}
+        \item ¿Es Microsoft el creador de Windows? $\ltruefull$
+        \item ¿Es Microsoft el creador de GNU? $\lfalsefull$
+        \item ¿Es Richard Stallman el creador de Windows? $\lfalsefull$
+        \item ¿Es Richard Stallman el creador de GNU? $\ltruefull$
+    \end{itemize}
+
+    Analice las preguntas a continuación, detecte las conectivas involucradas y
+    reemplantee las preguntas para que estén elaboradas en términos de las
+    preguntas dadas. Luego, analice el valor de verdad de las mismas.
+
+    \begin{enumerate}[a)]
+        \item ¿Es cierto que no es cierto que Microsoft es el creador de GNU?
+        \item ¿Es cierto que Richard Stallman es el creador de Windows o de GNU?
+        \item ¿Es cierto que Microsoft no es el creador de GNU pero que Richard
+        Stallman si lo es?
+        \item ¿Es cierto que GNU no es del mismo creador que Windows?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Se ha encontrado vida en otro planeta, y se ha decidido nombrar a los animales
+    encontrados como ``Woofle'', ``Brlfks'' y ``Morlock''.
+
+    Cada animal tiene sus características distintivas (pueden ser grandes o chicos,
+    con o sin pelo, acuáticos o terrestres).
+
+    Si las respuestas a todas las preguntas siguientes son $\ltruefull$, enumere que
+    características tiene cada animal. Para ello, realice la tabla de verdad de
+    cada pregunta y analice las respuestas a las preguntas base en las valuaciones
+    verdaderas.
+
+    \begin{itemize}
+      \item ¿El Woofle tiene pelo y no es acuático?
+      \item ¿El Morlock es terrestre y es grande, y el Brlfks es acuático?
+      \item ¿El Brlfks es pequeño o el Morlock es pequeño?
+      \item ¿El Woofle no es grande o el Brlfks es grande? ¿Y es cierto que el Morlock no es pequeño?
+      \item ¿El Woofle tiene pelo y el Brlfks no? ¿O es cierto que el Brlfks no tiene pelo y el Morlock tiene pelo?
+    \end{itemize}
+\end{exercise}

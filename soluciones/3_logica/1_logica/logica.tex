@@ -1,0 +1,354 @@
+\chapterimage{unidades/3_logica/1_logica/imagenes/cover}
+\chapterimagedescription{Red Lógica de un Enrutador con LEDs}
+\chapterimageauthor{Fotografía de tschoenemeyer}
+
+\chapter{Introducción a la lógica}
+\label{chap:logica}
+
+\section{Actividades}
+\label{chap:logica:sec:actividades}
+
+\begin{exercise}
+    Dados los siguientes razonamientos, indique si se tratan de razonamientos
+    deductivos o inductivos.
+
+    \begin{enumerate}[a)]
+      \item
+        Dado que las versiones más nuevas de los navegadores soportan HTML5, y
+        dado que el Microsoft Edge es la última versión del navegador de dicha
+        empresa, se sigue que el Microsoft Edge soporta HTML5.
+
+      \item
+        Mi primo compró una computadora aquí y tenía instalado Windows 10. Mi
+        hermano compró una computadora aquí y tenía instalado Windows 10. Mi tío
+        compró una computadora aquí y tenía instalado Windows 10. Si compro una
+        computadora aquí tendrá instalado Windows 10.
+
+      \item
+        Maria se inscribió el jueves y solo tenía habilitadas las materias del
+        CI. Pablo se inscribió el jueves y solo tenía habilitadas las materias
+        del CI. Juan se inscribió el jueves y solo tenía habilitadas las
+        materias del CI. Por lo tanto, todo alumno que se inscriba el jueves
+        tiene solo habilitadas las materias del CI.
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    Si bien basta con decir si es deductivo o inductivo, podemos además agregar qué
+    tipo de razonamiento inductivo es, ya que podemos encontrar de dos tipos. En un
+    razonamiento inductivo la conclusión puede ser un nuevo caso particular, que lo
+    hace inductivo por analogía, o una generalización (es decir, afirmar que todos
+    los casos futuros cumplirán una caracteristica), lo cual lo hace inductivo por
+    enumeración.
+
+    De esta forma, las respuestas son:
+
+    \begin{enumerate}[a)]
+        \item Razonamiento deductivo.
+        \item Razonamiento inductivo (por analogía).
+        \item Razonamiento inductivo (por enumeración).
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Considerando las siguientes preguntas como básicas:
+
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item ¿hay harina?
+            \item ¿hay manteca?
+            \item ¿hay aceite?
+            \item ¿hay agua?
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item ¿hay huevos?
+            \item ¿hay yerba?
+            \item ¿hay chocolate?
+            \item ¿hay azúcar?
+        \end{itemize}
+    \end{minipage}
+
+    Se le pide que, utilizando las mencionadas como preguntas básicas\footnote{
+        Recuerde que puede elaborar preguntas auxiliares que le ayuden a
+        solucionar las pedidas } y las conectivas lógicas vistas, exprese las
+        preguntas generales a continuación\footnote{ Se espera escriba algo de
+        la forma ``\textit{¿hay manzanas?} $\land$ \textit{¿hay bananas?}'' }:
+    \begin{enumerate}[a)]
+        \item \textbf{¿hay para hacer una torta?} (Una torta requiere harina,
+        huevos y manteca)
+        \item \textbf{¿hay para hacer huevos fritos?} (Requiere huevos y aceite)
+        \item \textbf{¿hay para hacer huevos duros?} (Requiere huevos y agua)
+        \item \textbf{¿Puedo almorzar huevos?} (Ya sean duros o fritos)
+        \item \textbf{¿hay para hacer una torta de chocolate?} (Idéntico a una
+        torta, más chocolate)
+        \item \textbf{¿Solo se puede tomar mate amargo?} (Cuando se puede tomar
+        mate, es decir, hay agua y yerba, pero no hay azúcar)
+        \item \textbf{¿No hay nada para el mate?} (Cuando se puede tomar mate,
+        pero no hay torta de ningún tipo)
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    Las respuestas son:
+
+    \begin{enumerate}[a)]
+        \item \textbf{\textit{¿Hay harina?} y \textit{¿Hay huevos?} y \textit{¿Hay
+        manteca?}}
+
+        \item \textbf{\textit{¿Hay huevos?} y \textit{¿Hay aceite?}}
+
+        \item \textbf{\textit{¿Hay huevos?} y \textit{¿Hay agua?}}
+
+        \item
+            \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+                \item  Acá comienza a volverse más divertido. El truco consiste en
+                reutilizar preguntas para las cuales ya dimos una equivalencia en
+                términos de las base, como \textit{¿Hay para hacer huevos fritos?}.
+                De esta forma, la mejor respuesta sería:
+                \item \textbf{\textit{¿Hay para hacer huevos fritos?} o \textit{¿Hay
+                para hacer huevos duros?}}
+                \item Sin embargo es probable que no sea la respuesta de todos en
+                una primer instancia. La primer aproximación tiende a ser emplear
+                únicamente preguntas base, y por tanto se obtienen respuestas como:
+                \item \textbf{(\textit{¿Hay huevos?} y \textit{¿Hay aceite?}) o
+                (\textit{¿Hay huevos?} y \textit{¿Hay agua?})}
+                \item O también, quienes se percatan de que siemre deben haber
+                huevos, que realizan algo como:
+                \item \textbf{\textit{¿Hay huevos?} y (\textit{¿Hay aceite?} o
+                \textit{¿Hay agua?})}
+                \item Luego de explicar que la mejor opción es reutilizar las
+                preguntas ya analizadas, se espera respondan las siguientes siempre
+                reutilizando.
+            \end{itemize}
+
+        \item
+            \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+                \item Este punto tiene la particularidad de que combinamos una
+                pregunta ya realizada en otro ejercicio con una pregunta base. Es
+                perfectamente posible hacer esto ya que todas son preguntas que
+                portan un valor de verdad.
+                \item \textbf{\textit{¿Hay para hacer una torta?} y \textit{¿Hay
+                chocolate?}}
+            \end{itemize}
+
+        \item
+            \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+                \item En este caso es conveniente primero definir una nueva
+                pregunta, ya que la idea de que se pueda tomar mate, es algo
+                independiente de si se puede tomarlo amargo o no. Conviene entonces
+                desglosar la pregunta, que de otra forma resulta compleja y con
+                muchas partes, en preguntas más pequeñas. El resultado sería:
+                \item \textbf{\textit{¿Hay mate?} = \textit{¿Hay yerba?} y
+                \textit{¿Hay agua?}}
+                \item Y la pregunta original que queríamos definir sería entonces:
+                \item \textbf{\textit{¿Hay mate?} y no \textit{¿Hay azúcar?}}
+            \end{itemize}
+
+        \item
+            \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+                \item Acá surge la ventaja de haber hecho \textit{¿Hay mate?}, ya
+                que podemos volver a usarla en este punto, resultando en:
+                \item \textbf{\textit{¿Hay mate?} y (no \textit{¿Hay para hacer una
+                torta de chocolate?} y no \textit{¿Hay para hacer una torta?})}
+                \item Aunque, como si no hay para una torta común, tampoco hay para
+                una de chocolate, varios podrían percatarse de que basta con:
+                \item \textbf{\textit{¿Hay mate?} y no \textit{¿Hay para hacer una
+                torta?}}
+        \end{itemize}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Considerando las siguientes preguntas básicas y sus respuestas asociadas:
+    \begin{itemize}
+        \item ¿Plutón es un planeta? $\lfalsefull$
+        \item ¿Marte es un planeta?  $\ltruefull$
+        \item ¿Marte es un satélite? $\lfalsefull$
+        \item ¿Deimos es un satélite?  $\ltruefull$
+        \item ¿Ganímedes es un satélite?  $\ltruefull$
+        \item ¿Eros es un planeta? $\lfalsefull$
+        \item ¿Eros es un satélite? $\lfalsefull$
+    \end{itemize}
+
+    Se le pide que, utilizando las mencionadas como preguntas básicas y las
+    conectivas lógicas vistas, exprese las preguntas generales a continuación y
+    determine el valor de verdad de cada una.
+    \begin{enumerate}[a)]
+        \item \textbf{¿Son Marte y Plutón planetas?}
+        \item \textbf{¿Es Marte un planeta o es Plutón un planeta?}
+        \item \textbf{¿Es Marte un planeta o un satélite?}
+        \item \textbf{¿Es cierto que Marte es un planeta y Plutón no lo es?}
+        \item \textbf{¿Es cierto que Ganímedes y Eros son satélites?}
+        \item \textbf{¿Es cierto que Eros no es un satélite, pero Deimos si lo
+        es?}
+        \item \textbf{¿Es Deimos un satélito o es cierto que Marte es un
+        planeta?}
+        \item \textbf{¿Es Eros un satélite o es cierto que es un planeta?}
+    \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+    \begin{enumerate}[a)]
+        \item
+            \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+                \item \textbf{¿Son Marte y Plutón planetas?} \lfalsefull
+                \item Para determinarlo que es falso, la forma de solución es identificar que la pregunta dada es equivalente a:
+                \item \textbf{¿Marte es un planeta? $\land$ ¿Plutón es un planeta?}
+                \item Y por tanto, considerando las respuestas a las preguntas base que tenemos, es equivalente a:
+                \item \ltruefull ~ $\land$ ~ \lfalsefull
+                \item De esta forma, y por la semántica de la conjunción, sabemos que si uno de los elementos es falso, la conjunción completa es falsa. Por lo que se obtiene que el resultado es:
+                \item \lfalsefull
+                \item En los siguientes items presentaremos el resultado y el análisis línea a línea, sin explicación detallada de los pasos, pero todos siguen el mismo proceso.
+            \end{itemize}
+        \item
+            \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+                \item \textbf{¿Es Marte un planeta o es Plutón un planeta?}
+            \end{itemize}
+        \item \textbf{¿Es Marte un planeta o un satélite?}
+        \item \textbf{¿Es cierto que Marte es un planeta y Plutón no lo es?}
+        \item \textbf{¿Es cierto que Ganímedes y Eros son satélites?}
+        \item \textbf{¿Es cierto que Eros no es un satélite, pero Deimos si lo
+        es?}
+        \item \textbf{¿Es Deimos un satélito o es cierto que Marte es un
+        planeta?}
+        \item \textbf{¿Es Eros un satélite o es cierto que es un planeta?}
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+    Considerando las siguientes preguntas como básicas:
+
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item ¿hay ejercito enemigo al Norte?
+            \item ¿hay ejercito enemigo al Este?
+            \item ¿hay ejercito enemigo al Sur?
+            \item ¿hay ejercito enemigo al Oeste?
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item ¿hay ejercito aliado al Norte?
+            \item ¿hay ejercito aliado al Este?
+            \item ¿hay ejercito aliado al Sur?
+            \item ¿hay ejercito aliado al Oeste?
+        \end{itemize}
+    \end{minipage}
+
+    Se le pide que, utilizando las mencionadas como preguntas básicas\footnote{
+        Recuerde que puede elaborar preguntas auxiliares que le ayuden a
+        solucionar las pedidas } y las conectivas lógicas vistas, exprese las
+        preguntas generales a continuación\footnote{ Se espera escriba algo de
+        la forma ``\textit{¿hay manzanas?} $\land$ \textit{¿hay bananas?}'' }:
+    \begin{enumerate}[a)]
+        \item \textbf{¿Se está amenazado?} (Cuando hay ejercito enemigo en
+        alguna dirección)
+        \item \textbf{¿Se está libre de peligro?} (Cuando no hay ejercitos
+        enemigos en ninguna dirección)
+        \item \textbf{¿Se tiene apoyo?} (Cuando hay un ejercito aliado en alguna
+        dirección)
+        \item \textbf{¿Se está hasta las manos?} (Cuando no hay apoyo y se está
+        amenazado)
+        \item \textbf{¿Se puede neutralizar alguna amenaza?} (Cuando hay un
+        ejercito enemigo en alguna dirección, pero también hay un ejercito
+        aliado allí)
+        \item \textbf{¿Se puede neutralizar todas las amenazas?} (Cuando se
+        puede neutralizar en todas las direcciones)
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Considerando las siguientes preguntas símples:
+    \begin{itemize}
+        \item ¿Se cumple P?
+        \item ¿Se cumple Q?
+        \item ¿Se cumple R?
+    \end{itemize}
+
+    Se le pide que analice que valuaciones darán verdadero y cuales falso para
+        las siguientes preguntas compuestas\footnote{ Si pensar en preguntas
+        como ``\textit{¿Se cumple P?}'' le resulta confuso, piense en
+        reemplazarlas por preguntas que le sean más familiares, como
+        ``\textit{¿Se cumple que el lobo vive en el bosque?}''. Lo interesante
+        del ejercicio es que la pregunta en cuestión no es realmente relevante,
+        sino la forma de la pregunta compuesta. }. Además se le pide determine
+        cuales de ellas se tratan de tautologías, cuales de contradicciones y
+        cuáles de contingencias.
+    \begin{enumerate}[a)]
+        \item \textbf{¿Se cumple P? $\land$ $\lnot$ ¿Se cumple P?}
+        \item \textbf{¿Se cumple P? $\lor$ $\lnot$ ¿Se cumple P?}
+        \item \textbf{¿Se cumple P? $\land$ ¿Se cumple Q?}
+        \item \textbf{¿Se cumple P? $\land$ (¿Se cumple Q? $\lor$ ¿Se cumple
+        R?)}
+        \item \textbf{¿Se cumple P? $\lor$ ¿Se cumple Q?}
+        \item \textbf{$\lnot$ ¿Se cumple P? $\lor$ (¿Se cumple Q? $\land$ ¿Se
+        cumple R?)}
+        \item \textbf{$\lnot$ ¿Se cumple P? $\lor$ $\lnot$ (¿Se cumple Q? $\lor$
+        ¿Se cumple R?)}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Sabiendo que las siguientes preguntas compuestas evalúan todas a
+    $\ltruefull$
+    \begin{itemize}
+    \item ¿La palmera está creciendo torcida? y ¿Es cierto que el árbol no dio
+    paltas este año?
+    \item ¿Es cierto que no hay flores en el cantero? o ¿El árbol dio paltas
+    este año?
+    \end{itemize}
+
+    Se pide que responda las siguientes preguntas simples
+    \begin{enumerate}[a)]
+        \item ¿El árbol dio paltas este año?
+        \item ¿Hay flores en el cantero?
+        \item ¿La palmera está creciendo torcida?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Dadas las siguientes preguntas base y sus respuestas:
+    \begin{itemize}
+        \item ¿Es Microsoft el creador de Windows? $\ltruefull$
+        \item ¿Es Microsoft el creador de GNU? $\lfalsefull$
+        \item ¿Es Richard Stallman el creador de Windows? $\lfalsefull$
+        \item ¿Es Richard Stallman el creador de GNU? $\ltruefull$
+    \end{itemize}
+
+    Analice las preguntas a continuación, detecte las conectivas involucradas y
+    reemplantee las preguntas para que estén elaboradas en términos de las
+    preguntas dadas. Luego, analice el valor de verdad de las mismas.
+
+    \begin{enumerate}[a)]
+        \item ¿Es cierto que no es cierto que Microsoft es el creador de GNU?
+        \item ¿Es cierto que Richard Stallman es el creador de Windows o de GNU?
+        \item ¿Es cierto que Microsoft no es el creador de GNU pero que Richard
+        Stallman si lo es?
+        \item ¿Es cierto que GNU no es del mismo creador que Windows?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Se ha encontrado vida en otro planeta, y se ha decidido nombrar a los
+    animales encontrados como ``Woofle'', ``Brlfks'' y ``Morlock''.
+
+    Cada animal tiene sus características distintivas (pueden ser grandes o
+    chicos, con o sin pelo, acuáticos o terrestres).
+
+    Si las respuestas a todas las preguntas siguientes son $\ltruefull$, enumere
+    que características tiene cada animal. Para ello, realice la tabla de verdad
+    de cada pregunta y analice las respuestas a las preguntas base en las
+    valuaciones verdaderas.
+
+    \begin{itemize}
+      \item ¿El Woofle tiene pelo y no es acuático?
+      \item ¿El Morlock es terrestre y es grande, y el Brlfks es acuático?
+      \item ¿El Brlfks es pequeño o el Morlock es pequeño?
+      \item ¿El Woofle no es grande o el Brlfks es grande? ¿Y es cierto que el
+      Morlock no es pequeño?
+      \item ¿El Woofle tiene pelo y el Brlfks no? ¿O es cierto que el Brlfks no
+      tiene pelo y el Morlock tiene pelo?
+    \end{itemize}
+\end{exercise}

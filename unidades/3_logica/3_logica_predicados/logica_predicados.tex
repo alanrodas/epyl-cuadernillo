@@ -1,0 +1,296 @@
+\chapterimage{unidades/3_logica/1_logica/imagenes/cover}
+\chapterimagedescription{Red Lógica de un Enrutador con LEDs}
+\chapterimageauthor{Fotografía de tschoenemeyer}
+
+\chapter{Lógica de predicados}
+\index{Logica de predicados@Lógica de predicados}
+\label{chap:logica_predicados}
+
+En el capítulo anterior vimos que la lógica proposicional no nos permite formalizar todos los razonamientos que se nos puedan ocurrir. Así, el pobre Sócrates podría terminar herido de muerte por alguien que solo concibe la lógica proposicional como el único formalismo lógico.
+
+Por suerte para Sócrates, y para el resto de nosotros, con el tiempo varios pensadores se dieron cuenta de las problemáticas asociadas a la lógica proposicional, y elaboraron otros formalismos capaces de modelar razonamientos que antes no eran posibles. La \textbf{lógica de predicados}, también llamada
+\textbf{lógica de primer orden} o \textbf{lógica de orden uno} es uno de tales
+formalismos.
+
+La lógica de predicados tiene la particularidad de que permite hablar sobre los
+diversos elementos gramaticales internos a las proposiciones, es decir, sobre los
+individuos que menciona, sus propiedades y relaciones. Además nos va a permitir versar sobre el universo, y todos los elementos del mismo, o algunos de ellos, sin ponerles a estos nombres específicos.
+
+Si la lógica proposicional tenía a la \textbf{proposición} como el elemento portador de verdad, la lógica de predicados tendrá al \textbf{predicado} como el elemento mínimo capaz de ser verdadero o falso. En la siguiente sección veremos en que consiste esto de los predicados, pero para entenderlo, deberemos primero poder ``desmenuzar'' una proposición
+
+\section{Individuos, Propiedades y Relaciones}
+\label{chap:logica_predicados:sec:individuos_propiedades_relaciones}
+
+Pensemos en algunas proposiciones que podíamos enunciar e intentemos comprender mejor la estructura interna de dichas proposiciones. Vamos con nuestro ejemplo clásico, que menciona a Sócrates.
+
+\begin{example}
+    \textit{Sócrates es humano}
+\end{example}
+
+Estamos ante algo de lo que podemos decir que es verdadero o falso, es decir, frente a una proposición. Pero como vimos, lo que deseamos es poder comprender la estructura interna de estas oraciones. Aquí es donde el comprender sujeto y predicado se vuelve útil. ¿Sobre quién habla la oración? Es decir, ¿Quién es el sujeto? Sócrates, claro.
+
+\subsection{Individuos}
+\label{chap:logica_predicados:subsec:individuos}
+
+Los \textbf{individuos} son los elementos sobre los que versa la lógica de predicados. Pueden ser personas, como ``\textit{Sócrates}'', planetas como ``\textit{La Tierra}'', objetos como ``\textit{la silla}'', elementos ideales ``\textit{el color rojo}'' o no tangibles como ``\textit{el alma}''. Son, en definitiva, los \textbf{sujetos} en las oraciones que antes mencionabamos como proposiciones, que podrían incluso incluir modificadores directos o indirectos.
+
+Hay una particularidad interesante, y es que un individuo es un único elemento. Si decimos algo como ``\textit{las personas}'', ``\textit{los astronautas}'' o
+``\textit{los colores}'' no estamos hablando de un individuo, sino de varios. Veremos como lidiar con la situación de nombrar varios elementos al mismo tiempo más adelante. De momento, tenga presente el lector que para que algo sea un individuo debería en principio estar en enunciado singular y no en plural.
+
+Los individuos no tienen un valor de verdad asociado, es decir,
+``\textit{Sócrates}'' no es ni verdadero ni falso, es una persona, una entidad sobre la cual vamos a mencionar cosas, pero en si misma, no tiene valor de verdad alguno.
+
+Al formalizar en la lógica de predicados, vamos a elaborar un \textbf{diccionario}, de forma similar a lo que hacíamos para lógica proposicional. Sin embargo, este diccionario es bastante diferente, ya que uno de los elementos que debemos incluir en el mismo son los individuos. A cada individuo se le asignará una letra en minúscula en el diccionario. En general optamos por elegir una letra relacionada al individuo en cuestión, por ejemplo ``\textit{$s$}'' para ``\textit{Sócrates}'' o  ``\textit{$t$}'' para ``\textit{El planeta Tierra}''. Incluso podríamos asignar combinaciones de letras, como ``\textit{$sm$}'' para ``\textit{San Martín}''.
+
+A estas letras se las conoce como \textbf{constantes}, y cada una representa un individuo específico del discurso.
+
+\subsection{Propiedades}
+\label{chap:logica_predicados:subsec:propiedades}
+
+Sobre los individuos vamos a querer decir diferentes cosas. Por ejemplo, podemos querer mencionar algunas caracteristicas que pueden llegar a tener, como el ``\textit{ser un humano}'' o ``\textit{ser mortal}''. Llamamos a estas características \textbf{propiedades}. Una propiedad no es más que una caracteristica que puede aplicar (o no) a un individuo particular. Por ejemplo, la propiedad ``\textit{ser un color primario}'' es una caracteristica que aplica a ``\textit{el color rojo}'', pero no a ``\textit{el color violeta}''.
+
+Por supuesto, también vamos a querer escribir propiedades en nuestro diccionario. Las mismas van a estar identificadas por una letra en mayúscula, y también buscaremos que esté relacionada a la propiedad, por ejemplo ``\textit{$P$}'' para la idea de color primario, o ``\textit{$H$}'' para la idea de ser un humano.
+
+Como las propiedades versan sobre una característica de un elemento, y como el lenguaje natural en ocasiones no nos permite expresar claramente la caractersitica sin mencionar al sujeto, vamos a mencionar al individuo en la oración, con un nuevo concepto. Por ejemplo, vamos a decir ``\textit{$x$ es humano}''. Al momento de definir el diccionario, no sabemos a priori quien es ``\textit{$x$}'', por lo que actúa de forma similar a las incógnitas en matemáticas. Decimos que es una \textbf{variable}, que tiene sentido mencionar dentro de la propiedad. Definiremos entonces la propiedad en términos de esa variable, como se muestra en los siguientes ejemplos:
+
+\begin{example}
+    \sindent $H(x) =$ \textit{$x$ es humano}
+    \sindent $M(x) =$ \textit{$x$ es mortal}
+    \sindent $P(x)$ \textit{$x$ es un color primario}
+\end{example}
+
+Notar que para vamos a definir una propiedad ``$A$'' como ``$A(x)$'' (se lee ``A de equis''). En el texto mencionaremos esa ``$x$'' en el punto en donde mencionaríamos un individuo. Así, la interpretación que debe hacerse es que ``$A$'' es algo que espera un individuo cualquiera, y dice si ese individuo es humano.
+
+Al momento de escribir la fórmula, vamos a dar un valor concreto a ese ``$x$'', por ejemplo, ``\textit{Sócrates}'', por lo que usaremos la constante que asignamos a dicho individuo. Veamos un ejemplo concreto.
+
+\begin{example}
+    \sindent Texto a pasar a fórmula:
+
+    \dindent \textit{Sócrates es humano}
+
+    \indent Diccionario:
+
+    \sindent $s = $ \textit{Sócrates}
+
+    \sindent $H(x) =$ \textit{$x$ es humano}
+
+    \indent Fórmula:
+
+    \sindent $H(s)$
+\end{example}
+
+Notar que la idea de la fórmula es tomar el texto de la propiedad, y reemplazar la ``$x$'' con el individuo concreto que se ha aplicado, o más bien, con la interpretación del diccionario de la constante aplicada. En este ejemplo, se usa la constante ``$s$'' aplicada a la propiedad ``$H$'', por lo que se debe reemplazar la ``$x$'' en ``\textit{$x$ es humano}'' (la interpretación de ``$H$''), con la interpretación de ``$s$'', ``\textit{Sócrates}''. Esto da como resultado la frase ``\textit{Sócrates es humano}'', el texto original a pasar a fórmula.
+
+Notar que una propiedad, en principio es algo abstracto. Es decir, ``\textit{$x$ es humano}'' es una propiedad, pero no podemos decir ni que sea verdadera ni falsa. Sin embargo, al aplicar la propiedad a un individuo, se transforma en un valor de verdad. Decir que ``\textit{Sócraes es humano}'' si es algo de lo que podamos decir que sea verdadero o falso.
+
+Para quienes conozcan de matemática, una propiedad no es más que una función de individuos en valores de verdad. Es decir, si le damos a la función un individuo concreto, nos describirá verdadero o falso dependiendo de si ese individuo cumple o no dicha propiedad. Así, en el diccionario tendremos la definición de dicha función (Ej. ``$H(x) =$ \textit{$x$ es humano}''), y en la fórmula, la función aplicada a un individuo concreto (Ej. ``$H(s)$'').
+
+TODO Hablar de alfa-conversión de variables
+
+TODO: Relaciones
+
+\section{Predicados}
+\label{chap:logica_predicados:sec:predicados}
+
+TODO
+
+\subsection{Aridad}
+\label{chap:logica_predicados:subsec:aridad}
+
+TODO
+
+\subsection{Predicados y conectivas}
+\label{chap:logica_predicados:subsec:predicados_y_conectivas}
+
+TODO
+
+\section{Universo de discurso}
+\label{chap:logica_predicados:sec:universo}
+
+TODO
+
+\section{Cuantificadores}
+\label{chap:logica_predicados:sec:cuantificadores}
+
+TODO
+
+\subsection{Cuantificador universal}
+\label{chap:logica_predicados:subsec:universal}
+
+TODO
+
+\subsection{Cuantificador existencial}
+\label{chap:logica_predicados:subsec:existencial}
+
+TODO
+
+\subsection{Cuantificador existencial negado}
+\label{chap:logica_predicados:subsec:existencial_negado}
+
+TODO
+
+\subsection{Equivalencia de cuantificadores}
+\label{chap:logica_predicados:subsec:equivalencias}
+
+TODO
+
+\section{Actividades}
+\label{chap:logica_predicados:sec:actividades}
+
+\begin{exercise}
+    Dados los siguientes textos, determine si se trata de individuos o no, y justifique su respuesta en caso negativo.
+
+    \begin{enumerate}[a)]
+        \item Lisa
+        \item Los astronautas
+        \item José de San Martín
+        \item Paquetes
+        \item La selección argentina
+        \item Los jugadores de la selección
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Pasar cada una de las siguientes oraciones a fórmula, identificando claramente el diccionario, los individuos, las propiedades y las relaciones entre los mismos. Recuerde identificar adicionalmente las conectivas que pudieran aparecer.
+    \begin{enumerate}[a)]
+        \item La Tierra es plana
+        \item Los Beatles es un grupo musical inglés
+        \item Lisa quiere a Nelson
+        \item El gato de Schrödinger está vivo o muerto
+        \item El verde es un color secundario, pero el azul no lo es.
+        \item Freddy Mercury fue el vocalista de Queen, y Kurt Cobain el de Nirvana.
+        \item Freddy Mercury no cantaba con Kurt Cobain.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Dados los siguientes dominios, pensar para cada uno al menos 3 individuos que formen parte del mismo, dos propiedades y dos relaciones que apliquen a los elementos de dicho dominio.
+
+    Si conoce poco del tema, puede investigar en Internet sobre el mismo para determinar cosas sobre el mismo.
+
+    \begin{enumerate}[a)]
+        \item El espacio exterior
+        \item Las partículas subatómicas
+        \item Los deportes
+        \item Las computadoras
+        \item El software libre
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Dados los siguientes diccionarios, elabore al menos dos proposiciones compuestas en el lenguaje natural que utilicen los elementos del diccionario.
+
+    \begin{enumerate}[a)]
+    \item
+        \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+            \item $j = $ Juan
+            \item $m = $ María
+            \item $a = $ Ana
+            \item $l = $ Luis
+            \item $A(x) = $ $x$ vive en Argentina.
+            \item $B(x) = $ $x$ vive en Brasil.
+        \end{itemize}
+    \item
+        \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+            \item $a = $  Argentina
+            \item $b = $  Brasil
+            \item $u = $  Uruguay
+            \item $J(x, y) = $ $x$ jugó contra $y$.
+            \item $G(x, y) = $ $x$ le ganó a $y$.
+            \item $C(x) = $ $x$ salió campeon del torneo.
+        \end{itemize}
+    \item
+        \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+            \item $me = Messi$
+            \item $ma = Maradona$
+            \item $p = Pelé$
+            \item $a = La selección argentina$
+            \item $b = La selección brasilera$
+            \item $J(x, y) = $ $x$ jugó en $y$
+            \item $P(x, y) = $ $x$ tiene en su plantel a $y$
+        \end{itemize}
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Pase cada una de las siguientes oraciones en el lenguaje natural a una fórmula de la lógica de predicados. Para cada una indique su diccionario y fórmula.
+    \begin{enumerate}[a)]
+        \item El 7 es un número natural y es impar.
+        \item Windows es un sistema operativo privativo y Linux es un sistema operativo libre.
+        \item Algunas computadoras usan Linux.
+        \item Todos los programas de software libre garantizan las 4 libertades.
+        \item No todos los perros tienen pelo.
+        \item Ningún animal es más inteligente que el pulpo.
+        \item Todo número es igual a si mismo.
+        \item Algunos astronautas son de Rusia, otros son de Estados Unidos.
+        \item Ningun lenguaje de programación soluciona todos los problemas.
+        \item No hay números que sean primos y sean pares y que además sean mayores a 2.
+        \item Si un número es primo entonces no hay ningún número que sea su divisor, salvo el 1 y el mismo.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Dado que el dominio son los productos de software y las empresas que los producen, y se cuenta con el siguiente diccionario.
+
+    \begin{itemize}[label=, leftmargin=0mm,itemsep=8pt]
+        \item $w = $ WhatsApp
+        \item $f = $ Facebook
+        \item $i = $ Instagram
+        \item $g = $ Gmail
+        \item $m = $ Meta
+        \item $a = $ Alphabet
+        \item $S(x) = $ $x$ es un software.
+        \item $E(x) = $ $x$ es una empresa que produce software.
+        \item $B(x) = $ $x$ tiene más de un billón de dólares.
+        \item $U(x) = $ $x$ es muy usado.
+        \item $D(x, y) = $ $x$ es dueña de  $y$
+        \item $F(x, y) = $ $x$ fabricó $y$
+        \item $C(x, y) = $ $x$ compró $y$
+    \end{itemize}
+
+    Se pide que pase al lenguaje natural las siguientes fórmulas de la lógica de predicados.
+
+    \begin{enumerate}[a)]
+        \item $D(m, f) \land D(m, i) \land D(m, w)$
+        \item $\forall x. E(x) \lthen B(x)$
+        \item $\exists x. \lnot E(x) \land B(x)$
+        \item $\exists x. \forall y. E(x) \land D(x, y) \lthen \lnot F(x, y)$
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Considere las siguientes expresiones que representan una famosa variación del juego piedra-papel-tijeras:
+
+    \begin{itemize}
+        \item Las tijeras cortan al papel.
+        \item El papel envuelve a la piedra.
+        \item La piedra aplasta al lagarto.
+        \item El lagarto envenena a Spock.
+        \item Spock destruye las tijeras.
+        \item Las tijeras decapitan al lagarto.
+        \item El lagarto se come al papel.
+        \item El papel desautoriza a Spock.
+        \item Spock vaporiza la roca.
+        \item La piedra aplasta las tijeras.
+    \end{itemize}
+
+    Tenga en cuenta que la expresión ``tijera corta al papel'' representa que la tijera vence al papel. Es decir, toda expresión, cualquiera sea, puede ser reformulada en término de, \textbf{el primer elemento vence al segundo}.
+
+    Se pide entonces complete la tabla a continuación para expresar quien vence a quien en dicho juego, completando con ~\ltrue ~o~ \lfalse.
+
+    \begin{tabular}{| l | c | c | c | c | c |}
+        \hline
+        $x$ vence a $y$ & Piedra & Papel & Tijeras & Lagarto & Spock \\
+        \hline
+        Piedra&&&&&\\
+        \hline
+        Papel&&&&&\\
+        \hline
+        Tijeras&&&&&\\
+        \hline
+        Lagarto&&&&&\\
+        \hline
+        Spock&&&&&\\
+        \hline
+    \end{tabular}
+\end{exercise}
